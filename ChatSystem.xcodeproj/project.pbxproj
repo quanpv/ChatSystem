@@ -7,6 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
+		4CD569AB224A06130060EB36 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */; };
+		4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
+		4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
+		4CD569AE224A06130060EB36 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079942249D20400116A00 /* UIWindowExtension.swift */; };
+		4CD569AF224A06130060EB36 /* CSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079892249CB5400116A00 /* CSBaseViewController.swift */; };
+		4CD569B0224A06130060EB36 /* CSTalkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */; };
+		4CD569B1224A06130060EB36 /* CSConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079972249D5E700116A00 /* CSConstant.swift */; };
+		4CD569B2224A06130060EB36 /* CSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799D2249D73B00116A00 /* CSUtils.swift */; };
+		4CD569B3224A06130060EB36 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */; };
+		4CD569B4224A06130060EB36 /* NSObjectExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A62249D9BD00116A00 /* NSObjectExtention.swift */; };
+		4CD569B5224A06130060EB36 /* CSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A02249D83300116A00 /* CSLoginViewController.swift */; };
+		4CD569B6224A06130060EB36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079502249C48500116A00 /* AppDelegate.swift */; };
+		4CD569B7224A06130060EB36 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079992249D6CF00116A00 /* APIRouter.swift */; };
+		4CD569B8224A06130060EB36 /* CSBaseViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798F2249CF7C00116A00 /* CSBaseViewControllerExtention.swift */; };
+		4CD569B9224A06130060EB36 /* CSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */; };
+		4CD569BA224A06130060EB36 /* CSTalkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB62249E2BF00F59EA5 /* CSTalkListViewController.swift */; };
+		4CD569BB224A06130060EB36 /* ChatSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079572249C48500116A00 /* ChatSystem.xcdatamodeld */; };
+		4CD569BC224A06130060EB36 /* CSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079922249D12D00116A00 /* CSConfig.swift */; };
+		4CD569BD224A06130060EB36 /* CSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A42249D8CC00116A00 /* CSLoginViewModel.swift */; };
+		4CD569C0224A06130060EB36 /* CSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE079A12249D83300116A00 /* CSLoginViewController.xib */; };
+		4CD569C1224A06130060EB36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795C2249C48600116A00 /* LaunchScreen.storyboard */; };
+		4CD569C2224A06130060EB36 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
+		4CD569C3224A06130060EB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
+		4CD569CB224A06170060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
+		4CD569CC224A06170060EB36 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */; };
+		4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
+		4CD569CE224A06170060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
+		4CD569CF224A06170060EB36 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079942249D20400116A00 /* UIWindowExtension.swift */; };
+		4CD569D0224A06170060EB36 /* CSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079892249CB5400116A00 /* CSBaseViewController.swift */; };
+		4CD569D1224A06170060EB36 /* CSTalkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */; };
+		4CD569D2224A06170060EB36 /* CSConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079972249D5E700116A00 /* CSConstant.swift */; };
+		4CD569D3224A06170060EB36 /* CSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799D2249D73B00116A00 /* CSUtils.swift */; };
+		4CD569D4224A06170060EB36 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */; };
+		4CD569D5224A06170060EB36 /* NSObjectExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A62249D9BD00116A00 /* NSObjectExtention.swift */; };
+		4CD569D6224A06170060EB36 /* CSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A02249D83300116A00 /* CSLoginViewController.swift */; };
+		4CD569D7224A06170060EB36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079502249C48500116A00 /* AppDelegate.swift */; };
+		4CD569D8224A06170060EB36 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079992249D6CF00116A00 /* APIRouter.swift */; };
+		4CD569D9224A06170060EB36 /* CSBaseViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798F2249CF7C00116A00 /* CSBaseViewControllerExtention.swift */; };
+		4CD569DA224A06170060EB36 /* CSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */; };
+		4CD569DB224A06170060EB36 /* CSTalkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB62249E2BF00F59EA5 /* CSTalkListViewController.swift */; };
+		4CD569DC224A06170060EB36 /* ChatSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079572249C48500116A00 /* ChatSystem.xcdatamodeld */; };
+		4CD569DD224A06170060EB36 /* CSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079922249D12D00116A00 /* CSConfig.swift */; };
+		4CD569DE224A06170060EB36 /* CSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A42249D8CC00116A00 /* CSLoginViewModel.swift */; };
+		4CD569E1224A06170060EB36 /* CSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE079A12249D83300116A00 /* CSLoginViewController.xib */; };
+		4CD569E2224A06170060EB36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795C2249C48600116A00 /* LaunchScreen.storyboard */; };
+		4CD569E3224A06170060EB36 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
+		4CD569E4224A06170060EB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
+		4CD569EC224A061A0060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
+		4CD569ED224A061A0060EB36 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */; };
+		4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
+		4CD569EF224A061A0060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
+		4CD569F0224A061A0060EB36 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079942249D20400116A00 /* UIWindowExtension.swift */; };
+		4CD569F1224A061A0060EB36 /* CSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079892249CB5400116A00 /* CSBaseViewController.swift */; };
+		4CD569F2224A061A0060EB36 /* CSTalkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */; };
+		4CD569F3224A061A0060EB36 /* CSConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079972249D5E700116A00 /* CSConstant.swift */; };
+		4CD569F4224A061A0060EB36 /* CSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799D2249D73B00116A00 /* CSUtils.swift */; };
+		4CD569F5224A061A0060EB36 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */; };
+		4CD569F6224A061A0060EB36 /* NSObjectExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A62249D9BD00116A00 /* NSObjectExtention.swift */; };
+		4CD569F7224A061A0060EB36 /* CSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A02249D83300116A00 /* CSLoginViewController.swift */; };
+		4CD569F8224A061A0060EB36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079502249C48500116A00 /* AppDelegate.swift */; };
+		4CD569F9224A061A0060EB36 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079992249D6CF00116A00 /* APIRouter.swift */; };
+		4CD569FA224A061A0060EB36 /* CSBaseViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798F2249CF7C00116A00 /* CSBaseViewControllerExtention.swift */; };
+		4CD569FB224A061A0060EB36 /* CSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */; };
+		4CD569FC224A061A0060EB36 /* CSTalkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB62249E2BF00F59EA5 /* CSTalkListViewController.swift */; };
+		4CD569FD224A061A0060EB36 /* ChatSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079572249C48500116A00 /* ChatSystem.xcdatamodeld */; };
+		4CD569FE224A061A0060EB36 /* CSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079922249D12D00116A00 /* CSConfig.swift */; };
+		4CD569FF224A061A0060EB36 /* CSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079A42249D8CC00116A00 /* CSLoginViewModel.swift */; };
+		4CD56A02224A061A0060EB36 /* CSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE079A12249D83300116A00 /* CSLoginViewController.xib */; };
+		4CD56A03224A061A0060EB36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795C2249C48600116A00 /* LaunchScreen.storyboard */; };
+		4CD56A04224A061A0060EB36 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
+		4CD56A05224A061A0060EB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
 		5B5E1CB02249E04500F59EA5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */; };
 		5B5E1CB22249E0BF00F59EA5 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */; };
 		5B5E1CB42249E20D00F59EA5 /* CSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */; };
@@ -53,18 +125,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CD569C7224A06130060EB36 /* ChatSystem UAT VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT VN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD569E8224A06170060EB36 /* ChatSystem UAT JP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT JP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD56A09224A061A0060EB36 /* ChatSystem PROD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem PROD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD56A0C224A075F0060EB36 /* Info_UAT_JP.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_UAT_JP.plist; sourceTree = "<group>"; };
+		4CD56A0D224A075F0060EB36 /* Info_DEV.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_DEV.plist; sourceTree = "<group>"; };
+		4CD56A0E224A075F0060EB36 /* Info_UAT_VN.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_UAT_VN.plist; sourceTree = "<group>"; };
+		4CD56A0F224A075F0060EB36 /* Info_PROD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_PROD.plist; sourceTree = "<group>"; };
 		5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSEnum.swift; sourceTree = "<group>"; };
 		5B5E1CB62249E2BF00F59EA5 /* CSTalkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTalkListViewController.swift; sourceTree = "<group>"; };
 		5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSTalkListViewController.xib; sourceTree = "<group>"; };
 		5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTalkListViewModel.swift; sourceTree = "<group>"; };
-		5BE0794D2249C48500116A00 /* ChatSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE0794D2249C48500116A00 /* ChatSystem DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE079502249C48500116A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BE079582249C48500116A00 /* ChatSystem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatSystem.xcdatamodel; sourceTree = "<group>"; };
 		5BE0795A2249C48600116A00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BE0795D2249C48600116A00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5BE0795F2249C48600116A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BE079642249C48700116A00 /* ChatSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE079682249C48700116A00 /* ChatSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSystemTests.swift; sourceTree = "<group>"; };
 		5BE0796A2249C48700116A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +166,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4CD569BE224A06130060EB36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD569DF224A06170060EB36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD56A00224A061A0060EB36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BE0794A2249C48500116A00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,6 +211,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CD56A0B224A06E50060EB36 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BE079502249C48500116A00 /* AppDelegate.swift */,
+				4CD56A0D224A075F0060EB36 /* Info_DEV.plist */,
+				4CD56A0E224A075F0060EB36 /* Info_UAT_VN.plist */,
+				4CD56A0C224A075F0060EB36 /* Info_UAT_JP.plist */,
+				4CD56A0F224A075F0060EB36 /* Info_PROD.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5B5E1CB52249E29900F59EA5 /* TalkList */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,9 +246,12 @@
 		5BE0794E2249C48500116A00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5BE0794D2249C48500116A00 /* ChatSystem.app */,
+				5BE0794D2249C48500116A00 /* ChatSystem DEV.app */,
 				5BE079642249C48700116A00 /* ChatSystemTests.xctest */,
 				5BE0796F2249C48700116A00 /* ChatSystemUITests.xctest */,
+				4CD569C7224A06130060EB36 /* ChatSystem UAT VN.app */,
+				4CD569E8224A06170060EB36 /* ChatSystem UAT JP.app */,
+				4CD56A09224A061A0060EB36 /* ChatSystem PROD.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,10 +268,9 @@
 				5BE079832249C8C000116A00 /* Model */,
 				5BE079822249C5FE00116A00 /* Utils */,
 				5BE079812249C5DF00116A00 /* Networking */,
-				5BE079502249C48500116A00 /* AppDelegate.swift */,
+				4CD56A0B224A06E50060EB36 /* Supporting Files */,
 				5BE0795A2249C48600116A00 /* Assets.xcassets */,
 				5BE0795C2249C48600116A00 /* LaunchScreen.storyboard */,
-				5BE0795F2249C48600116A00 /* Info.plist */,
 				5BE079572249C48500116A00 /* ChatSystem.xcdatamodeld */,
 			);
 			path = ChatSystem;
@@ -273,9 +386,60 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5BE0794C2249C48500116A00 /* ChatSystem */ = {
+		4CD569A8224A06130060EB36 /* ChatSystem UAT VN */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5BE079782249C48700116A00 /* Build configuration list for PBXNativeTarget "ChatSystem" */;
+			buildConfigurationList = 4CD569C4224A06130060EB36 /* Build configuration list for PBXNativeTarget "ChatSystem UAT VN" */;
+			buildPhases = (
+				4CD569A9224A06130060EB36 /* Sources */,
+				4CD569BE224A06130060EB36 /* Frameworks */,
+				4CD569BF224A06130060EB36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ChatSystem UAT VN";
+			productName = ChatSystem;
+			productReference = 4CD569C7224A06130060EB36 /* ChatSystem UAT VN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CD569C9224A06170060EB36 /* ChatSystem UAT JP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD569E5224A06170060EB36 /* Build configuration list for PBXNativeTarget "ChatSystem UAT JP" */;
+			buildPhases = (
+				4CD569CA224A06170060EB36 /* Sources */,
+				4CD569DF224A06170060EB36 /* Frameworks */,
+				4CD569E0224A06170060EB36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ChatSystem UAT JP";
+			productName = ChatSystem;
+			productReference = 4CD569E8224A06170060EB36 /* ChatSystem UAT JP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CD569EA224A061A0060EB36 /* ChatSystem PROD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD56A06224A061A0060EB36 /* Build configuration list for PBXNativeTarget "ChatSystem PROD" */;
+			buildPhases = (
+				4CD569EB224A061A0060EB36 /* Sources */,
+				4CD56A00224A061A0060EB36 /* Frameworks */,
+				4CD56A01224A061A0060EB36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ChatSystem PROD";
+			productName = ChatSystem;
+			productReference = 4CD56A09224A061A0060EB36 /* ChatSystem PROD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BE0794C2249C48500116A00 /* ChatSystem DEV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BE079782249C48700116A00 /* Build configuration list for PBXNativeTarget "ChatSystem DEV" */;
 			buildPhases = (
 				5BE079492249C48500116A00 /* Sources */,
 				5BE0794A2249C48500116A00 /* Frameworks */,
@@ -285,9 +449,9 @@
 			);
 			dependencies = (
 			);
-			name = ChatSystem;
+			name = "ChatSystem DEV";
 			productName = ChatSystem;
-			productReference = 5BE0794D2249C48500116A00 /* ChatSystem.app */;
+			productReference = 5BE0794D2249C48500116A00 /* ChatSystem DEV.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5BE079632249C48700116A00 /* ChatSystemTests */ = {
@@ -362,7 +526,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5BE0794C2249C48500116A00 /* ChatSystem */,
+				5BE0794C2249C48500116A00 /* ChatSystem DEV */,
+				4CD569A8224A06130060EB36 /* ChatSystem UAT VN */,
+				4CD569C9224A06170060EB36 /* ChatSystem UAT JP */,
+				4CD569EA224A061A0060EB36 /* ChatSystem PROD */,
 				5BE079632249C48700116A00 /* ChatSystemTests */,
 				5BE0796E2249C48700116A00 /* ChatSystemUITests */,
 			);
@@ -370,6 +537,39 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4CD569BF224A06130060EB36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD569C0224A06130060EB36 /* CSLoginViewController.xib in Resources */,
+				4CD569C1224A06130060EB36 /* LaunchScreen.storyboard in Resources */,
+				4CD569C2224A06130060EB36 /* CSTalkListViewController.xib in Resources */,
+				4CD569C3224A06130060EB36 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD569E0224A06170060EB36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD569E1224A06170060EB36 /* CSLoginViewController.xib in Resources */,
+				4CD569E2224A06170060EB36 /* LaunchScreen.storyboard in Resources */,
+				4CD569E3224A06170060EB36 /* CSTalkListViewController.xib in Resources */,
+				4CD569E4224A06170060EB36 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD56A01224A061A0060EB36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD56A02224A061A0060EB36 /* CSLoginViewController.xib in Resources */,
+				4CD56A03224A061A0060EB36 /* LaunchScreen.storyboard in Resources */,
+				4CD56A04224A061A0060EB36 /* CSTalkListViewController.xib in Resources */,
+				4CD56A05224A061A0060EB36 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BE0794B2249C48500116A00 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +598,87 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4CD569A9224A06130060EB36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */,
+				4CD569AB224A06130060EB36 /* StringExtention.swift in Sources */,
+				4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */,
+				4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */,
+				4CD569AE224A06130060EB36 /* UIWindowExtension.swift in Sources */,
+				4CD569AF224A06130060EB36 /* CSBaseViewController.swift in Sources */,
+				4CD569B0224A06130060EB36 /* CSTalkListViewModel.swift in Sources */,
+				4CD569B1224A06130060EB36 /* CSConstant.swift in Sources */,
+				4CD569B2224A06130060EB36 /* CSUtils.swift in Sources */,
+				4CD569B3224A06130060EB36 /* UITableViewExtension.swift in Sources */,
+				4CD569B4224A06130060EB36 /* NSObjectExtention.swift in Sources */,
+				4CD569B5224A06130060EB36 /* CSLoginViewController.swift in Sources */,
+				4CD569B6224A06130060EB36 /* AppDelegate.swift in Sources */,
+				4CD569B7224A06130060EB36 /* APIRouter.swift in Sources */,
+				4CD569B8224A06130060EB36 /* CSBaseViewControllerExtention.swift in Sources */,
+				4CD569B9224A06130060EB36 /* CSEnum.swift in Sources */,
+				4CD569BA224A06130060EB36 /* CSTalkListViewController.swift in Sources */,
+				4CD569BB224A06130060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				4CD569BC224A06130060EB36 /* CSConfig.swift in Sources */,
+				4CD569BD224A06130060EB36 /* CSLoginViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD569CA224A06170060EB36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD569CB224A06170060EB36 /* CSBaseViewModel.swift in Sources */,
+				4CD569CC224A06170060EB36 /* StringExtention.swift in Sources */,
+				4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */,
+				4CD569CE224A06170060EB36 /* CSNavigationViewModel.swift in Sources */,
+				4CD569CF224A06170060EB36 /* UIWindowExtension.swift in Sources */,
+				4CD569D0224A06170060EB36 /* CSBaseViewController.swift in Sources */,
+				4CD569D1224A06170060EB36 /* CSTalkListViewModel.swift in Sources */,
+				4CD569D2224A06170060EB36 /* CSConstant.swift in Sources */,
+				4CD569D3224A06170060EB36 /* CSUtils.swift in Sources */,
+				4CD569D4224A06170060EB36 /* UITableViewExtension.swift in Sources */,
+				4CD569D5224A06170060EB36 /* NSObjectExtention.swift in Sources */,
+				4CD569D6224A06170060EB36 /* CSLoginViewController.swift in Sources */,
+				4CD569D7224A06170060EB36 /* AppDelegate.swift in Sources */,
+				4CD569D8224A06170060EB36 /* APIRouter.swift in Sources */,
+				4CD569D9224A06170060EB36 /* CSBaseViewControllerExtention.swift in Sources */,
+				4CD569DA224A06170060EB36 /* CSEnum.swift in Sources */,
+				4CD569DB224A06170060EB36 /* CSTalkListViewController.swift in Sources */,
+				4CD569DC224A06170060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				4CD569DD224A06170060EB36 /* CSConfig.swift in Sources */,
+				4CD569DE224A06170060EB36 /* CSLoginViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD569EB224A061A0060EB36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD569EC224A061A0060EB36 /* CSBaseViewModel.swift in Sources */,
+				4CD569ED224A061A0060EB36 /* StringExtention.swift in Sources */,
+				4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */,
+				4CD569EF224A061A0060EB36 /* CSNavigationViewModel.swift in Sources */,
+				4CD569F0224A061A0060EB36 /* UIWindowExtension.swift in Sources */,
+				4CD569F1224A061A0060EB36 /* CSBaseViewController.swift in Sources */,
+				4CD569F2224A061A0060EB36 /* CSTalkListViewModel.swift in Sources */,
+				4CD569F3224A061A0060EB36 /* CSConstant.swift in Sources */,
+				4CD569F4224A061A0060EB36 /* CSUtils.swift in Sources */,
+				4CD569F5224A061A0060EB36 /* UITableViewExtension.swift in Sources */,
+				4CD569F6224A061A0060EB36 /* NSObjectExtention.swift in Sources */,
+				4CD569F7224A061A0060EB36 /* CSLoginViewController.swift in Sources */,
+				4CD569F8224A061A0060EB36 /* AppDelegate.swift in Sources */,
+				4CD569F9224A061A0060EB36 /* APIRouter.swift in Sources */,
+				4CD569FA224A061A0060EB36 /* CSBaseViewControllerExtention.swift in Sources */,
+				4CD569FB224A061A0060EB36 /* CSEnum.swift in Sources */,
+				4CD569FC224A061A0060EB36 /* CSTalkListViewController.swift in Sources */,
+				4CD569FD224A061A0060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				4CD569FE224A061A0060EB36 /* CSConfig.swift in Sources */,
+				4CD569FF224A061A0060EB36 /* CSLoginViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BE079492249C48500116A00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,12 +727,12 @@
 /* Begin PBXTargetDependency section */
 		5BE079662249C48700116A00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5BE0794C2249C48500116A00 /* ChatSystem */;
+			target = 5BE0794C2249C48500116A00 /* ChatSystem DEV */;
 			targetProxy = 5BE079652249C48700116A00 /* PBXContainerItemProxy */;
 		};
 		5BE079712249C48700116A00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5BE0794C2249C48500116A00 /* ChatSystem */;
+			target = 5BE0794C2249C48500116A00 /* ChatSystem DEV */;
 			targetProxy = 5BE079702249C48700116A00 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -468,6 +749,114 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4CD569C5224A06130060EB36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ChatSystem/Supporting Files/Info_UAT_VN.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.quanpv.ChatSystem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CD569C6224A06130060EB36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ChatSystem/Supporting Files/Info_UAT_VN.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.quanpv.ChatSystem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4CD569E6224A06170060EB36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ChatSystem/Supporting Files/Info_UAT_JP.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.quanpv.ChatSystem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CD569E7224A06170060EB36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ChatSystem/Supporting Files/Info_UAT_JP.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.quanpv.ChatSystem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4CD56A07224A061A0060EB36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ChatSystem/Supporting Files/Info_PROD.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.quanpv.ChatSystem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CD56A08224A061A0060EB36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ChatSystem/Supporting Files/Info_PROD.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.quanpv.ChatSystem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5BE079762249C48700116A00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -589,7 +978,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ChatSystem/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChatSystem/Supporting Files/Info_DEV.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -607,7 +996,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ChatSystem/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChatSystem/Supporting Files/Info_DEV.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,6 +1090,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4CD569C4224A06130060EB36 /* Build configuration list for PBXNativeTarget "ChatSystem UAT VN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD569C5224A06130060EB36 /* Debug */,
+				4CD569C6224A06130060EB36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD569E5224A06170060EB36 /* Build configuration list for PBXNativeTarget "ChatSystem UAT JP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD569E6224A06170060EB36 /* Debug */,
+				4CD569E7224A06170060EB36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD56A06224A061A0060EB36 /* Build configuration list for PBXNativeTarget "ChatSystem PROD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD56A07224A061A0060EB36 /* Debug */,
+				4CD56A08224A061A0060EB36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5BE079482249C48500116A00 /* Build configuration list for PBXProject "ChatSystem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -710,7 +1126,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5BE079782249C48700116A00 /* Build configuration list for PBXNativeTarget "ChatSystem" */ = {
+		5BE079782249C48700116A00 /* Build configuration list for PBXNativeTarget "ChatSystem DEV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5BE079792249C48700116A00 /* Debug */,
