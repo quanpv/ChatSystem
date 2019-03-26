@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
-		4CD569AB224A06130060EB36 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */; };
+		4CD569AB224A06130060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */; };
 		4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
 		4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
 		4CD569AE224A06130060EB36 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079942249D20400116A00 /* UIWindowExtension.swift */; };
@@ -32,7 +32,7 @@
 		4CD569C2224A06130060EB36 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
 		4CD569C3224A06130060EB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
 		4CD569CB224A06170060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
-		4CD569CC224A06170060EB36 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */; };
+		4CD569CC224A06170060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */; };
 		4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
 		4CD569CE224A06170060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
 		4CD569CF224A06170060EB36 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079942249D20400116A00 /* UIWindowExtension.swift */; };
@@ -56,7 +56,7 @@
 		4CD569E3224A06170060EB36 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
 		4CD569E4224A06170060EB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
 		4CD569EC224A061A0060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
-		4CD569ED224A061A0060EB36 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */; };
+		4CD569ED224A061A0060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */; };
 		4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
 		4CD569EF224A061A0060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
 		4CD569F0224A061A0060EB36 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079942249D20400116A00 /* UIWindowExtension.swift */; };
@@ -80,11 +80,12 @@
 		4CD56A04224A061A0060EB36 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
 		4CD56A05224A061A0060EB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
 		5B5E1CB02249E04500F59EA5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */; };
-		5B5E1CB22249E0BF00F59EA5 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */; };
+		5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */; };
 		5B5E1CB42249E20D00F59EA5 /* CSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */; };
 		5B5E1CB82249E2BF00F59EA5 /* CSTalkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB62249E2BF00F59EA5 /* CSTalkListViewController.swift */; };
 		5B5E1CB92249E2BF00F59EA5 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
 		5B5E1CBB2249E2E000F59EA5 /* CSTalkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */; };
+		5B5E1CBD224A101500F59EA5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */; };
 		5BE079512249C48500116A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079502249C48500116A00 /* AppDelegate.swift */; };
 		5BE079592249C48500116A00 /* ChatSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079572249C48500116A00 /* ChatSystem.xcdatamodeld */; };
 		5BE0795B2249C48600116A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
@@ -133,11 +134,12 @@
 		4CD56A0E224A075F0060EB36 /* Info_UAT_VN.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_UAT_VN.plist; sourceTree = "<group>"; };
 		4CD56A0F224A075F0060EB36 /* Info_PROD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_PROD.plist; sourceTree = "<group>"; };
 		5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
-		5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
+		5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSEnum.swift; sourceTree = "<group>"; };
 		5B5E1CB62249E2BF00F59EA5 /* CSTalkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTalkListViewController.swift; sourceTree = "<group>"; };
 		5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSTalkListViewController.xib; sourceTree = "<group>"; };
 		5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTalkListViewModel.swift; sourceTree = "<group>"; };
+		5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5BE0794D2249C48500116A00 /* ChatSystem DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE079502249C48500116A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BE079582249C48500116A00 /* ChatSystem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatSystem.xcdatamodel; sourceTree = "<group>"; };
@@ -264,7 +266,7 @@
 				5BE079872249C93000116A00 /* Enum */,
 				5BE079862249C8FE00116A00 /* Constant */,
 				5BE079852249C8F400116A00 /* Views */,
-				5BE079842249C8C800116A00 /* Extentions */,
+				5BE079842249C8C800116A00 /* Extensions */,
 				5BE079832249C8C000116A00 /* Model */,
 				5BE079822249C5FE00116A00 /* Utils */,
 				5BE079812249C5DF00116A00 /* Networking */,
@@ -318,15 +320,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5BE079842249C8C800116A00 /* Extentions */ = {
+		5BE079842249C8C800116A00 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				5BE079942249D20400116A00 /* UIWindowExtension.swift */,
 				5BE079A62249D9BD00116A00 /* NSObjectExtention.swift */,
 				5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */,
-				5B5E1CB12249E0BF00F59EA5 /* StringExtention.swift */,
+				5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */,
+				5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */,
 			);
-			path = Extentions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5BE079852249C8F400116A00 /* Views */ = {
@@ -603,7 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */,
-				4CD569AB224A06130060EB36 /* StringExtention.swift in Sources */,
+				4CD569AB224A06130060EB36 /* StringExtension.swift in Sources */,
 				4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */,
 				4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569AE224A06130060EB36 /* UIWindowExtension.swift in Sources */,
@@ -630,7 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD569CB224A06170060EB36 /* CSBaseViewModel.swift in Sources */,
-				4CD569CC224A06170060EB36 /* StringExtention.swift in Sources */,
+				4CD569CC224A06170060EB36 /* StringExtension.swift in Sources */,
 				4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */,
 				4CD569CE224A06170060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569CF224A06170060EB36 /* UIWindowExtension.swift in Sources */,
@@ -657,7 +660,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD569EC224A061A0060EB36 /* CSBaseViewModel.swift in Sources */,
-				4CD569ED224A061A0060EB36 /* StringExtention.swift in Sources */,
+				4CD569ED224A061A0060EB36 /* StringExtension.swift in Sources */,
 				4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */,
 				4CD569EF224A061A0060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569F0224A061A0060EB36 /* UIWindowExtension.swift in Sources */,
@@ -684,10 +687,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BE0798C2249CBE100116A00 /* CSBaseViewModel.swift in Sources */,
-				5B5E1CB22249E0BF00F59EA5 /* StringExtention.swift in Sources */,
+				5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */,
 				5BE0799C2249D70A00116A00 /* LoginModel.swift in Sources */,
 				5BE0798E2249CC4800116A00 /* CSNavigationViewModel.swift in Sources */,
 				5BE079952249D20400116A00 /* UIWindowExtension.swift in Sources */,
+				5B5E1CBD224A101500F59EA5 /* UIColorExtension.swift in Sources */,
 				5BE0798A2249CB5400116A00 /* CSBaseViewController.swift in Sources */,
 				5B5E1CBB2249E2E000F59EA5 /* CSTalkListViewModel.swift in Sources */,
 				5BE079982249D5E700116A00 /* CSConstant.swift in Sources */,

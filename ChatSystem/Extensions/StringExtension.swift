@@ -9,13 +9,24 @@
 import UIKit
 
 extension String {
+    
     static func className(_ aClass: AnyClass) -> String {
         return NSStringFromClass(aClass).components(separatedBy: ".").last!
     }
     
-//    func substring(_ from: Int) -> String {
-//        return self.substring(from: self.characters.index(self.startIndex, offsetBy: from))
-//    }
+    func substring(_ from: Int) -> String {
+        return String(self[from...])
+    }
+    
+    subscript(bounds: PartialRangeUpTo<Int>) -> String {
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[..<end])
+    }
+    
+    subscript(bounds: PartialRangeFrom<Int>) -> String {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        return String(self[start...])
+    }
     
     subscript (bounds: CountableClosedRange<Int>) -> String {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
@@ -40,5 +51,5 @@ extension String {
     func encodeUrl() -> String
     {
         return self.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
-}
+    }
 }
