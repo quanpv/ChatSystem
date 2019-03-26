@@ -29,13 +29,13 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="4Fi-Mn-YV6">
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="64"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-ps-Lvf">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="社員番号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-ps-Lvf">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egh-J2-brl">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="社員番号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egh-J2-brl">
                                             <rect key="frame" x="0.0" y="24" width="335" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="1wa-lj-ARn"/>
@@ -49,20 +49,20 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="d6K-Vl-FsV">
                                     <rect key="frame" x="0.0" y="74" width="335" height="64"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xji-8b-qkm">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xji-8b-qkm">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7v-GD-gd0">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7v-GD-gd0">
                                             <rect key="frame" x="0.0" y="24" width="335" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="191-m7-O38"/>
                                             </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" textContentType="password"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         </textField>
                                     </subviews>
                                 </stackView>
@@ -79,17 +79,23 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="LVu-GO-x2y"/>
                             </constraints>
-                            <state key="normal" title="Login">
+                            <state key="normal" title="ログイン">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhK-bu-v33">
+                            <rect key="frame" x="20" y="268" width="177" height="30"/>
+                            <state key="normal" title="PWをお忘れの方はこちら"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="OhK-bu-v33" firstAttribute="leading" secondItem="0DO-Y1-Mdc" secondAttribute="leading" constant="20" id="FcA-dS-5Sc"/>
                         <constraint firstAttribute="trailing" secondItem="TXi-WF-7jr" secondAttribute="trailing" constant="20" id="HQV-a0-IpO"/>
                         <constraint firstItem="tfj-FG-lbE" firstAttribute="leading" secondItem="0DO-Y1-Mdc" secondAttribute="leading" constant="20" id="NjJ-QR-8lX"/>
                         <constraint firstItem="TXi-WF-7jr" firstAttribute="leading" secondItem="0DO-Y1-Mdc" secondAttribute="leading" constant="20" id="T2i-Rj-PVH"/>
                         <constraint firstAttribute="trailing" secondItem="tfj-FG-lbE" secondAttribute="trailing" constant="20" id="Uox-KA-jHb"/>
+                        <constraint firstItem="OhK-bu-v33" firstAttribute="top" secondItem="TXi-WF-7jr" secondAttribute="bottom" constant="20" id="ejB-dx-hCA"/>
                         <constraint firstItem="tfj-FG-lbE" firstAttribute="top" secondItem="0DO-Y1-Mdc" secondAttribute="top" constant="50" id="fqV-bO-JpM"/>
                         <constraint firstAttribute="height" constant="300" id="uvN-EK-duD"/>
                         <constraint firstItem="TXi-WF-7jr" firstAttribute="top" secondItem="tfj-FG-lbE" secondAttribute="bottom" constant="20" id="zGI-Wp-jpi"/>
