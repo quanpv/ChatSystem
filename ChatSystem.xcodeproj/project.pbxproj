@@ -79,6 +79,10 @@
 		4CD56A03224A061A0060EB36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795C2249C48600116A00 /* LaunchScreen.storyboard */; };
 		4CD56A04224A061A0060EB36 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
 		4CD56A05224A061A0060EB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
+		4CD56A16224A10340060EB36 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */; };
+		4CD56A17224A10340060EB36 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */; };
+		4CD56A18224A10340060EB36 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */; };
+		4CD56A19224A10340060EB36 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */; };
 		5B5E1CB02249E04500F59EA5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */; };
 		5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */; };
 		5B5E1CB42249E20D00F59EA5 /* CSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */; };
@@ -169,6 +173,7 @@
 		4CD56A0D224A075F0060EB36 /* Info_DEV.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_DEV.plist; sourceTree = "<group>"; };
 		4CD56A0E224A075F0060EB36 /* Info_UAT_VN.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_UAT_VN.plist; sourceTree = "<group>"; };
 		4CD56A0F224A075F0060EB36 /* Info_PROD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_PROD.plist; sourceTree = "<group>"; };
+		4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSEnum.swift; sourceTree = "<group>"; };
@@ -393,9 +398,9 @@
 				5BE079942249D20400116A00 /* UIWindowExtension.swift */,
 				5BE079A62249D9BD00116A00 /* NSObjectExtention.swift */,
 				5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */,
-				5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */,
 				5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */,
 				5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */,
+				4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -711,6 +716,7 @@
 				4CD569B4224A06130060EB36 /* NSObjectExtention.swift in Sources */,
 				5BCF4118224B3B3700E9BA22 /* Room.swift in Sources */,
 				4CD569B5224A06130060EB36 /* CSLoginViewController.swift in Sources */,
+				4CD56A17224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4CD569B6224A06130060EB36 /* AppDelegate.swift in Sources */,
 				4CD569B7224A06130060EB36 /* APIRouter.swift in Sources */,
 				5BCF4120224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */,
@@ -744,6 +750,7 @@
 				4CD569D5224A06170060EB36 /* NSObjectExtention.swift in Sources */,
 				5BCF4119224B3B3700E9BA22 /* Room.swift in Sources */,
 				4CD569D6224A06170060EB36 /* CSLoginViewController.swift in Sources */,
+				4CD56A18224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4CD569D7224A06170060EB36 /* AppDelegate.swift in Sources */,
 				4CD569D8224A06170060EB36 /* APIRouter.swift in Sources */,
 				5BCF4121224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */,
@@ -777,6 +784,7 @@
 				4CD569F6224A061A0060EB36 /* NSObjectExtention.swift in Sources */,
 				5BCF411A224B3B3700E9BA22 /* Room.swift in Sources */,
 				4CD569F7224A061A0060EB36 /* CSLoginViewController.swift in Sources */,
+				4CD56A19224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4CD569F8224A061A0060EB36 /* AppDelegate.swift in Sources */,
 				4CD569F9224A061A0060EB36 /* APIRouter.swift in Sources */,
 				5BCF4122224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */,
@@ -811,6 +819,7 @@
 				5B5E1CB02249E04500F59EA5 /* UITableViewExtension.swift in Sources */,
 				5BE079A72249D9BD00116A00 /* NSObjectExtention.swift in Sources */,
 				5BE079A22249D83300116A00 /* CSLoginViewController.swift in Sources */,
+				4CD56A16224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				5BE079512249C48500116A00 /* AppDelegate.swift in Sources */,
 				5BE0799A2249D6CF00116A00 /* APIRouter.swift in Sources */,
 				5BCF4128224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
