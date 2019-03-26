@@ -11,11 +11,11 @@ import UIKit
 class CSBaseViewController: UIViewController, CSNavigationViewModelProtocol {
 
     private var viewHolder: CSStackOfView? // Root view will own this object
-    var isStartedScreen: Bool { return false }
     var navigationVM: CSNavigationViewModel { return CSNavigationViewModel(self) }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewHolder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
