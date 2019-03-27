@@ -86,6 +86,10 @@
 		5B5E1CB92249E2BF00F59EA5 /* CSTalkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */; };
 		5B5E1CBB2249E2E000F59EA5 /* CSTalkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */; };
 		5B5E1CBD224A101500F59EA5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */; };
+		5B5E1CBF224A353200F59EA5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */; };
+		5B5E1CC0224A353200F59EA5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */; };
+		5B5E1CC1224A353200F59EA5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */; };
+		5B5E1CC2224A353200F59EA5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */; };
 		5BE079512249C48500116A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079502249C48500116A00 /* AppDelegate.swift */; };
 		5BE079592249C48500116A00 /* ChatSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079572249C48500116A00 /* ChatSystem.xcdatamodeld */; };
 		5BE0795B2249C48600116A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
@@ -140,6 +144,7 @@
 		5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSTalkListViewController.xib; sourceTree = "<group>"; };
 		5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTalkListViewModel.swift; sourceTree = "<group>"; };
 		5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5BE0794D2249C48500116A00 /* ChatSystem DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE079502249C48500116A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BE079582249C48500116A00 /* ChatSystem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatSystem.xcdatamodel; sourceTree = "<group>"; };
@@ -328,6 +333,7 @@
 				5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */,
 				5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */,
 				5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */,
+				5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				4CD569B9224A06130060EB36 /* CSEnum.swift in Sources */,
 				4CD569BA224A06130060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569BB224A06130060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				5B5E1CC0224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				4CD569BC224A06130060EB36 /* CSConfig.swift in Sources */,
 				4CD569BD224A06130060EB36 /* CSLoginViewModel.swift in Sources */,
 			);
@@ -650,6 +657,7 @@
 				4CD569DA224A06170060EB36 /* CSEnum.swift in Sources */,
 				4CD569DB224A06170060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569DC224A06170060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				5B5E1CC1224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				4CD569DD224A06170060EB36 /* CSConfig.swift in Sources */,
 				4CD569DE224A06170060EB36 /* CSLoginViewModel.swift in Sources */,
 			);
@@ -677,6 +685,7 @@
 				4CD569FB224A061A0060EB36 /* CSEnum.swift in Sources */,
 				4CD569FC224A061A0060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569FD224A061A0060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				5B5E1CC2224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				4CD569FE224A061A0060EB36 /* CSConfig.swift in Sources */,
 				4CD569FF224A061A0060EB36 /* CSLoginViewModel.swift in Sources */,
 			);
@@ -688,6 +697,7 @@
 			files = (
 				5BE0798C2249CBE100116A00 /* CSBaseViewModel.swift in Sources */,
 				5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */,
+				5B5E1CBF224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				5BE0799C2249D70A00116A00 /* LoginModel.swift in Sources */,
 				5BE0798E2249CC4800116A00 /* CSNavigationViewModel.swift in Sources */,
 				5BE079952249D20400116A00 /* UIWindowExtension.swift in Sources */,

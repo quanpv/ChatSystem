@@ -10,7 +10,7 @@ import UIKit
 
 class CSLoginViewController: CSBaseViewController {
 
-    var firstVM: CSLoginViewModel {
+    var loginVM: CSLoginViewModel {
         return CSLoginViewModel(self)
     }
     
@@ -20,7 +20,10 @@ class CSLoginViewController: CSBaseViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func actionLogin(_ sender: Any) {
+        loginVM.processOpenTalkList()
+    }
+    
     /*
     // MARK: - Navigation
 
