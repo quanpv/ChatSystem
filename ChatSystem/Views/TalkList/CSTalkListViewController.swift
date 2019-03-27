@@ -12,6 +12,10 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
     
     @IBOutlet weak var tableViewTalkList: UITableView!
     
+    var talkListVM: CSTalkListViewModel {
+        return CSTalkListViewModel(self)
+    }
+    
     var rooms = [Room(name: "Red Velvet", date: "2019/01/11 11:30"),
                  Room(name: "Brownie", date: "2019/02/13 12:30"),
                  Room(name: "Bannna Bread", date: "2019/03/16 10:00"),
@@ -73,6 +77,9 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+    }
+    @IBAction func actionCreateTalk(_ sender: Any) {
+        talkListVM.processOpenCreateTalk()
     }
     /*
      // MARK: - Navigation
