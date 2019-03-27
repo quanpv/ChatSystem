@@ -83,6 +83,14 @@
 		4CD56A17224A10340060EB36 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */; };
 		4CD56A18224A10340060EB36 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */; };
 		4CD56A19224A10340060EB36 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */; };
+		4CD56A1B224A1D190060EB36 /* CSSKConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A1A224A1D190060EB36 /* CSSKConnection.swift */; };
+		4CD56A1C224A1D190060EB36 /* CSSKConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A1A224A1D190060EB36 /* CSSKConnection.swift */; };
+		4CD56A1D224A1D190060EB36 /* CSSKConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A1A224A1D190060EB36 /* CSSKConnection.swift */; };
+		4CD56A1E224A1D190060EB36 /* CSSKConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A1A224A1D190060EB36 /* CSSKConnection.swift */; };
+		4CD56A24224B160B0060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A23224B160B0060EB36 /* StringExtension.swift */; };
+		4CD56A25224B160B0060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A23224B160B0060EB36 /* StringExtension.swift */; };
+		4CD56A26224B160B0060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A23224B160B0060EB36 /* StringExtension.swift */; };
+		4CD56A27224B160B0060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A23224B160B0060EB36 /* StringExtension.swift */; };
 		5B5E1CB02249E04500F59EA5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */; };
 		5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */; };
 		5B5E1CB42249E20D00F59EA5 /* CSEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */; };
@@ -174,6 +182,8 @@
 		4CD56A0E224A075F0060EB36 /* Info_UAT_VN.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_UAT_VN.plist; sourceTree = "<group>"; };
 		4CD56A0F224A075F0060EB36 /* Info_PROD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_PROD.plist; sourceTree = "<group>"; };
 		4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		4CD56A1A224A1D190060EB36 /* CSSKConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSKConnection.swift; sourceTree = "<group>"; };
+		4CD56A23224B160B0060EB36 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5B5E1CB32249E20D00F59EA5 /* CSEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSEnum.swift; sourceTree = "<group>"; };
@@ -275,6 +285,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4CD56A22224B15BD0060EB36 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5B5E1CB12249E0BF00F59EA5 /* StringExtension.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		5B5E1CB52249E29900F59EA5 /* TalkList */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +331,7 @@
 				5BE079672249C48700116A00 /* ChatSystemTests */,
 				5BE079722249C48700116A00 /* ChatSystemUITests */,
 				5BE0794E2249C48500116A00 /* Products */,
+				4CD56A22224B15BD0060EB36 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -379,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				5BE0799D2249D73B00116A00 /* CSUtils.swift */,
+				4CD56A1A224A1D190060EB36 /* CSSKConnection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -396,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				5BE079942249D20400116A00 /* UIWindowExtension.swift */,
+				4CD56A23224B160B0060EB36 /* StringExtension.swift */,
 				5BE079A62249D9BD00116A00 /* NSObjectExtention.swift */,
 				5B5E1CAF2249E04500F59EA5 /* UITableViewExtension.swift */,
 				5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */,
@@ -703,6 +724,7 @@
 				4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF4129224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5BCF410F224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
+				4CD56A1C224A1D190060EB36 /* CSSKConnection.swift in Sources */,
 				4CD569AB224A06130060EB36 /* StringExtension.swift in Sources */,
 				4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */,
 				4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */,
@@ -724,6 +746,7 @@
 				4CD569B9224A06130060EB36 /* CSEnum.swift in Sources */,
 				4CD569BA224A06130060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569BB224A06130060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				4CD56A25224B160B0060EB36 /* StringExtension.swift in Sources */,
 				5B5E1CC0224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				4CD569BC224A06130060EB36 /* CSConfig.swift in Sources */,
 				4CD569BD224A06130060EB36 /* CSLoginViewModel.swift in Sources */,
@@ -737,6 +760,7 @@
 				4CD569CB224A06170060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF412A224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5BCF4110224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
+				4CD56A1D224A1D190060EB36 /* CSSKConnection.swift in Sources */,
 				4CD569CC224A06170060EB36 /* StringExtension.swift in Sources */,
 				4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */,
 				4CD569CE224A06170060EB36 /* CSNavigationViewModel.swift in Sources */,
@@ -758,6 +782,7 @@
 				4CD569DA224A06170060EB36 /* CSEnum.swift in Sources */,
 				4CD569DB224A06170060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569DC224A06170060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				4CD56A26224B160B0060EB36 /* StringExtension.swift in Sources */,
 				5B5E1CC1224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				4CD569DD224A06170060EB36 /* CSConfig.swift in Sources */,
 				4CD569DE224A06170060EB36 /* CSLoginViewModel.swift in Sources */,
@@ -771,6 +796,7 @@
 				4CD569EC224A061A0060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF412B224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5BCF4111224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
+				4CD56A1E224A1D190060EB36 /* CSSKConnection.swift in Sources */,
 				4CD569ED224A061A0060EB36 /* StringExtension.swift in Sources */,
 				4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */,
 				4CD569EF224A061A0060EB36 /* CSNavigationViewModel.swift in Sources */,
@@ -792,6 +818,7 @@
 				4CD569FB224A061A0060EB36 /* CSEnum.swift in Sources */,
 				4CD569FC224A061A0060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569FD224A061A0060EB36 /* ChatSystem.xcdatamodeld in Sources */,
+				4CD56A27224B160B0060EB36 /* StringExtension.swift in Sources */,
 				5B5E1CC2224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				4CD569FE224A061A0060EB36 /* CSConfig.swift in Sources */,
 				4CD569FF224A061A0060EB36 /* CSLoginViewModel.swift in Sources */,
@@ -807,9 +834,12 @@
 				5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */,
 				5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */,
 				5B5E1CBF224A353200F59EA5 /* UIViewExtension.swift in Sources */,
+				4CD56A1B224A1D190060EB36 /* CSSKConnection.swift in Sources */,
+				5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */,
 				5BE0799C2249D70A00116A00 /* LoginModel.swift in Sources */,
 				5BE0798E2249CC4800116A00 /* CSNavigationViewModel.swift in Sources */,
 				5BE079952249D20400116A00 /* UIWindowExtension.swift in Sources */,
+				4CD56A24224B160B0060EB36 /* StringExtension.swift in Sources */,
 				5B5E1CBD224A101500F59EA5 /* UIColorExtension.swift in Sources */,
 				5BE0798A2249CB5400116A00 /* CSBaseViewController.swift in Sources */,
 				5BCF410E224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
