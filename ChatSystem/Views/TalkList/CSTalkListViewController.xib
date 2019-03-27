@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CSTalkListViewController" customModule="ChatSystem_DEV" customModuleProvider="target">
             <connections>
+                <outlet property="tableViewTalkList" destination="h0y-ns-c5l" id="hrE-8W-4u3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

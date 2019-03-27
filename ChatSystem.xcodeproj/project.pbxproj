@@ -90,6 +90,18 @@
 		5B5E1CC0224A353200F59EA5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */; };
 		5B5E1CC1224A353200F59EA5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */; };
 		5B5E1CC2224A353200F59EA5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */; };
+		5BCF410E224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF410C224B1CB500E9BA22 /* CSTalkListCell.swift */; };
+		5BCF410F224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF410C224B1CB500E9BA22 /* CSTalkListCell.swift */; };
+		5BCF4110224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF410C224B1CB500E9BA22 /* CSTalkListCell.swift */; };
+		5BCF4111224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF410C224B1CB500E9BA22 /* CSTalkListCell.swift */; };
+		5BCF4112224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */; };
+		5BCF4113224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */; };
+		5BCF4114224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */; };
+		5BCF4115224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */; };
+		5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* Room.swift */; };
+		5BCF4118224B3B3700E9BA22 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* Room.swift */; };
+		5BCF4119224B3B3700E9BA22 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* Room.swift */; };
+		5BCF411A224B3B3700E9BA22 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* Room.swift */; };
 		5BE079512249C48500116A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079502249C48500116A00 /* AppDelegate.swift */; };
 		5BE079592249C48500116A00 /* ChatSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BE079572249C48500116A00 /* ChatSystem.xcdatamodeld */; };
 		5BE0795B2249C48600116A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0795A2249C48600116A00 /* Assets.xcassets */; };
@@ -145,6 +157,9 @@
 		5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTalkListViewModel.swift; sourceTree = "<group>"; };
 		5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		5BCF410C224B1CB500E9BA22 /* CSTalkListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTalkListCell.swift; sourceTree = "<group>"; };
+		5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSTalkListCell.xib; sourceTree = "<group>"; };
+		5BCF4116224B3B3700E9BA22 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5BE0794D2249C48500116A00 /* ChatSystem DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE079502249C48500116A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BE079582249C48500116A00 /* ChatSystem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatSystem.xcdatamodel; sourceTree = "<group>"; };
@@ -233,11 +248,21 @@
 		5B5E1CB52249E29900F59EA5 /* TalkList */ = {
 			isa = PBXGroup;
 			children = (
+				5BCF410B224B19F000E9BA22 /* Cell */,
 				5B5E1CB62249E2BF00F59EA5 /* CSTalkListViewController.swift */,
 				5B5E1CB72249E2BF00F59EA5 /* CSTalkListViewController.xib */,
 				5B5E1CBA2249E2E000F59EA5 /* CSTalkListViewModel.swift */,
 			);
 			path = TalkList;
+			sourceTree = "<group>";
+		};
+		5BCF410B224B19F000E9BA22 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF410C224B1CB500E9BA22 /* CSTalkListCell.swift */,
+				5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5BE079442249C48500116A00 = {
@@ -321,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				5BE0799B2249D70A00116A00 /* LoginModel.swift */,
+				5BCF4116224B3B3700E9BA22 /* Room.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -550,6 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF4113224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */,
 				4CD569C0224A06130060EB36 /* CSLoginViewController.xib in Resources */,
 				4CD569C1224A06130060EB36 /* LaunchScreen.storyboard in Resources */,
 				4CD569C2224A06130060EB36 /* CSTalkListViewController.xib in Resources */,
@@ -561,6 +588,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF4114224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */,
 				4CD569E1224A06170060EB36 /* CSLoginViewController.xib in Resources */,
 				4CD569E2224A06170060EB36 /* LaunchScreen.storyboard in Resources */,
 				4CD569E3224A06170060EB36 /* CSTalkListViewController.xib in Resources */,
@@ -572,6 +600,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF4115224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */,
 				4CD56A02224A061A0060EB36 /* CSLoginViewController.xib in Resources */,
 				4CD56A03224A061A0060EB36 /* LaunchScreen.storyboard in Resources */,
 				4CD56A04224A061A0060EB36 /* CSTalkListViewController.xib in Resources */,
@@ -583,6 +612,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF4112224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */,
 				5BE079A32249D83300116A00 /* CSLoginViewController.xib in Resources */,
 				5BE0795E2249C48600116A00 /* LaunchScreen.storyboard in Resources */,
 				5B5E1CB92249E2BF00F59EA5 /* CSTalkListViewController.xib in Resources */,
@@ -612,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */,
+				5BCF410F224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
 				4CD569AB224A06130060EB36 /* StringExtension.swift in Sources */,
 				4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */,
 				4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */,
@@ -622,6 +653,7 @@
 				4CD569B2224A06130060EB36 /* CSUtils.swift in Sources */,
 				4CD569B3224A06130060EB36 /* UITableViewExtension.swift in Sources */,
 				4CD569B4224A06130060EB36 /* NSObjectExtention.swift in Sources */,
+				5BCF4118224B3B3700E9BA22 /* Room.swift in Sources */,
 				4CD569B5224A06130060EB36 /* CSLoginViewController.swift in Sources */,
 				4CD569B6224A06130060EB36 /* AppDelegate.swift in Sources */,
 				4CD569B7224A06130060EB36 /* APIRouter.swift in Sources */,
@@ -640,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD569CB224A06170060EB36 /* CSBaseViewModel.swift in Sources */,
+				5BCF4110224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
 				4CD569CC224A06170060EB36 /* StringExtension.swift in Sources */,
 				4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */,
 				4CD569CE224A06170060EB36 /* CSNavigationViewModel.swift in Sources */,
@@ -650,6 +683,7 @@
 				4CD569D3224A06170060EB36 /* CSUtils.swift in Sources */,
 				4CD569D4224A06170060EB36 /* UITableViewExtension.swift in Sources */,
 				4CD569D5224A06170060EB36 /* NSObjectExtention.swift in Sources */,
+				5BCF4119224B3B3700E9BA22 /* Room.swift in Sources */,
 				4CD569D6224A06170060EB36 /* CSLoginViewController.swift in Sources */,
 				4CD569D7224A06170060EB36 /* AppDelegate.swift in Sources */,
 				4CD569D8224A06170060EB36 /* APIRouter.swift in Sources */,
@@ -668,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD569EC224A061A0060EB36 /* CSBaseViewModel.swift in Sources */,
+				5BCF4111224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
 				4CD569ED224A061A0060EB36 /* StringExtension.swift in Sources */,
 				4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */,
 				4CD569EF224A061A0060EB36 /* CSNavigationViewModel.swift in Sources */,
@@ -678,6 +713,7 @@
 				4CD569F4224A061A0060EB36 /* CSUtils.swift in Sources */,
 				4CD569F5224A061A0060EB36 /* UITableViewExtension.swift in Sources */,
 				4CD569F6224A061A0060EB36 /* NSObjectExtention.swift in Sources */,
+				5BCF411A224B3B3700E9BA22 /* Room.swift in Sources */,
 				4CD569F7224A061A0060EB36 /* CSLoginViewController.swift in Sources */,
 				4CD569F8224A061A0060EB36 /* AppDelegate.swift in Sources */,
 				4CD569F9224A061A0060EB36 /* APIRouter.swift in Sources */,
@@ -697,12 +733,14 @@
 			files = (
 				5BE0798C2249CBE100116A00 /* CSBaseViewModel.swift in Sources */,
 				5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */,
+				5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */,
 				5B5E1CBF224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				5BE0799C2249D70A00116A00 /* LoginModel.swift in Sources */,
 				5BE0798E2249CC4800116A00 /* CSNavigationViewModel.swift in Sources */,
 				5BE079952249D20400116A00 /* UIWindowExtension.swift in Sources */,
 				5B5E1CBD224A101500F59EA5 /* UIColorExtension.swift in Sources */,
 				5BE0798A2249CB5400116A00 /* CSBaseViewController.swift in Sources */,
+				5BCF410E224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
 				5B5E1CBB2249E2E000F59EA5 /* CSTalkListViewModel.swift in Sources */,
 				5BE079982249D5E700116A00 /* CSConstant.swift in Sources */,
 				5BE0799E2249D73B00116A00 /* CSUtils.swift in Sources */,
