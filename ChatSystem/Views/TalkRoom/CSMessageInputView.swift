@@ -20,8 +20,10 @@ class CSMessageInputView: UIView {
     
     var delegate: MessageInputDelegate?
     var editIndexPath: IndexPath?
+    
     let identifier = "CSMessageInputView"
     let maximumNumberOfLines:CGFloat = 5
+    let defaultHeightTextView: CGFloat = 40
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var textView: UITextView!
@@ -92,7 +94,7 @@ class CSMessageInputView: UIView {
             heightTextView.constant = textView.font!.lineHeight * maximumNumberOfLines
             textView.isScrollEnabled = true
         } else {
-            heightTextView.constant = textView.font!.lineHeight * numberLines
+            heightTextView.constant = max(textView.font!.lineHeight * numberLines, defaultHeightTextView)
             textView.isScrollEnabled = false
         }
     }
@@ -100,7 +102,7 @@ class CSMessageInputView: UIView {
 
 extension CSMessageInputView: UITextViewDelegate {
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        return true
+        return false
     }
     
     func textViewDidChange(_ textView: UITextView) {
