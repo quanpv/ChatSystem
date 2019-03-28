@@ -10,12 +10,16 @@ import UIKit
 
 extension UIApplication {
     
-    static let appVersion: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
-    static let buildVersion: String = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1.0.0"
-    static let storeUrl: URL? = URL.init(string: Bundle.main.infoDictionary?["StoreURL"] as? String ?? "")
-    static let connectionTimeOut: Double = (Bundle.main.infoDictionary?["TimeOut"] as? NSNumber)?.doubleValue ?? 15.0
-    static let socketHost: String = Bundle.main.infoDictionary?["SocketHost"] as? String ?? ""
-    static let socketPort: UInt32 = (Bundle.main.infoDictionary?["SocketPort"] as? NSNumber)?.uint32Value ?? 0
-    static let sslPeerName: String = Bundle.main.infoDictionary?["SslPeerName"] as? String ?? ""
+    static let appVersion: String = getInfo("CFBundleShortVersionString") as? String ?? "1.0.0"
+    static let buildVersion: String = getInfo("CFBundleVersion") as? String ?? "1.0.0"
+    static let storeUrl: URL? = URL.init(string: getInfo("StoreURL") as? String ?? "")
+    static let connectionTimeOut: Double = (getInfo("TimeOut") as? NSNumber)?.doubleValue ?? 15.0
+    static let socketHost: String = getInfo("SocketHost") as? String ?? ""
+    static let socketPort: UInt32 = (getInfo("SocketPort") as? NSNumber)?.uint32Value ?? 0
+    static let sslPeerName: String = getInfo("SslPeerName") as? String ?? ""
+    
+    static func getInfo(_ key: String) -> Any? {
+        return Bundle.main.infoDictionary?[key]
+    }
     
 }

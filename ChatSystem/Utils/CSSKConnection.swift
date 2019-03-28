@@ -9,10 +9,10 @@
 import UIKit
 
 protocol MessageDelegate: class {
-    func receivedMessage(message: Any)
+    func receivedMessage(message: MessageModel)
 }
 
-enum SCSKConnectionStatus {
+enum CSSKConnectionStatus {
     case notOpen, open, opening, close, closed, error
 }
 
@@ -20,7 +20,7 @@ class CSSKConnection: NSObject {
     
     weak var delegate: MessageDelegate?
     
-    public var status: SCSKConnectionStatus = .notOpen
+    public var status: CSSKConnectionStatus = .notOpen
     public lazy var isOpening: Bool = {
         return inputStream.streamStatus == Stream.Status.open && outputStream.streamStatus ==  Stream.Status.open
     }()
@@ -29,9 +29,15 @@ class CSSKConnection: NSObject {
     var inputStream: InputStream!
     var outputStream: OutputStream!
     
+    var username = ""
+    
     static let shared = CSSKConnection()
     
-    public func openSocket() {
+    public func openSocket(completion:((_ status: CSSKConnectionStatus) -> Void)?) {
+//        if status == .opening {
+//            return
+//        }
+        
         status = .open
         
         var readStream: Unmanaged<CFReadStream>?
@@ -43,11 +49,11 @@ class CSSKConnection: NSObject {
                                            &readStream,
                                            &writeStream)
         
-        let sslSettings = [kCFStreamSSLValidatesCertificateChain:kCFBooleanTrue,
-                           kCFStreamSSLPeerName:UIApplication.sslPeerName,
-                           Stream.PropertyKey.socketSecurityLevelKey:StreamSocketSecurityLevel.negotiatedSSL] as [AnyHashable : Any]
-        
-        inputStream.setValue(sslSettings, forKey: kCFStreamPropertySSLSettings as String)
+//        let sslSettings = [kCFStreamSSLValidatesCertificateChain:kCFBooleanTrue,
+//                           kCFStreamSSLPeerName:UIApplication.sslPeerName,
+//                           Stream.PropertyKey.socketSecurityLevelKey:StreamSocketSecurityLevel.negotiatedSSL] as [AnyHashable : Any]
+//        
+//        inputStream.setValue(sslSettings, forKey: kCFStreamPropertySSLSettings as String)
         
         inputStream = readStream!.takeRetainedValue()
         outputStream = writeStream!.takeRetainedValue()
@@ -66,16 +72,21 @@ class CSSKConnection: NSObject {
         } else {
             status = .closed
         }
+        completion?(status)
     }
     
     public func closeSocket() {
         status = .close
         
-        inputStream.close()
-        inputStream.remove(from: .main, forMode: .common)
+        if inputStream != nil {
+            inputStream.close()
+            inputStream.remove(from: .main, forMode: .common)
+        }
         
-        outputStream.close()
-        outputStream.remove(from: .main, forMode: .common)
+        if outputStream != nil {
+            outputStream.close()
+            outputStream.remove(from: .main, forMode: .common)
+        }
         
         status = .closed
     }
@@ -87,13 +98,15 @@ class CSSKConnection: NSObject {
         let group = DispatchGroup()
         
         group.enter()
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [unowned self] in
+        DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
             readStreamStatus = self.waitOpenStream(stream: self.inputStream)
+            group.leave()
         }
         
         group.enter()
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [unowned self] in
+        DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
             writeStreamStatus = self.waitOpenStream(stream: self.outputStream)
+            group.leave()
         }
         
         let timeOut = DispatchTime.now() + UIApplication.connectionTimeOut
@@ -119,24 +132,35 @@ class CSSKConnection: NSObject {
         
         return true
     }
+    
+    func joinChat(username: String) {
+        let data = "iam:\(username)".data(using: .utf8)!
+        self.username = username
+        _ = data.withUnsafeBytes { outputStream.write($0, maxLength: data.count) }
+    }
+    
+    func sendMessage(message: String) {
+        let data = "msg:\(message)".data(using: .utf8)!
+        _ = data.withUnsafeBytes { outputStream.write($0, maxLength: data.count) }
+    }
 }
 
 extension CSSKConnection: StreamDelegate {
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
         switch eventCode {
         case Stream.Event.openCompleted:
-            print("opem completed")
+            dprint("open completed")
         case Stream.Event.hasBytesAvailable:
-            print("new message received")
+            dprint("new message received")
             readAvailableBytes(stream: aStream as! InputStream)
         case Stream.Event.endEncountered:
             closeSocket()
         case Stream.Event.errorOccurred:
-            print("error occurred")
+            dprint("error occurred")
         case Stream.Event.hasSpaceAvailable:
-            print("has space available")
+            dprint("has space available")
         default:
-            print("some other event...")
+            dprint("some other event...")
             break
         }
     }
@@ -159,9 +183,18 @@ extension CSSKConnection: StreamDelegate {
         }
     }
     
-    private func processedData(buffer: UnsafeMutablePointer<UInt8>, length: Int) -> String? {
-        let message = String(cString: buffer)
+    private func processedData(buffer: UnsafeMutablePointer<UInt8>, length: Int) -> MessageModel? {
+        guard let stringArray = String(bytesNoCopy: buffer,
+                                       length: length,
+                                       encoding: .ascii,
+                                       freeWhenDone: true)?.components(separatedBy: ":"),
+            let name = stringArray.first,
+            let message = stringArray.last else {
+                return nil
+        }
         
-        return message
+        let messageSender:MessageSender = (name == self.username) ? .ourself : .someoneElse
+        
+        return MessageModel(message: message, messageSender: messageSender, username: name)
     }
 }
