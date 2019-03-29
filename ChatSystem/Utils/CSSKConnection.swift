@@ -149,18 +149,19 @@ extension CSSKConnection: StreamDelegate {
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
         switch eventCode {
         case Stream.Event.openCompleted:
-            dprint("open completed")
+            track("open completed")
         case Stream.Event.hasBytesAvailable:
-            dprint("new message received")
+            track("new message received")
             readAvailableBytes(stream: aStream as! InputStream)
         case Stream.Event.endEncountered:
+            track("close socket")
             closeSocket()
         case Stream.Event.errorOccurred:
-            dprint("error occurred")
+            track("error occurred")
         case Stream.Event.hasSpaceAvailable:
-            dprint("has space available")
+            track("has space available")
         default:
-            dprint("some other event...")
+            track("some other event...")
             break
         }
     }

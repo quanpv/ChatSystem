@@ -23,11 +23,17 @@ class CSMessageInputView: UIView {
     
     let identifier = "CSMessageInputView"
     let maximumNumberOfLines:CGFloat = 5
-    let defaultHeightTextView: CGFloat = 40
+    lazy var defaultHeightTextView: CGFloat = {
+        return textView.font!.lineHeight + textView.contentInset.top + textView.contentInset.bottom
+    }()
+    lazy var maxHeightTextView: CGFloat = {
+        return textView.font!.lineHeight * maximumNumberOfLines + textView.contentInset.top + textView.contentInset.bottom
+    }()
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var heightButtonSend: NSLayoutConstraint!
     @IBOutlet weak var heightTextView: NSLayoutConstraint!
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,19 +55,17 @@ class CSMessageInputView: UIView {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         backgroundColor = UIColor.groupTableViewBackground
+        textView.font = UIFont.systemFont(ofSize: 17.0)
         textView.layer.cornerRadius = 4
         textView.layer.borderColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 0.6).cgColor
-        textView.layer.borderWidth = 1
-        
-        textView.textContainer.maximumNumberOfLines = Int(maximumNumberOfLines)
-        layoutTextView()
+        textView.layer.borderWidth = 0.5
         textView.delegate = self
+        layoutTextView()
         
-        sendButton.backgroundColor = UIColor(red: 8/255, green: 183/255, blue: 231/255, alpha: 1.0)
         sendButton.layer.cornerRadius = 4
         sendButton.isEnabled = true
-        
-        sendButton.addTarget(self, action: #selector(CSMessageInputView.sendTapped), for: .touchUpInside)
+        heightButtonSend.constant = defaultHeightTextView + textView.textContainerInset.top + textView.textContainerInset.bottom
+        sendButton.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)
     }
     
     @objc func sendTapped() {
@@ -83,26 +87,33 @@ class CSMessageInputView: UIView {
                                                  context: nil).size
     }
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize.zero
-    }
+    private var previewHeight: CGFloat = 0
     
     func layoutTextView() {
-        let boundingRect = sizeOfString(string: textView.text, constrainedToWidth: Double(textView.frame.width), font: textView.font!)
-        let numberLines = boundingRect.height / textView.font!.lineHeight;
-        if numberLines > maximumNumberOfLines {
-            heightTextView.constant = textView.font!.lineHeight * maximumNumberOfLines
-            textView.isScrollEnabled = true
-        } else {
-            heightTextView.constant = max(textView.font!.lineHeight * numberLines, defaultHeightTextView)
-            textView.isScrollEnabled = false
+        let fixedWidth = textView.frame.size.width
+        let newSize = textView.sizeThatFits(CGSize.init(width: fixedWidth, height: CGFloat(MAXFLOAT)))
+        if newSize.height != previewHeight {
+            if newSize.height >= maxHeightTextView {
+                heightTextView.constant = maxHeightTextView
+                textView.isScrollEnabled = true
+            }
+            else
+            {
+                heightTextView.constant = max(newSize.height, defaultHeightTextView)
+                textView.isScrollEnabled = false
+            }
+            previewHeight = newSize.height
         }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize.zero
     }
 }
 
 extension CSMessageInputView: UITextViewDelegate {
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        return false
+        return true
     }
     
     func textViewDidChange(_ textView: UITextView) {

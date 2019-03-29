@@ -15,7 +15,7 @@ protocol LoginViewModelProtocol {
 class CSLoginViewModel: CSNavigationViewModel {
     
     func processOpenTalkList() {
-        let view = CSTalkListViewController(nibName: CSTalkListViewController.className, bundle: nil)
-        self.ownerView?.openView(view)
+        let talkList = CSTalkListViewController(nibName: CSTalkListViewController.className, bundle: nil)
+        self.ownerView?.swapRootNavigation(talkList)
     }
 }

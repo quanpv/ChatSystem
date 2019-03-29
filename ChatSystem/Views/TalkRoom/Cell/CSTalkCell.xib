@@ -13,33 +13,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CSTalkCell" rowHeight="85" id="KGk-i7-Jjw" customClass="CSTalkCell" customModule="ChatSystem_DEV" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="84.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hZW-gf-4ZQ">
-                        <rect key="frame" x="16" y="8" width="144" height="68.5"/>
+                        <rect key="frame" x="16" y="8" width="134" height="58.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9a-wo-Y4H">
-                                <rect key="frame" x="0.0" y="0.0" width="144" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="134" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5U1-UP-xG8">
-                                <rect key="frame" x="0.0" y="28.5" width="144" height="40"/>
+                                <rect key="frame" x="0.0" y="28.5" width="134" height="30"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ndd-Ie-XPC">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boy" translatesAutoresizingMaskIntoConstraints="NO" id="ndd-Ie-XPC">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" priority="999" constant="40" id="EGv-vC-M7F"/>
-                                            <constraint firstAttribute="width" constant="40" id="d1D-NR-tkP"/>
+                                            <constraint firstAttribute="height" priority="999" constant="30" id="EGv-vC-M7F"/>
+                                            <constraint firstAttribute="width" constant="30" id="d1D-NR-tkP"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x47-0Z-Apr" customClass="CSLabel" customModule="ChatSystem_DEV" customModuleProvider="target">
-                                        <rect key="frame" x="44" y="0.0" width="42" height="20.5"/>
+                                        <rect key="frame" x="34" y="0.0" width="42" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="4PE-qb-vVV"/>
                                             <constraint firstAttribute="height" priority="999" constant="20.5" id="rcz-2q-NeK"/>
@@ -49,14 +49,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="Hvt-M3-Vlm">
-                                        <rect key="frame" x="90" y="0.0" width="25" height="25"/>
+                                        <rect key="frame" x="80" y="0.0" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="Olb-3O-h2A"/>
                                             <constraint firstAttribute="height" constant="25" id="hYb-iX-XoY"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Joh-or-xgY">
-                                        <rect key="frame" x="119" y="0.0" width="25" height="25"/>
+                                        <rect key="frame" x="109" y="0.0" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="Jcq-T7-TUb"/>
                                             <constraint firstAttribute="height" constant="25" id="aSb-ke-8xM"/>
@@ -94,7 +94,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="avatar" width="40" height="40"/>
+        <image name="boy" width="32" height="32"/>
         <image name="flag" width="25" height="25"/>
     </resources>
 </document>

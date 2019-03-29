@@ -21,30 +21,34 @@ class CSTalkRoomViewController: CSBaseViewController {
     }
     
     lazy var messageInputView: CSMessageInputView = {
-        let accessoryView = CSMessageInputView()
-        accessoryView.autoresizingMask = .flexibleHeight
+        let rect = CGRect(x: 0,y: 0,width: UIScreen.main.bounds.width,height: 144)
+        let accessoryView = CSMessageInputView(frame: rect)
+        accessoryView.autoresizingMask = [.flexibleHeight]
         return accessoryView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        track()
+        talkRoomVM.attach(view: self)
         messageInputView.delegate = self
         becomeFirstResponder()
         
-        talkRoomVM.attach(view: self)
-
-        CSSKConnection.shared.closeSocket()
-        CSSKConnection.shared.delegate = self
-        CSSKConnection.shared.openSocket { [unowned self] (status) in
-            if status == .opening {
-                self.talkRoomVM.joinChat(username: "tampt")
-            }
-        }
-
         tableView.registerCellNib(CSTalkCell.self)
-
         loadViews()
+        setupDemoData()
+    }
+    
+    func setupDemoData() {
+        var mesage = MessageModel(message: "Hello", messageSender: .someoneElse, username: "Key")
+        talkRoomVM.messages.append(mesage)
+        mesage = MessageModel(message: "Hi", messageSender: .someoneElse, username: "Tony")
+        talkRoomVM.messages.append(mesage)
+        mesage = MessageModel(message: "Hi, welcome join", messageSender: .someoneElse, username: "Mat")
+        talkRoomVM.messages.append(mesage)
+        mesage = MessageModel(message: "Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. ", messageSender: .ourself, username: "me")
+        talkRoomVM.messages.append(mesage)
     }
     
     func loadViews() {
@@ -54,9 +58,30 @@ class CSTalkRoomViewController: CSBaseViewController {
         tableView.separatorStyle = .none
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChange(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+        
+        CSSKConnection.shared.delegate = self
+        CSSKConnection.shared.openSocket { [unowned self] (status) in
+            if status == .opening {
+                self.talkRoomVM.joinChat(username: "tampt")
+            }
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillChangeFrameNotification,
+                                                  object: nil)
+        
+        CSSKConnection.shared.closeSocket()
     }
     
     func tableviewCellUpdate(action:(() -> Void)?) {
@@ -65,6 +90,16 @@ class CSTalkRoomViewController: CSBaseViewController {
         action?()
         tableView.endUpdates()
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
+    @objc func keyboardWillChange(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
+            let endHeight = endFrame.size.height
+            UIView.animate(withDuration: 0.25) {
+                self.tableView.contentInset.bottom = endHeight
+            }
+        }
     }
 }
 
@@ -94,7 +129,7 @@ extension CSTalkRoomViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return 75
     }
 }
 

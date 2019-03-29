@@ -62,4 +62,39 @@ class CSBaseViewController: UIViewController, CSNavigationViewModelProtocol {
     func closeToView(_ view: CSBaseViewController, animated: Bool = true) {
         //MARK: - TODO closeToView
     }
+    
+    
+    //MARK: Navigate
+    
+    func swapRoot(_ vc: UIViewController) {
+        CSDelegate.window?.swapRoot(vc)
+    }
+    
+    func swapRootNavigation(_ vc: UIViewController) {
+        CSDelegate.window?.swapRootNavigation(vc)
+    }
+    
+    func show(_ vc: UIViewController) {
+        navigationController?.show(vc, sender: nil)
+    }
+    
+    func present(_ vc: UIViewController, completion: (()->Void)?) {
+        present(vc, animated: true, completion: completion)
+    }
+    
+    func showDetailViewController(_ vc: UIViewController) {
+        navigationController?.showDetailViewController(vc, sender: nil)
+    }
+    
+    func popViewController() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func popToViewController(_ vc: UIViewController) {
+        navigationController?.popToViewController(vc, animated: true)
+    }
+    
+    func popToRootViewController() {
+        navigationController?.popToRootViewController(animated: true)
+    }
 }

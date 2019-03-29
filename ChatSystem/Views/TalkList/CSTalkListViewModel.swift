@@ -11,8 +11,13 @@ import UIKit
 class CSTalkListViewModel: CSNavigationViewModel {
     
     func processOpenCreateTalk() {
-        let view = CSCreateTalkViewController(nibName: CSCreateTalkViewController.className, bundle: nil)
-        self.ownerView?.openView(view)
+        let createTalk = CSCreateTalkViewController(nibName: CSCreateTalkViewController.className, bundle: nil)
+        self.ownerView?.show(createTalk)
+    }
+    
+    func processOpenTalkRoom() {
+        let talkRoom = CSTalkRoomViewController(nibName: CSTalkRoomViewController.className, bundle: nil)
+        self.ownerView?.show(talkRoom)
     }
 }
 

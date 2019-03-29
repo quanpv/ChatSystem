@@ -47,6 +47,10 @@
 		4CA897FD224CA3DD00023F99 /* CSMessageInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */; };
 		4CA897FE224CA3DD00023F99 /* CSMessageInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */; };
 		4CA897FF224CA3DD00023F99 /* CSMessageInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */; };
+		4CA89807224DF5BB00023F99 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */; };
+		4CA89808224DF5BB00023F99 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */; };
+		4CA89809224DF5BB00023F99 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */; };
+		4CA8980A224DF5BB00023F99 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */; };
 		4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
 		4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
 		4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
@@ -218,6 +222,7 @@
 		4C0B385E224B348D001F737E /* CSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLabel.swift; sourceTree = "<group>"; };
 		4C0B386E224B88CD001F737E /* CSTalkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSTalkCell.xib; sourceTree = "<group>"; };
 		4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSMessageInputView.xib; sourceTree = "<group>"; };
+		4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		4CD569C7224A06130060EB36 /* ChatSystem UAT VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT VN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD569E8224A06170060EB36 /* ChatSystem UAT JP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT JP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD56A09224A061A0060EB36 /* ChatSystem PROD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem PROD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,16 +325,40 @@
 		4C0B3830224B25A7001F737E /* TalkRoom */ = {
 			isa = PBXGroup;
 			children = (
+				4CA8980B224DFE7D00023F99 /* Cell */,
+				4CA8980C224E04AE00023F99 /* Message Input */,
+				4CA8980D224E071E00023F99 /* Custom View */,
 				4C0B3831224B25F8001F737E /* CSTalkRoomViewController.swift */,
 				4C0B3832224B25F8001F737E /* CSTalkRoomViewController.xib */,
 				4C0B383B224B2616001F737E /* CSTalkRoomViewModel.swift */,
-				4C0B3845224B3140001F737E /* CSTalkCell.swift */,
-				4C0B386E224B88CD001F737E /* CSTalkCell.xib */,
-				4C0B3859224B3431001F737E /* CSMessageInputView.swift */,
-				4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */,
-				4C0B385E224B348D001F737E /* CSLabel.swift */,
 			);
 			path = TalkRoom;
+			sourceTree = "<group>";
+		};
+		4CA8980B224DFE7D00023F99 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C0B3845224B3140001F737E /* CSTalkCell.swift */,
+				4C0B386E224B88CD001F737E /* CSTalkCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4CA8980C224E04AE00023F99 /* Message Input */ = {
+			isa = PBXGroup;
+			children = (
+				4C0B3859224B3431001F737E /* CSMessageInputView.swift */,
+				4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */,
+			);
+			path = "Message Input";
+			sourceTree = "<group>";
+		};
+		4CA8980D224E071E00023F99 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				4C0B385E224B348D001F737E /* CSLabel.swift */,
+			);
+			path = "Custom View";
 			sourceTree = "<group>";
 		};
 		4CD56A0B224A06E50060EB36 /* Supporting Files */ = {
@@ -482,6 +511,7 @@
 				5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */,
 				5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */,
 				4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */,
+				4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -802,6 +832,7 @@
 				4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */,
 				4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569AE224A06130060EB36 /* UIWindowExtension.swift in Sources */,
+				4CA89808224DF5BB00023F99 /* NSObjectExtension.swift in Sources */,
 				4CD569AF224A06130060EB36 /* CSBaseViewController.swift in Sources */,
 				4CD569B0224A06130060EB36 /* CSTalkListViewModel.swift in Sources */,
 				5BEE514D224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
@@ -844,6 +875,7 @@
 				4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */,
 				4CD569CE224A06170060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569CF224A06170060EB36 /* UIWindowExtension.swift in Sources */,
+				4CA89809224DF5BB00023F99 /* NSObjectExtension.swift in Sources */,
 				4CD569D0224A06170060EB36 /* CSBaseViewController.swift in Sources */,
 				4CD569D1224A06170060EB36 /* CSTalkListViewModel.swift in Sources */,
 				5BEE514E224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
@@ -886,6 +918,7 @@
 				4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */,
 				4CD569EF224A061A0060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569F0224A061A0060EB36 /* UIWindowExtension.swift in Sources */,
+				4CA8980A224DF5BB00023F99 /* NSObjectExtension.swift in Sources */,
 				4CD569F1224A061A0060EB36 /* CSBaseViewController.swift in Sources */,
 				4CD569F2224A061A0060EB36 /* CSTalkListViewModel.swift in Sources */,
 				5BEE514F224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
@@ -923,12 +956,12 @@
 			files = (
 				5BE0798C2249CBE100116A00 /* CSBaseViewModel.swift in Sources */,
 				5BEE514C224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
-				5B5E1CB22249E0BF00F59EA5 /* StringExtension.swift in Sources */,
 				5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */,
 				5B5E1CBF224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				4CD56A1B224A1D190060EB36 /* CSSKConnection.swift in Sources */,
 				5BE0799C2249D70A00116A00 /* LoginModel.swift in Sources */,
 				5BE0798E2249CC4800116A00 /* CSNavigationViewModel.swift in Sources */,
+				4CA89807224DF5BB00023F99 /* NSObjectExtension.swift in Sources */,
 				5BE079952249D20400116A00 /* UIWindowExtension.swift in Sources */,
 				4C0B382F224B1B61001F737E /* StringExtension.swift in Sources */,
 				5B5E1CBD224A101500F59EA5 /* UIColorExtension.swift in Sources */,

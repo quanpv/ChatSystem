@@ -28,6 +28,7 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        track()
         
         filteredRooms = rooms
         
@@ -77,6 +78,7 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+        talkListVM.processOpenTalkRoom()
     }
     @IBAction func actionCreateTalk(_ sender: Any) {
         talkListVM.processOpenCreateTalk()

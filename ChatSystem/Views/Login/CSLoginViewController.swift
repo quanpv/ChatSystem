@@ -16,7 +16,7 @@ class CSLoginViewController: CSBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        track()
         // Do any additional setup after loading the view.
     }
 

@@ -24,17 +24,20 @@ class CSCreateTalkViewController: CSBaseViewController , UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        track()
+        
         if (self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout))) {
               self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         }
-        let heightStatusBar = UIApplication.shared.statusBarFrame.height
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: heightStatusBar, width:  self.view.bounds.width, height: 45))
-        self.view.addSubview(navBar)
-        navBar.backgroundColor = UIColor.cyan
-        let navItem = UINavigationItem(title: "トークルーム")
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(actionBack));
-        navItem.leftBarButtonItem = doneItem;
-        navBar.setItems([navItem], animated: false);
+//        let heightStatusBar = UIApplication.shared.statusBarFrame.height
+//        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: heightStatusBar, width:  self.view.bounds.width, height: 45))
+//        self.view.addSubview(navBar)
+//        navBar.backgroundColor = UIColor.cyan
+//        let navItem = UINavigationItem(title: "トークルーム")
+//        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(actionBack));
+//        navItem.leftBarButtonItem = doneItem;
+//        navBar.setItems([navItem], animated: false);
+        title = "トークルーム"
         // Do any additional setup after loading the view.
         filteredRooms = rooms
         

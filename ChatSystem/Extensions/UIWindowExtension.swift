@@ -73,5 +73,22 @@ extension UIWindow {
         
         makeKeyAndVisible()
     }
+    
+    func swapRoot(_ vc: UIViewController) {
+        swapRootViewControllerWithAnimation(newViewController: vc, animationType: .present)
+    }
+    
+    func swapRootNavigation(_ vc: UIViewController) {
+        guard let currentViewController = rootViewController else {
+            return
+        }
+        
+        if (currentViewController.isKind(of: UINavigationController.self)) {
+            return
+        }
+        
+        let navigationController = UINavigationController(rootViewController: vc)
+        swapRoot(navigationController)
+    }
 }
 

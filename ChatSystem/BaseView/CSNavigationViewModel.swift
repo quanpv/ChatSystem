@@ -13,6 +13,16 @@ protocol CSNavigationViewModelProtocol {
     func selfClose(animated: Bool)
     func closeToRoot(animated: Bool)
     func closeToView(_ view: CSBaseViewController, animated: Bool)
+    
+    
+    func swapRoot(_ vc: UIViewController)
+    func swapRootNavigation(_ vc: UIViewController)
+    func show(_ vc: UIViewController)
+    func present(_ vc: UIViewController, completion: (()->Void)?)
+    func showDetailViewController(_ vc: UIViewController)
+    func popViewController()
+    func popToViewController(_ vc: UIViewController)
+    func popToRootViewController()
 }
 
 class CSNavigationViewModel: CSBaseViewModel {

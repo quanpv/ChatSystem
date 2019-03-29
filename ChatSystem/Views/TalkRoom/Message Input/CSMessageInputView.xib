@@ -13,7 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CSMessageInputView" customModule="ChatSystem_DEV" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="WJE-lb-Oqf" id="oRP-Xf-RzL"/>
-                <outlet property="heightTextView" destination="uKL-Ot-ntT" id="jnH-y0-DKh"/>
+                <outlet property="heightButtonSend" destination="9Xz-Sl-nWH" id="o1L-l5-Wny"/>
+                <outlet property="heightTextView" destination="dbA-kr-emX" id="G1B-F0-ydC"/>
                 <outlet property="sendButton" destination="q1K-1i-L1j" id="PWe-rj-C7W"/>
                 <outlet property="textView" destination="x3i-Gp-MPf" id="vtE-Ye-0HJ"/>
             </connections>
@@ -23,37 +24,49 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dV-SA-9bh" userLabel="separate">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.66666666666666663"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="TYf-sb-SAB"/>
+                    </constraints>
+                </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x3i-Gp-MPf">
                     <rect key="frame" x="16" y="8" width="324" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="uKL-Ot-ntT"/>
+                        <constraint firstAttribute="height" constant="40" id="dbA-kr-emX"/>
                     </constraints>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1K-1i-L1j">
                     <rect key="frame" x="348" y="8" width="50" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="9Xz-Sl-nWH"/>
                         <constraint firstAttribute="width" constant="50" id="veh-YI-7In"/>
                     </constraints>
-                    <state key="normal" title="Send"/>
+                    <state key="normal" title="Send">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="x3i-Gp-MPf" firstAttribute="top" secondItem="lNe-oQ-btU" secondAttribute="top" constant="8" id="F5F-ll-IvH"/>
-                <constraint firstItem="lNe-oQ-btU" firstAttribute="bottom" secondItem="x3i-Gp-MPf" secondAttribute="bottom" constant="8" id="IGi-A5-x5I"/>
+                <constraint firstAttribute="trailing" secondItem="3dV-SA-9bh" secondAttribute="trailing" id="4Wj-7w-01z"/>
                 <constraint firstItem="lNe-oQ-btU" firstAttribute="trailing" secondItem="q1K-1i-L1j" secondAttribute="trailing" constant="16" id="MbE-kW-emn"/>
-                <constraint firstItem="x3i-Gp-MPf" firstAttribute="leading" secondItem="lNe-oQ-btU" secondAttribute="leading" constant="16" id="Q1m-ap-U2t"/>
+                <constraint firstItem="3dV-SA-9bh" firstAttribute="top" secondItem="lNe-oQ-btU" secondAttribute="top" id="Mgx-8F-g4a"/>
+                <constraint firstItem="3dV-SA-9bh" firstAttribute="leading" secondItem="WJE-lb-Oqf" secondAttribute="leading" id="Rdd-Eb-Gou"/>
                 <constraint firstItem="lNe-oQ-btU" firstAttribute="bottom" secondItem="q1K-1i-L1j" secondAttribute="bottom" constant="8" id="UYk-n2-fwJ"/>
-                <constraint firstItem="q1K-1i-L1j" firstAttribute="leading" secondItem="x3i-Gp-MPf" secondAttribute="trailing" constant="8" id="g8L-kT-HRh"/>
+                <constraint firstItem="q1K-1i-L1j" firstAttribute="leading" secondItem="x3i-Gp-MPf" secondAttribute="trailing" constant="8" id="ZeJ-ar-lwh"/>
+                <constraint firstItem="lNe-oQ-btU" firstAttribute="bottom" secondItem="x3i-Gp-MPf" secondAttribute="bottom" constant="8" id="awe-bX-T7H"/>
+                <constraint firstItem="x3i-Gp-MPf" firstAttribute="leading" secondItem="lNe-oQ-btU" secondAttribute="leading" constant="16" id="kJ7-a6-HIr"/>
+                <constraint firstItem="x3i-Gp-MPf" firstAttribute="top" secondItem="3dV-SA-9bh" secondAttribute="bottom" constant="7.5" id="lyJ-sm-FBs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="lNe-oQ-btU"/>
-            <point key="canvasLocation" x="-81.159420289855078" y="-120.24456521739131"/>
+            <point key="canvasLocation" x="-72.463768115942031" y="-84.782608695652186"/>
         </view>
     </objects>
 </document>
