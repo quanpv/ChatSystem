@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CSCreateTalkViewController: CSBaseViewController , UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+class CSCreateTalkViewController: CSBaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,10 +26,6 @@ class CSCreateTalkViewController: CSBaseViewController , UITableViewDelegate, UI
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         track()
-        
-        if (self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout))) {
-              self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
-        }
 //        let heightStatusBar = UIApplication.shared.statusBarFrame.height
 //        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: heightStatusBar, width:  self.view.bounds.width, height: 45))
 //        self.view.addSubview(navBar)
@@ -64,20 +60,21 @@ class CSCreateTalkViewController: CSBaseViewController , UITableViewDelegate, UI
         // Pass the selected object to the new view controller.
     }
     */
-
     
-    func updateSearchResults(for searchController: UISearchController) {
-        // If we haven't typed anything into the search bar then do not filter the results
-        if searchController.searchBar.text! == "" {
-            filteredRooms = rooms
-        } else {
-            // Filter the results
-            filteredRooms = rooms.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
-        }
-        
-        self.tableView.reloadData()
+}
+
+extension CSCreateTalkViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.row).")
+    }
+    
+}
+
+extension CSCreateTalkViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredRooms.count
     }
@@ -94,13 +91,19 @@ class CSCreateTalkViewController: CSBaseViewController , UITableViewDelegate, UI
         
         return cell!
     }
+}
+
+extension CSCreateTalkViewController:UISearchResultsUpdating {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+    func updateSearchResults(for searchController: UISearchController) {
+        // If we haven't typed anything into the search bar then do not filter the results
+        if searchController.searchBar.text! == "" {
+            filteredRooms = rooms
+        } else {
+            // Filter the results
+            filteredRooms = rooms.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+        }
+        
+        self.tableView.reloadData()
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
-    }
-    
 }

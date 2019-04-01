@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating{
+class CSTalkListViewController: CSBaseViewController {
     
     @IBOutlet weak var tableViewTalkList: UITableView!
     
@@ -44,43 +44,6 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
         // Do any additional setup after loading the view.
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        // If we haven't typed anything into the search bar then do not filter the results
-        if searchController.searchBar.text! == "" {
-             filteredRooms = rooms
-        } else {
-            // Filter the results
-            filteredRooms = rooms.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
-        }
-        
-        self.tableViewTalkList.reloadData()
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredRooms.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // create a new cell if needed or reuse an old one
-        var cell:CSTalkListCell? = self.tableViewTalkList.dequeueReusableCell(withIdentifier: CSTalkListCell.className, for: indexPath) as? CSTalkListCell
-        if (cell == nil) {
-            cell = CSTalkListCell(style: .default, reuseIdentifier:
-                CSTalkListCell.className)
-        }
-        // set the text from the data model
-        cell?.setData(filteredRooms[indexPath.row])
-        
-        return cell!
-    }
-    
-       func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
-        talkListVM.processOpenTalkRoom(indexPath: indexPath)
-    }
     @IBAction func actionCreateTalk(_ sender: Any) {
         talkListVM.processOpenCreateTalk()
     }
@@ -98,4 +61,48 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
      }
      */
     
+}
+
+extension CSTalkListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.row).")
+        talkListVM.processOpenTalkRoom(indexPath: indexPath)
+    }
+}
+
+extension CSTalkListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredRooms.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // create a new cell if needed or reuse an old one
+        var cell:CSTalkListCell? = self.tableViewTalkList.dequeueReusableCell(withIdentifier: CSTalkListCell.className, for: indexPath) as? CSTalkListCell
+        if (cell == nil) {
+            cell = CSTalkListCell(style: .default, reuseIdentifier:
+                CSTalkListCell.className)
+        }
+        // set the text from the data model
+        cell?.setData(filteredRooms[indexPath.row])
+        
+        return cell!
+    }
+}
+
+extension CSTalkListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        // If we haven't typed anything into the search bar then do not filter the results
+        if searchController.searchBar.text! == "" {
+            filteredRooms = rooms
+        } else {
+            // Filter the results
+            filteredRooms = rooms.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+        }
+        
+        self.tableViewTalkList.reloadData()
+    }
 }

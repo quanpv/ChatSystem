@@ -28,7 +28,22 @@ class CSTalkRoomViewController: CSBaseViewController {
     
     var isGroupTalk: Bool = false
     
-    private let memberItem: UIBarButtonItem = UIBarButtonItem.init(title: "メンバ", style: .done, target: self, action: #selector(memberTap(sender:)))
+    private let memberItem: UIBarButtonItem = {
+        let btnGroupMember = UIButton.init(type: .custom)
+        btnGroupMember.titleLabel?.textColor = UIColor.white
+        btnGroupMember.setTitle("メンバ", for: .normal)
+        btnGroupMember.titleLabel?.font = UIFont.systemFont(ofSize: 10.0)
+        btnGroupMember.backgroundColor = UIColor.blue
+        btnGroupMember.layer.cornerRadius = 4
+        //        btnGroupMember.layer.borderWidth = 0.5
+        btnGroupMember.clipsToBounds = true
+        //        btnGroupMember.layer.borderColor = UIColor.red.cgColor
+        btnGroupMember.frame = CGRect(x:0,y: 0, width:60, height:20)
+        btnGroupMember.addTarget(self, action: #selector(memberTap(sender: )), for: .touchUpInside)
+        let groupItem = UIBarButtonItem(customView: btnGroupMember);
+        return groupItem
+    }()
+//        UIBarButtonItem = UIBarButtonItem.init(title: "メンバ", style: .done, target: self, action: #selector(memberTap(sender:)))
     
     private let searchItem: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(searchTap(sender:)))
     
@@ -114,7 +129,9 @@ class CSTalkRoomViewController: CSBaseViewController {
     }
     
     @objc func memberTap(sender: Any) {
-        talkRoomVM.
+       print("actionGroupMember clicked")
+        let groupMember = CSGroupMemberViewController(nibName: CSGroupMemberViewController.className, bundle: nil)
+        self.show(groupMember)
     }
     
     @objc func searchTap(sender: Any) {

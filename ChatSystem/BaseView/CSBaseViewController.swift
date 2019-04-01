@@ -12,7 +12,9 @@ class CSBaseViewController: UIViewController, CSNavigationViewModelProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout))) {
+            self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
+        }
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
