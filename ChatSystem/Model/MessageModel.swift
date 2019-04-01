@@ -12,10 +12,12 @@ struct MessageModel {
     let message: String
     let senderUsername: String
     let messageSender: MessageSender
+    let time: String
     
-    init(message: String, messageSender: MessageSender, username: String) {
+    init(message: String, messageSender: MessageSender, username: String, time: String) {
         self.message = message.withoutWhitespace()
         self.messageSender = messageSender
         self.senderUsername = username
+        self.time = time
     }
 }

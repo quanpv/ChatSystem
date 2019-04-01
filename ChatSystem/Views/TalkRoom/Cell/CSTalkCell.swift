@@ -10,11 +10,6 @@ import UIKit
 
 let widthControl: CGFloat = 25.0
 
-enum MessageSender {
-    case ourself
-    case someoneElse
-}
-
 protocol CSTalkCellDelegate: class {
     func deleteMessage(at indexPath:IndexPath)
 }
@@ -24,6 +19,7 @@ class CSTalkCell: UITableViewCell {
     var messageSender: MessageSender = .ourself
     weak var delegate:CSTalkCellDelegate?
     private var indexPath:IndexPath = IndexPath()
+    var statusSender: StatusSender = .online
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
@@ -37,6 +33,9 @@ class CSTalkCell: UITableViewCell {
     @IBOutlet weak var widthLabel: NSLayoutConstraint!
     @IBOutlet weak var heightLabel: NSLayoutConstraint!
     
+    @IBOutlet weak var status: UIImageView!
+    @IBOutlet weak var time: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -44,8 +43,11 @@ class CSTalkCell: UITableViewCell {
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
         
-        nameLabel.textColor = .lightGray
-        nameLabel.font = UIFont(name: "Helvetica", size: 10)
+        nameLabel.textColor = .darkGray
+        nameLabel.font = UIFont(name: "Helvetica", size: 14)
+        
+        time.textColor = .lightGray
+        time.font = UIFont(name: "Helvetica", size: 12)
         
         clipsToBounds = true
         nameLabel.isHidden = true
@@ -74,13 +76,34 @@ class CSTalkCell: UITableViewCell {
         nameLabel.text = message.senderUsername
         messageLabel.text = message.message
         messageSender = message.messageSender
-        layoutSubviews()
+        time.text = message.time
+        
+        if messageSender == .ourself {
+            nameLabel.isHidden = true
+            messageLabel.backgroundColor = .lightGray
+            avatar.isHidden = true
+            deleteButton.isHidden = false
+            stackContainer.alignment = .trailing
+            
+            status.isHidden = true
+            time.textAlignment = .right
+        } else {
+            nameLabel.isHidden = false
+            nameLabel.sizeToFit()
+            messageLabel.backgroundColor = UIColor(red: 24/255, green: 180/255, blue: 128/255, alpha: 1.0)
+            avatar.isHidden = false
+            deleteButton.isHidden = true
+            stackContainer.alignment = .leading
+            
+            status.isHidden = statusSender == .offline
+            time.textAlignment = .left
+        }
+        layoutIfNeeded()
     }
     
     @IBAction func deleteTap(_ sender: Any) {
         delegate?.deleteMessage(at: indexPath)
     }
-    
 }
 
 // MARK: layout
@@ -94,24 +117,9 @@ extension CSTalkCell {
             messageLabel.font = UIFont(name: "Helvetica", size: 17)
             messageLabel.textColor = .white
             
-            let size = messageLabel.sizeThatFits(CGSize(width: 2*(bounds.size.width/3), height: CGFloat.greatestFiniteMagnitude))
+            let size = messageLabel.sizeThatFits(CGSize(width: 3*(bounds.size.width/5), height: CGFloat.greatestFiniteMagnitude))
             heightLabel.constant = size.height + 16
             widthLabel.constant = size.width + 32
-            
-            if messageSender == .ourself {
-                nameLabel.isHidden = true
-                messageLabel.backgroundColor = .lightGray
-                avatar.isHidden = true
-                deleteButton.isHidden = false
-                stackContainer.alignment = .trailing
-            } else {
-                nameLabel.isHidden = false
-                nameLabel.sizeToFit()
-                messageLabel.backgroundColor = UIColor(red: 24/255, green: 180/255, blue: 128/255, alpha: 1.0)
-                avatar.isHidden = false
-                deleteButton.isHidden = true
-                stackContainer.alignment = .leading
-            }
         }
         
         messageLabel.layer.cornerRadius = min(heightLabel.constant/2.0, 16)

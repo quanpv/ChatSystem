@@ -43,7 +43,7 @@ class CSTalkRoomViewModel {//: CSNavigationViewModel {
         if message.withoutWhitespace().count <= 0 {
             return
         }
-        let messageModel = MessageModel(message: message, messageSender: .ourself, username: CSSKConnection.shared.username)
+        let messageModel = MessageModel(message: message, messageSender: .ourself, username: CSSKConnection.shared.username, time: Formatter.shared.dateFormat.string(from: Date()))
         
         switch action {
         case .new:
@@ -56,11 +56,11 @@ class CSTalkRoomViewModel {//: CSNavigationViewModel {
         DispatchQueue.global().async {
             CSSKConnection.shared.sendMessage(message: message)
         }
-        talkRoomView?.insertNewMessageCell(message: MessageModel(message: message, messageSender: .ourself, username: CSSKConnection.shared.username))
+        talkRoomView?.insertNewMessageCell(message: MessageModel(message: message, messageSender: .ourself, username: CSSKConnection.shared.username, time: Formatter.shared.dateFormat.string(from: Date())))
     }
     
     func update(message: String, at indexPath:IndexPath) {
-        let messageModel = MessageModel(message: message, messageSender: .ourself, username: CSSKConnection.shared.username)
+        let messageModel = MessageModel(message: message, messageSender: .ourself, username: CSSKConnection.shared.username, time: Formatter.shared.dateFormat.string(from: Date()))
         messages[indexPath.row] = messageModel
         talkRoomView?.updateMessageCell(message: messageModel, at: indexPath)
     }

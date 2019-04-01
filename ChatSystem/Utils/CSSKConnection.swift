@@ -33,6 +33,8 @@ class CSSKConnection: NSObject {
     
     static let shared = CSSKConnection()
     
+    private override init() { }
+    
     public func openSocket(completion:((_ status: CSSKConnectionStatus) -> Void)?) {
 //        if status == .opening {
 //            return
@@ -196,6 +198,6 @@ extension CSSKConnection: StreamDelegate {
         
         let messageSender:MessageSender = (name == self.username) ? .ourself : .someoneElse
         
-        return MessageModel(message: message, messageSender: messageSender, username: name)
+        return MessageModel(message: message, messageSender: messageSender, username: name, time: Formatter.shared.dateFormat.string(from: Date()))
     }
 }

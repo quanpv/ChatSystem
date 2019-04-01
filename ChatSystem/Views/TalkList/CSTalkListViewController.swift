@@ -78,7 +78,7 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
-        talkListVM.processOpenTalkRoom()
+        talkListVM.processOpenTalkRoom(indexPath: indexPath)
     }
     @IBAction func actionCreateTalk(_ sender: Any) {
         talkListVM.processOpenCreateTalk()
