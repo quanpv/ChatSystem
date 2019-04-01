@@ -1,33 +1,22 @@
 //
-//  CSLoginViewController.swift
+//  CSForgotPWViewController.swift
 //  ChatSystem
 //
-//  Created by Pham Van Quan on 3/26/19.
+//  Created by Pham Van Quan on 4/1/19.
 //  Copyright © 2019 Pham Van Quan. All rights reserved.
 //
 
 import UIKit
 
-class CSLoginViewController: CSBaseViewController {
+class CSForgotPWViewController: CSBaseViewController {
 
-    var loginVM: CSLoginViewModel {
-        return CSLoginViewModel(self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
-        track()
+
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func actionLogin(_ sender: Any) {
-        loginVM.processOpenTalkList()
-    }
-    
-    @IBAction func actionForgotPW(_ sender: Any) {
-        loginVM.processOpenForgotPW()
-    }
+
     /*
     // MARK: - Navigation
 

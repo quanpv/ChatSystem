@@ -94,9 +94,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Setup View
     func setupView() {
         let firstView = CSLoginViewController(nibName: CSLoginViewController.className, bundle: nil)
+        let navigationController = UINavigationController(rootViewController: firstView)
 //        let firstView = CSTalkRoomViewController(nibName: CSTalkRoomViewController.className, bundle: nil)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = firstView
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
     

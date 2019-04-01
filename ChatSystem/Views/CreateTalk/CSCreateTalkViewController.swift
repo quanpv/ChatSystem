@@ -24,6 +24,7 @@ class CSCreateTalkViewController: CSBaseViewController , UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
         track()
         
         if (self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout))) {

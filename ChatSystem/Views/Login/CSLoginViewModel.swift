@@ -16,6 +16,11 @@ class CSLoginViewModel: CSNavigationViewModel {
     
     func processOpenTalkList() {
         let talkList = CSTalkListViewController(nibName: CSTalkListViewController.className, bundle: nil)
-        self.ownerView?.swapRootNavigation(talkList)
+        self.ownerView?.show(talkList)
+    }
+    
+    func processOpenForgotPW() {
+        let forgotPW = CSForgotPWViewController(nibName: CSForgotPWViewController.className, bundle: nil)
+        self.ownerView?.show(forgotPW)
     }
 }

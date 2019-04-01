@@ -28,6 +28,7 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
         track()
         
         filteredRooms = rooms
@@ -82,6 +83,10 @@ class CSTalkListViewController: CSBaseViewController , UITableViewDelegate, UITa
     }
     @IBAction func actionCreateTalk(_ sender: Any) {
         talkListVM.processOpenCreateTalk()
+    }
+    
+    @IBAction func actionCreateGroupTalk(_ sender: Any) {
+        talkListVM.processOpenCreateGroupTalk()
     }
     /*
      // MARK: - Navigation

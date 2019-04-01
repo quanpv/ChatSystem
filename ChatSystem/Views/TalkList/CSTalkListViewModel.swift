@@ -15,6 +15,11 @@ class CSTalkListViewModel: CSNavigationViewModel {
         self.ownerView?.show(createTalk)
     }
     
+    func processOpenCreateGroupTalk() {
+        let createGroupTalk = CSCreateGroupTalkViewController(nibName: CSCreateGroupTalkViewController.className, bundle: nil)
+        self.ownerView?.show(createGroupTalk)
+    }
+    
     func processOpenTalkRoom() {
         let talkRoom = CSTalkRoomViewController(nibName: CSTalkRoomViewController.className, bundle: nil)
         self.ownerView?.show(talkRoom)

@@ -63,6 +63,9 @@
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="actionCreateGroupTalk:" destination="-1" eventType="touchUpInside" id="Qr8-vu-BIJ"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
