@@ -9,14 +9,6 @@
 import UIKit
 
 protocol CSNavigationViewModelProtocol {
-    func openView(_ view: CSBaseViewController, animated: Bool)
-    func selfClose(animated: Bool)
-    func closeToRoot(animated: Bool)
-    func closeToView(_ view: CSBaseViewController, animated: Bool)
-    
-    
-    func swapRoot(_ vc: UIViewController)
-    func swapRootNavigation(_ vc: UIViewController)
     func show(_ vc: UIViewController)
     func present(_ vc: UIViewController, completion: (()->Void)?)
     func showDetailViewController(_ vc: UIViewController)
@@ -26,7 +18,5 @@ protocol CSNavigationViewModelProtocol {
 }
 
 class CSNavigationViewModel: CSBaseViewModel {
-    func closeCurrent() {
-        self.ownerView?.selfClose(animated: true)
-    }
+    
 }

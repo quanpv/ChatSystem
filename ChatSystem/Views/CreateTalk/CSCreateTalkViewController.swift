@@ -53,7 +53,7 @@ class CSCreateTalkViewController: CSBaseViewController , UITableViewDelegate, UI
     }
 
     @objc func actionBack() {
-        self.selfClose()
+        self.popViewController()
     }
     /*
     // MARK: - Navigation

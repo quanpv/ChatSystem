@@ -20,8 +20,9 @@ class CSTalkListViewModel: CSNavigationViewModel {
         self.ownerView?.show(createGroupTalk)
     }
     
-    func processOpenTalkRoom() {
+    func processOpenTalkRoom(indexPath: IndexPath) {
         let talkRoom = CSTalkRoomViewController(nibName: CSTalkRoomViewController.className, bundle: nil)
+        talkRoom.isGroupTalk = indexPath.row % 2 == 0
         self.ownerView?.show(talkRoom)
     }
 }

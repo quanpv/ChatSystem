@@ -21,11 +21,16 @@ class CSTalkRoomViewController: CSBaseViewController {
     }
     
     lazy var messageInputView: CSMessageInputView = {
-        let rect = CGRect(x: 0,y: 0,width: UIScreen.main.bounds.width,height: 144)
-        let accessoryView = CSMessageInputView(frame: rect)
+        let accessoryView = CSMessageInputView()
         accessoryView.autoresizingMask = [.flexibleHeight]
         return accessoryView
     }()
+    
+    var isGroupTalk: Bool = false
+    
+    private let memberItem: UIBarButtonItem = UIBarButtonItem.init(title: "メンバ", style: .done, target: self, action: #selector(memberTap(sender:)))
+    
+    private let searchItem: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(searchTap(sender:)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,21 +46,26 @@ class CSTalkRoomViewController: CSBaseViewController {
     }
     
     func setupDemoData() {
-        var mesage = MessageModel(message: "Hello", messageSender: .someoneElse, username: "Key")
+        var mesage = MessageModel(message: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", messageSender: .someoneElse, username: "Key", time: "2019-04-01 10:27")
         talkRoomVM.messages.append(mesage)
-        mesage = MessageModel(message: "Hi", messageSender: .someoneElse, username: "Tony")
+        mesage = MessageModel(message: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", messageSender: .someoneElse, username: "Tony", time: "2019-04-01 10:37")
         talkRoomVM.messages.append(mesage)
-        mesage = MessageModel(message: "Hi, welcome join", messageSender: .someoneElse, username: "Mat")
+        mesage = MessageModel(message: " uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", messageSender: .someoneElse, username: "Mat", time: "2019-04-01 10:39")
         talkRoomVM.messages.append(mesage)
-        mesage = MessageModel(message: "Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. Hi every one. ", messageSender: .ourself, username: "me")
+        mesage = MessageModel(message: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", messageSender: .ourself, username: "me", time: "2019-04-01 10:40")
         talkRoomVM.messages.append(mesage)
     }
     
     func loadViews() {
         navigationItem.title = "Let's Chat!"
-        navigationItem.backBarButtonItem?.title = "Run!"
         
         tableView.separatorStyle = .none
+        
+        if isGroupTalk {
+            navigationItem.rightBarButtonItems = [searchItem, memberItem]
+        } else {
+            navigationItem.rightBarButtonItems = [searchItem]
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,10 +106,19 @@ class CSTalkRoomViewController: CSBaseViewController {
         if let userInfo = notification.userInfo {
             let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
             let endHeight = endFrame.size.height
-            UIView.animate(withDuration: 0.25) {
+            UIView.animate(withDuration: 0.25) { [unowned self] in
                 self.tableView.contentInset.bottom = endHeight
+                self.tableView.scrollIndicatorInsets.bottom = endHeight
             }
         }
+    }
+    
+    @objc func memberTap(sender: Any) {
+        talkRoomVM.
+    }
+    
+    @objc func searchTap(sender: Any) {
+        
     }
 }
 
@@ -129,7 +148,7 @@ extension CSTalkRoomViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 70
     }
 }
 

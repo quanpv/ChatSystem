@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class Formatter {
+    
+    static let shared = Formatter()
+    
+    lazy var dateFormat: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "YYYY-mm-dd hh:mm"
+        return df
+    }()
+    
+    private init() { }
+}
