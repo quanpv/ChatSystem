@@ -22,14 +22,10 @@ protocol TalkRoomView: class {
     func setTextInputText(message:String)
 }
 
-class CSTalkRoomViewModel {//: CSNavigationViewModel {
+class CSTalkRoomViewModel: CSBaseViewModel {
     
     private weak var talkRoomView:TalkRoomView?
     public var messages = [MessageModel]()
-    
-    init() {
-        
-    }
     
     func attach(view:TalkRoomView) {
         self.talkRoomView = view
@@ -75,5 +71,11 @@ class CSTalkRoomViewModel {//: CSNavigationViewModel {
     func deleteMessage(at indexPath:IndexPath) {
         messages.remove(at: indexPath.row)
         talkRoomView?.removeMessageCell(at: indexPath)
+    }
+    
+    func processOpenSearchMessage() {
+        let searchMessage = CSSearchMessageViewController(nibName: CSSearchMessageViewController.className, bundle: nil)
+        let nav = UINavigationController(rootViewController: searchMessage)
+        self.ownerView?.present(nav, completion: nil)
     }
 }

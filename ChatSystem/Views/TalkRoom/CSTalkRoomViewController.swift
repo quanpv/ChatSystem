@@ -12,7 +12,9 @@ class CSTalkRoomViewController: CSBaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let talkRoomVM = CSTalkRoomViewModel()
+    private var talkRoomVM: CSTalkRoomViewModel {
+        return CSTalkRoomViewModel(self)
+    }
     
     override var canBecomeFirstResponder: Bool { return true }
     
@@ -46,14 +48,14 @@ class CSTalkRoomViewController: CSBaseViewController {
     }
     
     func setupDemoData() {
-        var mesage = MessageModel(message: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", messageSender: .someoneElse, username: "Key", time: "2019-04-01 10:27")
-        talkRoomVM.messages.append(mesage)
-        mesage = MessageModel(message: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", messageSender: .someoneElse, username: "Tony", time: "2019-04-01 10:37")
-        talkRoomVM.messages.append(mesage)
-        mesage = MessageModel(message: " uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", messageSender: .someoneElse, username: "Mat", time: "2019-04-01 10:39")
-        talkRoomVM.messages.append(mesage)
-        mesage = MessageModel(message: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", messageSender: .ourself, username: "me", time: "2019-04-01 10:40")
-        talkRoomVM.messages.append(mesage)
+        var message = MessageModel(message: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", messageSender: .someoneElse, username: "Key", time: "2019-04-01 10:27")
+        talkRoomVM.messages.append(message)
+        message = MessageModel(message: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", messageSender: .someoneElse, username: "Tony", time: "2019-04-01 10:37")
+        talkRoomVM.messages.append(message)
+        message = MessageModel(message: " uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", messageSender: .someoneElse, username: "Mat", time: "2019-04-01 10:39")
+        talkRoomVM.messages.append(message)
+        message = MessageModel(message: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", messageSender: .ourself, username: "me", time: "2019-04-01 10:40")
+        talkRoomVM.messages.append(message)
     }
     
     func loadViews() {
@@ -114,11 +116,11 @@ class CSTalkRoomViewController: CSBaseViewController {
     }
     
     @objc func memberTap(sender: Any) {
-        talkRoomVM.
+
     }
     
-    @objc func searchTap(sender: Any) {
-        
+    @objc func searchTap(sender: Any) {        
+        talkRoomVM.processOpenSearchMessage()
     }
 }
 

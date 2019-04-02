@@ -13,11 +13,13 @@ struct MessageModel {
     let senderUsername: String
     let messageSender: MessageSender
     let time: String
+    let importanct: Bool
     
-    init(message: String, messageSender: MessageSender, username: String, time: String) {
+    init(message: String, messageSender: MessageSender, username: String, time: String, importanct: Bool = true) {
         self.message = message.withoutWhitespace()
         self.messageSender = messageSender
         self.senderUsername = username
         self.time = time
+        self.importanct = importanct
     }
 }
