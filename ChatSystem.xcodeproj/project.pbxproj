@@ -75,6 +75,14 @@
 		4CB6759A2253040100A4169B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675982253040100A4169B /* UIImageExtension.swift */; };
 		4CB6759B2253040100A4169B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675982253040100A4169B /* UIImageExtension.swift */; };
 		4CB6759C2253040100A4169B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675982253040100A4169B /* UIImageExtension.swift */; };
+		4CB675A022531AD400A4169B /* CSSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6759E22531AD400A4169B /* CSSettingViewController.swift */; };
+		4CB675A122531AD400A4169B /* CSSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6759E22531AD400A4169B /* CSSettingViewController.swift */; };
+		4CB675A222531AD400A4169B /* CSSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6759E22531AD400A4169B /* CSSettingViewController.swift */; };
+		4CB675A322531AD400A4169B /* CSSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6759E22531AD400A4169B /* CSSettingViewController.swift */; };
+		4CB675A422531AD400A4169B /* CSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB6759F22531AD400A4169B /* CSSettingViewController.xib */; };
+		4CB675A522531AD400A4169B /* CSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB6759F22531AD400A4169B /* CSSettingViewController.xib */; };
+		4CB675A622531AD400A4169B /* CSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB6759F22531AD400A4169B /* CSSettingViewController.xib */; };
+		4CB675A722531AD400A4169B /* CSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB6759F22531AD400A4169B /* CSSettingViewController.xib */; };
 		4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
 		4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
 		4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
@@ -289,6 +297,8 @@
 		4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSMessageInputView.xib; sourceTree = "<group>"; };
 		4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		4CB675982253040100A4169B /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		4CB6759E22531AD400A4169B /* CSSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSettingViewController.swift; sourceTree = "<group>"; };
+		4CB6759F22531AD400A4169B /* CSSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSSettingViewController.xib; sourceTree = "<group>"; };
 		4CD569C7224A06130060EB36 /* ChatSystem UAT VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT VN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD569E8224A06170060EB36 /* ChatSystem UAT JP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT JP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD56A09224A061A0060EB36 /* ChatSystem PROD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem PROD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -454,6 +464,15 @@
 				4C0B385E224B348D001F737E /* CSLabel.swift */,
 			);
 			path = "Custom View";
+			sourceTree = "<group>";
+		};
+		4CB6759D22531A8500A4169B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4CB6759E22531AD400A4169B /* CSSettingViewController.swift */,
+				4CB6759F22531AD400A4169B /* CSSettingViewController.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		4CD56A0B224A06E50060EB36 /* Supporting Files */ = {
@@ -653,6 +672,7 @@
 		5BE079852249C8F400116A00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CB6759D22531A8500A4169B /* Setting */,
 				5B147AFB22520817001875BE /* GroupMember */,
 				4C2F4B782251F47000E5E9BD /* SearchMessage */,
 				5B147AEE2251C940001875BE /* ForgotPassWord */,
@@ -889,6 +909,7 @@
 				4CD569C1224A06130060EB36 /* LaunchScreen.storyboard in Resources */,
 				5B147B0322520843001875BE /* CSGroupMemberViewController.xib in Resources */,
 				4C0B3874224B88CD001F737E /* CSTalkCell.xib in Resources */,
+				4CB675A522531AD400A4169B /* CSSettingViewController.xib in Resources */,
 				4C0B3838224B25F8001F737E /* CSTalkRoomViewController.xib in Resources */,
 				4CA897FD224CA3DD00023F99 /* CSMessageInputView.xib in Resources */,
 				4CD569C2224A06130060EB36 /* CSTalkListViewController.xib in Resources */,
@@ -912,6 +933,7 @@
 				4CD569E2224A06170060EB36 /* LaunchScreen.storyboard in Resources */,
 				5B147B0422520843001875BE /* CSGroupMemberViewController.xib in Resources */,
 				4C0B3875224B88CD001F737E /* CSTalkCell.xib in Resources */,
+				4CB675A622531AD400A4169B /* CSSettingViewController.xib in Resources */,
 				4C0B3839224B25F8001F737E /* CSTalkRoomViewController.xib in Resources */,
 				4CA897FE224CA3DD00023F99 /* CSMessageInputView.xib in Resources */,
 				4CD569E3224A06170060EB36 /* CSTalkListViewController.xib in Resources */,
@@ -935,6 +957,7 @@
 				4CD56A03224A061A0060EB36 /* LaunchScreen.storyboard in Resources */,
 				5B147B0522520843001875BE /* CSGroupMemberViewController.xib in Resources */,
 				4C0B3876224B88CD001F737E /* CSTalkCell.xib in Resources */,
+				4CB675A722531AD400A4169B /* CSSettingViewController.xib in Resources */,
 				4C0B383A224B25F8001F737E /* CSTalkRoomViewController.xib in Resources */,
 				4CA897FF224CA3DD00023F99 /* CSMessageInputView.xib in Resources */,
 				4CD56A04224A061A0060EB36 /* CSTalkListViewController.xib in Resources */,
@@ -958,6 +981,7 @@
 				5BE0795E2249C48600116A00 /* LaunchScreen.storyboard in Resources */,
 				5B147B0222520843001875BE /* CSGroupMemberViewController.xib in Resources */,
 				4C0B3873224B88CD001F737E /* CSTalkCell.xib in Resources */,
+				4CB675A422531AD400A4169B /* CSSettingViewController.xib in Resources */,
 				4C0B3837224B25F8001F737E /* CSTalkRoomViewController.xib in Resources */,
 				4CA897FC224CA3DD00023F99 /* CSMessageInputView.xib in Resources */,
 				5B5E1CB92249E2BF00F59EA5 /* CSTalkListViewController.xib in Resources */,
@@ -1012,6 +1036,7 @@
 				4CD569B5224A06130060EB36 /* CSLoginViewController.swift in Sources */,
 				4CD56A17224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4C2F4B852251F4AC00E5E9BD /* CSSearchMessageViewModel.swift in Sources */,
+				4CB675A122531AD400A4169B /* CSSettingViewController.swift in Sources */,
 				4CD569B6224A06130060EB36 /* AppDelegate.swift in Sources */,
 				4CD569B7224A06130060EB36 /* APIRouter.swift in Sources */,
 				5BCF4120224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */,
@@ -1064,6 +1089,7 @@
 				4CD569D6224A06170060EB36 /* CSLoginViewController.swift in Sources */,
 				4CD56A18224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4C2F4B862251F4AC00E5E9BD /* CSSearchMessageViewModel.swift in Sources */,
+				4CB675A222531AD400A4169B /* CSSettingViewController.swift in Sources */,
 				4CD569D7224A06170060EB36 /* AppDelegate.swift in Sources */,
 				4CD569D8224A06170060EB36 /* APIRouter.swift in Sources */,
 				5BCF4121224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */,
@@ -1116,6 +1142,7 @@
 				4CD569F7224A061A0060EB36 /* CSLoginViewController.swift in Sources */,
 				4CD56A19224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4C2F4B872251F4AC00E5E9BD /* CSSearchMessageViewModel.swift in Sources */,
+				4CB675A322531AD400A4169B /* CSSettingViewController.swift in Sources */,
 				4CD569F8224A061A0060EB36 /* AppDelegate.swift in Sources */,
 				4CD569F9224A061A0060EB36 /* APIRouter.swift in Sources */,
 				5BCF4122224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */,
@@ -1168,6 +1195,7 @@
 				5BE079A72249D9BD00116A00 /* NSObjectExtention.swift in Sources */,
 				5BE079A22249D83300116A00 /* CSLoginViewController.swift in Sources */,
 				4C2F4B842251F4AC00E5E9BD /* CSSearchMessageViewModel.swift in Sources */,
+				4CB675A022531AD400A4169B /* CSSettingViewController.swift in Sources */,
 				4CD56A16224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				5BE079512249C48500116A00 /* AppDelegate.swift in Sources */,
 				5BE0799A2249D6CF00116A00 /* APIRouter.swift in Sources */,

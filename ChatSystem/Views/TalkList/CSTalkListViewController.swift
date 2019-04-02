@@ -41,7 +41,13 @@ class CSTalkListViewController: CSBaseViewController {
         self.tableViewTalkList.registerCellNib(CSTalkListCell.self)
         self.tableViewTalkList.delegate = self
         self.tableViewTalkList.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        let setting = UIBarButtonItem(image: UIImage(named: "boy"), style: .done, target: self, action: #selector(settingTap(_:)))
+        navigationItem.rightBarButtonItem = setting
+    }
+    
+    @objc func settingTap(_ sender: Any) {
+        talkListVM.processOpenSetting()
     }
     
     @IBAction func actionCreateTalk(_ sender: Any) {

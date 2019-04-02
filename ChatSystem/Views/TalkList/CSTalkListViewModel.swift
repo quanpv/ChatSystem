@@ -10,6 +10,11 @@ import UIKit
 
 class CSTalkListViewModel: CSNavigationViewModel {
     
+    func processOpenSetting() {
+        let settings = CSSettingViewController(nibName: CSSettingViewController.className, bundle: nil)
+        self.ownerView?.show(settings)
+    }
+    
     func processOpenCreateTalk() {
         let createTalk = CSCreateTalkViewController(nibName: CSCreateTalkViewController.className, bundle: nil)
         self.ownerView?.show(createTalk)
