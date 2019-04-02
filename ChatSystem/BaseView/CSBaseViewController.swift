@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CSBaseViewController: UIViewController, CSNavigationViewModelProtocol {
+class CSBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         if (self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout))) {
             self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
@@ -26,6 +27,9 @@ class CSBaseViewController: UIViewController, CSNavigationViewModelProtocol {
         setNeedsStatusBarAppearanceUpdate()
     }
     
+}
+
+extension CSBaseViewController: CSNavigationViewModelProtocol {
     func show(_ vc: UIViewController) {
         navigationController?.show(vc, sender: nil)
     }
@@ -48,5 +52,17 @@ class CSBaseViewController: UIViewController, CSNavigationViewModelProtocol {
     
     func popToRootViewController() {
         navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+extension CSBaseViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CSBaseViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
