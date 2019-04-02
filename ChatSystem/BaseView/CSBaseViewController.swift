@@ -12,6 +12,7 @@ class CSBaseViewController: UIViewController, CSNavigationViewModelProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         if (self.responds(to: #selector(getter: UIViewController.edgesForExtendedLayout))) {
             self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         }

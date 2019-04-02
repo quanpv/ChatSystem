@@ -1,26 +1,21 @@
 //
-//  CSGroupMemberViewController.swift
+//  CSAddMemberViewController.swift
 //  ChatSystem
 //
-//  Created by Pham Van Quan on 4/1/19.
+//  Created by Pham Van Quan on 4/2/19.
 //  Copyright © 2019 Pham Van Quan. All rights reserved.
 //
 
 import UIKit
 
-class CSGroupMemberViewController: CSBaseViewController {
-
+class CSAddMemberViewController: CSBaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var groupMemberVM: CSGroupMemberViewModel {
-        return CSGroupMemberViewModel(self)
-    }
-    
     var members = [GroupMemberModel(avatar: "Red Velvet", id: "02934", name: "高橋太郎", job: "営業"),
-               GroupMemberModel(avatar: "Red Velvet", id: "13954", name: "鈴木一郎", job: "給与"),
-              GroupMemberModel(avatar: "Red Velvet", id: "17374", name: "山下太郎", job: "人材開発"),
-               GroupMemberModel(avatar: "Red Velvet", id: "27367", name: "木下花子", job: "人材開発"),
-                 GroupMemberModel(avatar: "Red Velvet", id: "12345", name: "hihi", job: "cuu van")]
+                   GroupMemberModel(avatar: "Red Velvet", id: "13954", name: "鈴木一郎", job: "給与"),
+                   GroupMemberModel(avatar: "Red Velvet", id: "17374", name: "山下太郎", job: "人材開発"),
+                   GroupMemberModel(avatar: "Red Velvet", id: "27367", name: "木下花子", job: "人材開発"),
+                   GroupMemberModel(avatar: "Red Velvet", id: "12345", name: "hihi", job: "cuu van")]
     
     var filteredMembers = [GroupMemberModel]()
     
@@ -29,7 +24,7 @@ class CSGroupMemberViewController: CSBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        self.title = "第一グループ"
+        self.title = "グループ追加"
         filteredMembers = members
         
         searchController.searchResultsUpdater = self
@@ -37,7 +32,7 @@ class CSGroupMemberViewController: CSBaseViewController {
         definesPresentationContext = true
         self.tableView.tableHeaderView = searchController.searchBar
         
-        self.tableView.registerCellNib(CSGroupMemberCell.self)
+        self.tableView.registerCellNib(CSAddMemberCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -45,10 +40,9 @@ class CSGroupMemberViewController: CSBaseViewController {
     }
 
 
-    @IBAction func actionAddMember(_ sender: Any) {
-        self.groupMemberVM.processOpenAddMember()
+    @IBAction func actionAddTo(_ sender: Any) {
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -61,7 +55,7 @@ class CSGroupMemberViewController: CSBaseViewController {
 
 }
 
-extension CSGroupMemberViewController: UITableViewDelegate {
+extension CSAddMemberViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
@@ -71,17 +65,17 @@ extension CSGroupMemberViewController: UITableViewDelegate {
     }
 }
 
-extension CSGroupMemberViewController: UITableViewDataSource {
+extension CSAddMemberViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredMembers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create a new cell if needed or reuse an old one
-        var cell:CSGroupMemberCell? = self.tableView.dequeueReusableCell(withIdentifier: CSGroupMemberCell.className, for: indexPath) as? CSGroupMemberCell
+        var cell:CSAddMemberCell? = self.tableView.dequeueReusableCell(withIdentifier: CSAddMemberCell.className, for: indexPath) as? CSAddMemberCell
         if (cell == nil) {
-            cell = CSGroupMemberCell(style: .default, reuseIdentifier:
-                CSGroupMemberCell.className)
+            cell = CSAddMemberCell(style: .default, reuseIdentifier:
+                CSAddMemberCell.className)
         }
         // set the text from the data model
         cell?.setData(filteredMembers[indexPath.row])
@@ -91,7 +85,7 @@ extension CSGroupMemberViewController: UITableViewDataSource {
     
 }
 
-extension CSGroupMemberViewController: UISearchResultsUpdating {
+extension CSAddMemberViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         // If we haven't typed anything into the search bar then do not filter the results
         if searchController.searchBar.text! == "" {
