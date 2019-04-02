@@ -83,6 +83,14 @@
 		4CB675A522531AD400A4169B /* CSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB6759F22531AD400A4169B /* CSSettingViewController.xib */; };
 		4CB675A622531AD400A4169B /* CSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB6759F22531AD400A4169B /* CSSettingViewController.xib */; };
 		4CB675A722531AD400A4169B /* CSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB6759F22531AD400A4169B /* CSSettingViewController.xib */; };
+		4CB675AB22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675A922531FDC00A4169B /* CSHideRoomViewController.swift */; };
+		4CB675AC22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675A922531FDC00A4169B /* CSHideRoomViewController.swift */; };
+		4CB675AD22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675A922531FDC00A4169B /* CSHideRoomViewController.swift */; };
+		4CB675AE22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675A922531FDC00A4169B /* CSHideRoomViewController.swift */; };
+		4CB675AF22531FDC00A4169B /* CSHideRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */; };
+		4CB675B022531FDC00A4169B /* CSHideRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */; };
+		4CB675B122531FDC00A4169B /* CSHideRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */; };
+		4CB675B222531FDC00A4169B /* CSHideRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */; };
 		4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
 		4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
 		4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
@@ -299,6 +307,8 @@
 		4CB675982253040100A4169B /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		4CB6759E22531AD400A4169B /* CSSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSettingViewController.swift; sourceTree = "<group>"; };
 		4CB6759F22531AD400A4169B /* CSSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSSettingViewController.xib; sourceTree = "<group>"; };
+		4CB675A922531FDC00A4169B /* CSHideRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSHideRoomViewController.swift; sourceTree = "<group>"; };
+		4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSHideRoomViewController.xib; sourceTree = "<group>"; };
 		4CD569C7224A06130060EB36 /* ChatSystem UAT VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT VN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD569E8224A06170060EB36 /* ChatSystem UAT JP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT JP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD56A09224A061A0060EB36 /* ChatSystem PROD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem PROD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -473,6 +483,15 @@
 				4CB6759F22531AD400A4169B /* CSSettingViewController.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		4CB675A822531FBE00A4169B /* HideRoom */ = {
+			isa = PBXGroup;
+			children = (
+				4CB675A922531FDC00A4169B /* CSHideRoomViewController.swift */,
+				4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */,
+			);
+			path = HideRoom;
 			sourceTree = "<group>";
 		};
 		4CD56A0B224A06E50060EB36 /* Supporting Files */ = {
@@ -672,6 +691,7 @@
 		5BE079852249C8F400116A00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CB675A822531FBE00A4169B /* HideRoom */,
 				4CB6759D22531A8500A4169B /* Setting */,
 				5B147AFB22520817001875BE /* GroupMember */,
 				4C2F4B782251F47000E5E9BD /* SearchMessage */,
@@ -911,6 +931,7 @@
 				4C0B3874224B88CD001F737E /* CSTalkCell.xib in Resources */,
 				4CB675A522531AD400A4169B /* CSSettingViewController.xib in Resources */,
 				4C0B3838224B25F8001F737E /* CSTalkRoomViewController.xib in Resources */,
+				4CB675B022531FDC00A4169B /* CSHideRoomViewController.xib in Resources */,
 				4CA897FD224CA3DD00023F99 /* CSMessageInputView.xib in Resources */,
 				4CD569C2224A06130060EB36 /* CSTalkListViewController.xib in Resources */,
 				5B147AF62251C98A001875BE /* CSForgotPWViewController.xib in Resources */,
@@ -935,6 +956,7 @@
 				4C0B3875224B88CD001F737E /* CSTalkCell.xib in Resources */,
 				4CB675A622531AD400A4169B /* CSSettingViewController.xib in Resources */,
 				4C0B3839224B25F8001F737E /* CSTalkRoomViewController.xib in Resources */,
+				4CB675B122531FDC00A4169B /* CSHideRoomViewController.xib in Resources */,
 				4CA897FE224CA3DD00023F99 /* CSMessageInputView.xib in Resources */,
 				4CD569E3224A06170060EB36 /* CSTalkListViewController.xib in Resources */,
 				5B147AF72251C98A001875BE /* CSForgotPWViewController.xib in Resources */,
@@ -959,6 +981,7 @@
 				4C0B3876224B88CD001F737E /* CSTalkCell.xib in Resources */,
 				4CB675A722531AD400A4169B /* CSSettingViewController.xib in Resources */,
 				4C0B383A224B25F8001F737E /* CSTalkRoomViewController.xib in Resources */,
+				4CB675B222531FDC00A4169B /* CSHideRoomViewController.xib in Resources */,
 				4CA897FF224CA3DD00023F99 /* CSMessageInputView.xib in Resources */,
 				4CD56A04224A061A0060EB36 /* CSTalkListViewController.xib in Resources */,
 				5B147AF82251C98A001875BE /* CSForgotPWViewController.xib in Resources */,
@@ -983,6 +1006,7 @@
 				4C0B3873224B88CD001F737E /* CSTalkCell.xib in Resources */,
 				4CB675A422531AD400A4169B /* CSSettingViewController.xib in Resources */,
 				4C0B3837224B25F8001F737E /* CSTalkRoomViewController.xib in Resources */,
+				4CB675AF22531FDC00A4169B /* CSHideRoomViewController.xib in Resources */,
 				4CA897FC224CA3DD00023F99 /* CSMessageInputView.xib in Resources */,
 				5B5E1CB92249E2BF00F59EA5 /* CSTalkListViewController.xib in Resources */,
 				5B147AF52251C98A001875BE /* CSForgotPWViewController.xib in Resources */,
@@ -1025,6 +1049,7 @@
 				4CD569AF224A06130060EB36 /* CSBaseViewController.swift in Sources */,
 				5B147AE72251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */,
 				4CD569B0224A06130060EB36 /* CSTalkListViewModel.swift in Sources */,
+				4CB675AC22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */,
 				5BEE514D224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
 				4CD569B1224A06130060EB36 /* CSConstant.swift in Sources */,
 				4CD569B2224A06130060EB36 /* CSUtils.swift in Sources */,
@@ -1078,6 +1103,7 @@
 				4CD569D0224A06170060EB36 /* CSBaseViewController.swift in Sources */,
 				5B147AE82251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */,
 				4CD569D1224A06170060EB36 /* CSTalkListViewModel.swift in Sources */,
+				4CB675AD22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */,
 				5BEE514E224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
 				4CD569D2224A06170060EB36 /* CSConstant.swift in Sources */,
 				4CD569D3224A06170060EB36 /* CSUtils.swift in Sources */,
@@ -1131,6 +1157,7 @@
 				4CD569F1224A061A0060EB36 /* CSBaseViewController.swift in Sources */,
 				5B147AE92251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */,
 				4CD569F2224A061A0060EB36 /* CSTalkListViewModel.swift in Sources */,
+				4CB675AE22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */,
 				5BEE514F224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
 				4CD569F3224A061A0060EB36 /* CSConstant.swift in Sources */,
 				4CD569F4224A061A0060EB36 /* CSUtils.swift in Sources */,
@@ -1184,6 +1211,7 @@
 				5BE079952249D20400116A00 /* UIWindowExtension.swift in Sources */,
 				5B147AE62251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */,
 				4C0B382F224B1B61001F737E /* StringExtension.swift in Sources */,
+				4CB675AB22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */,
 				5B5E1CBD224A101500F59EA5 /* UIColorExtension.swift in Sources */,
 				5BE0798A2249CB5400116A00 /* CSBaseViewController.swift in Sources */,
 				5BCF410E224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,

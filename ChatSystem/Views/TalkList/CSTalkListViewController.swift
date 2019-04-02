@@ -42,7 +42,7 @@ class CSTalkListViewController: CSBaseViewController {
         self.tableViewTalkList.delegate = self
         self.tableViewTalkList.dataSource = self
         
-        let setting = UIBarButtonItem(image: UIImage(named: "boy"), style: .done, target: self, action: #selector(settingTap(_:)))
+        let setting = UIBarButtonItem(image: UIImage(named: "setting"), style: .done, target: self, action: #selector(settingTap(_:)))
         navigationItem.rightBarButtonItem = setting
     }
     

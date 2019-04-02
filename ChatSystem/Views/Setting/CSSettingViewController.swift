@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CSSettingViewController: UIViewController {
+class CSSettingViewController: CSBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,8 @@ class CSSettingViewController: UIViewController {
     }
 
     @IBAction func hideConversation(_ sender: Any) {
-        
+        let hideRoom = CSHideRoomViewController(nibName: CSHideRoomViewController.className, bundle: nil)
+        show(hideRoom)
     }
     
     @IBAction func notificationChanged(_ sender: Any) {
