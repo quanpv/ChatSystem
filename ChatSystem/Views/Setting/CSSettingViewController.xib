@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CSSettingViewController" customModule="ChatSystem_DEV" customModuleProvider="target">
             <connections>
+                <outlet property="notifySwitch" destination="ItA-w6-rxg" id="Vhs-TX-g9g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,7 +37,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ItA-w6-rxg">
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ItA-w6-rxg">
                             <rect key="frame" x="231" y="8" width="51" height="31"/>
                             <connections>
                                 <action selector="notificationChanged:" destination="-1" eventType="valueChanged" id="h8Y-kP-0R3"/>

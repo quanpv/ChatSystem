@@ -8,12 +8,8 @@
 
 import UIKit
 
-enum ActionSend {
-    case none, new, edit
-}
-
 protocol MessageInputDelegate {
-    func sendWasTapped(message:String, action:ActionSend, at indexPath:IndexPath?)
+    func sendWasTapped(message:String, action:MessageAction, at indexPath:IndexPath?)
 }
 
 class CSMessageInputView: UIView {
@@ -76,10 +72,6 @@ class CSMessageInputView: UIView {
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     func sizeOfString (string: String, constrainedToWidth width: Double, font: UIFont) -> CGSize {
         return (string as NSString).boundingRect(with: CGSize(width: width, height: Double.greatestFiniteMagnitude),
                                                  options: NSStringDrawingOptions.usesLineFragmentOrigin,
@@ -111,6 +103,7 @@ class CSMessageInputView: UIView {
     }
 }
 
+// MARK: - Text view delegate
 extension CSMessageInputView: UITextViewDelegate {
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         return true

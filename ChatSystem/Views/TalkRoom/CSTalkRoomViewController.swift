@@ -12,21 +12,17 @@ class CSTalkRoomViewController: CSBaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var talkRoomVM: CSTalkRoomViewModel {
-        return CSTalkRoomViewModel(self)
-    }
-    
-    override var canBecomeFirstResponder: Bool { return true }
-    
-    override var inputAccessoryView: UIView? {
-        return messageInputView
-    }
-    
     lazy var messageInputView: CSMessageInputView = {
         let accessoryView = CSMessageInputView()
         accessoryView.autoresizingMask = [.flexibleHeight]
         return accessoryView
     }()
+    override var canBecomeFirstResponder: Bool { return true }
+    override var inputAccessoryView: UIView? {
+        return messageInputView
+    }
+    
+    var viewModel: CSTalkRoomViewModel!
     
     var isGroupTalk: Bool = false
     
@@ -45,44 +41,27 @@ class CSTalkRoomViewController: CSBaseViewController {
         let groupItem = UIBarButtonItem(customView: btnGroupMember);
         return groupItem
     }()
-//        UIBarButtonItem = UIBarButtonItem.init(title: "メンバ", style: .done, target: self, action: #selector(memberTap(sender:)))
     
     private let searchItem: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(searchTap(sender:)))
     
+    // MARK: Life cycle view
     override func viewDidLoad() {
         super.viewDidLoad()
         
         track()
-        talkRoomVM.attach(view: self)
+        
+        viewModel.delegate = self
         messageInputView.delegate = self
         becomeFirstResponder()
         
-        tableView.registerCellNib(CSTalkCell.self)
-        loadViews()
-        setupDemoData()
-    }
-    
-    func setupDemoData() {
-        var message = MessageModel(message: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", messageSender: .someoneElse, username: "Key", time: "2019-04-01 10:27")
-        talkRoomVM.messages.append(message)
-        message = MessageModel(message: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", messageSender: .someoneElse, username: "Tony", time: "2019-04-01 10:37")
-        talkRoomVM.messages.append(message)
-        message = MessageModel(message: " uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", messageSender: .someoneElse, username: "Mat", time: "2019-04-01 10:39")
-        talkRoomVM.messages.append(message)
-        message = MessageModel(message: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", messageSender: .ourself, username: "me", time: "2019-04-01 10:40")
-        talkRoomVM.messages.append(message)
-    }
-    
-    func loadViews() {
-        navigationItem.title = "Let's Chat!"
-        
         tableView.separatorStyle = .none
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.registerCellNib(CSTalkCell.self)
+        viewModel.setupDemoData()
+        tableView.reloadData()
         
-        if isGroupTalk {
-            navigationItem.rightBarButtonItems = [searchItem, memberItem]
-        } else {
-            navigationItem.rightBarButtonItems = [searchItem]
-        }
+        loadViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +75,7 @@ class CSTalkRoomViewController: CSBaseViewController {
         CSSKConnection.shared.delegate = self
         CSSKConnection.shared.openSocket { [unowned self] (status) in
             if status == .opening {
-                self.talkRoomVM.joinChat(username: "tampt")
+                self.viewModel.joinChat(username: "me")
             }
         }
     }
@@ -111,139 +90,133 @@ class CSTalkRoomViewController: CSBaseViewController {
         CSSKConnection.shared.closeSocket()
     }
     
-    func tableviewCellUpdate(action:(() -> Void)?) {
-        let indexPath = IndexPath(row: talkRoomVM.messages.count - 1, section: 0)
-        tableView.beginUpdates()
-        action?()
-        tableView.endUpdates()
-        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    // MARK: UI
+    func loadViews() {
+        tableviewCellUpdate(nil)
+        if isGroupTalk {
+            navigationItem.rightBarButtonItems = [searchItem, memberItem]
+        } else {
+            navigationItem.rightBarButtonItems = [searchItem]
+        }
     }
     
     @objc func keyboardWillChange(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
             let endHeight = endFrame.size.height
-            UIView.animate(withDuration: 0.25) { [unowned self] in
-                self.tableView.contentInset.bottom = endHeight
-                self.tableView.scrollIndicatorInsets.bottom = endHeight
+            if let duration = userInfo[UIView.keyboardAnimationDurationUserInfoKey] as? NSNumber,
+                let curve = userInfo[UIView.keyboardAnimationCurveUserInfoKey] as? NSNumber {
+                UIView.animate(withDuration: duration.doubleValue,
+                               delay: 0,
+                               options: UIView.AnimationOptions(rawValue: curve.uintValue),
+                               animations: {
+                                self.tableView.contentInset.bottom = endHeight
+                                self.tableView.scrollIndicatorInsets.bottom = endHeight
+                }, completion: nil)
             }
+            if Int(endHeight) == Int(inputAccessoryView?.frame.size.height ?? 52) {
+                return
+            }
+            self.scrollToBottom(animated: true)
         }
     }
     
+    func tableviewCellUpdate(_ action:(() -> Void)?) {
+        if tableView.numberOfRows(inSection: 0) > 0 {
+            tableView.beginUpdates()
+            action?()
+            tableView.endUpdates()
+            scrollToBottom(animated: true)
+        }
+    }
+    
+    private func scrollToBottom(animated: Bool = true) {
+        let numberOfRows = tableView.numberOfRows(inSection: tableView.numberOfSections - 1)
+        if numberOfRows > 0 {
+            let indexPath = IndexPath(row: numberOfRows - 1, section: tableView.numberOfSections - 1)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: animated)
+        }
+    }
+    
+    // MARK: UI action
     @objc func memberTap(sender: Any) {
-       print("actionGroupMember clicked")
         let groupMember = CSGroupMemberViewController(nibName: CSGroupMemberViewController.className, bundle: nil)
         self.show(groupMember)
     }
     
-    @objc func searchTap(sender: Any) {        
-        talkRoomVM.processOpenSearchMessage()
+    @objc func searchTap(sender: Any) {
+        viewModel.processOpenSearchMessage()
     }
 }
 
-// MARK: UITableViewDataSource
+// MARK: - Talk Cell Delegate
+extension CSTalkRoomViewController: CSTalkCellDelegate {
+    func deleteMessage(at indexPath: IndexPath) {
+        viewModel.deleteMessage(at: indexPath)
+    }
+}
+
+// MARK: - Message Input Bar delegate
+extension CSTalkRoomViewController: MessageInputDelegate {
+    func sendWasTapped(message: String, action: MessageAction, at indexPath: IndexPath?) {
+        viewModel.send(message: message, action:action, at:indexPath)
+    }
+}
+
+// MARK: - Message Delegate
+extension CSTalkRoomViewController: MessageDelegate {
+    func receivedMessage(message: MessageModel) {
+        viewModel.receivedMessage(message: message)
+    }
+}
+
+// MARK: - Table view datasource
 extension CSTalkRoomViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return talkRoomVM.messages.count
+        return viewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CSTalkCell") as! CSTalkCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CSTalkCell.className) as! CSTalkCell
         cell.selectionStyle = .none
         cell.delegate = self
-        let message = talkRoomVM.messages[indexPath.row]
-        cell.apply(message: message, at: indexPath)
+        if let message = viewModel.message(at: indexPath.row) {
+            cell.apply(message: message, at: indexPath)
+        }
         
         return cell
     }
-    
 }
 
-//MARK: UITableViewDelegate
+// MARK: - Table view delegate
 extension CSTalkRoomViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return CSTalkCell.height(for: viewModel.message(at: indexPath.row)!)
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return CSTalkCell.height(for: viewModel.message(at: indexPath.row)!)
     }
 }
 
-//MARK: Message Input Bar
-extension CSTalkRoomViewController: MessageInputDelegate {
-    func sendWasTapped(message: String, action: ActionSend, at indexPath: IndexPath?) {
-        talkRoomVM.send(message: message, action:action, at:indexPath)
-    }
-}
-
-//MARK: MessageDelegate
-extension CSTalkRoomViewController: MessageDelegate {
-    func receivedMessage(message: MessageModel) {
-        talkRoomVM.receivedMessage(message: message)
-    }
-}
-
-// MARK: TalkRoomView delegate
-extension CSTalkRoomViewController:TalkRoomView {
-    func showMemberButton(isGroup: Bool) {
-        
-    }
-    
-    func showOnline(isOnline: Bool) {
-        
-    }
-    
-    func showFlag(isImportant: Bool) {
-        
-    }
-    
-    func updateDecreaseSend(enable: Bool) {
-        
-    }
-    
-    func updateDecreaseAttach(enable: Bool) {
-        
-    }
-    
-    func updateDecreaseCloseAttach(enable: Bool) {
-        
-    }
-    
-    func updateTable(messages: [MessageModel]) {
-        self.tableView.reloadData()
-        tableviewCellUpdate(action: nil)
-    }
-    
-    func updateMessageCell(message: MessageModel, at index: IndexPath) {
-        tableviewCellUpdate(action: {
-            self.tableView.reloadRows(at: [index], with: .bottom)
-        })
-    }
-    
-    func removeMessageCell(at index: IndexPath) {
-        UIView.performWithoutAnimation {
-            tableView.deleteRows(at: [index], with: .bottom)
+// MARK: - Talk Room ViewModel Protocol
+extension CSTalkRoomViewController: CSTalkRoomViewModelProtocol {
+    func updateCell(action: MessageAction, index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        switch action {
+        case .new:
+            tableviewCellUpdate { [weak self] in
+                self?.tableView.insertRows(at: [indexPath], with: .none)}
+        case .edit:
+            tableviewCellUpdate { [weak self] in
+                self?.tableView.reloadRows(at: [indexPath], with: .none)}
+        case .delete:
+            tableView.reloadData()
+        default:
+            break
         }
-        tableView.reloadData()
-    }
-    
-    func setTextInputText(message: String) {
-//        messageInputView.textView.text = message
-    }
-    
-    func insertNewMessageCell(message: MessageModel) {
-        let indexPath = IndexPath(row: talkRoomVM.messages.count - 1, section: 0)
-        tableviewCellUpdate(action: {
-            self.tableView.insertRows(at: [indexPath], with: .bottom)
-        })
     }
 }
 
-//MARK: CSTalkCellDelegate
-extension CSTalkRoomViewController:CSTalkCellDelegate {
-    func deleteMessage(at indexPath: IndexPath) {
-        talkRoomVM.deleteMessage(at: indexPath)
-    }
-}
