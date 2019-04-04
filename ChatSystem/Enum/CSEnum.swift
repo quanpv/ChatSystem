@@ -13,6 +13,13 @@ enum MessageSender {
     case someoneElse
 }
 
+enum MessageAction {
+    case none
+    case new
+    case delete
+    case edit
+}
+
 enum ConversationType {
     case single
     case group

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -112,12 +112,18 @@
                         <constraint firstItem="TXi-WF-7jr" firstAttribute="top" secondItem="tfj-FG-lbE" secondAttribute="bottom" constant="20" id="zGI-Wp-jpi"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfY-qc-0Wt" customClass="CSDemoNotify" customModule="ChatSystem_DEV" customModuleProvider="target">
+                    <rect key="frame" x="16" y="617" width="84" height="30"/>
+                    <state key="normal" title="Demo notify"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NfY-qc-0Wt" secondAttribute="bottom" constant="20" id="F5s-dg-jBW"/>
                 <constraint firstItem="0DO-Y1-Mdc" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="I4b-Ha-Ofg"/>
                 <constraint firstItem="0DO-Y1-Mdc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pV9-wP-NxJ"/>
                 <constraint firstItem="0DO-Y1-Mdc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="snq-hD-m9v"/>
+                <constraint firstItem="NfY-qc-0Wt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="tp5-PP-Qnq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0DO-Y1-Mdc" secondAttribute="trailing" id="vgY-PR-Zo5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

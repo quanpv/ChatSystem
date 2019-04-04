@@ -67,10 +67,6 @@
 		4CA897FD224CA3DD00023F99 /* CSMessageInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */; };
 		4CA897FE224CA3DD00023F99 /* CSMessageInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */; };
 		4CA897FF224CA3DD00023F99 /* CSMessageInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */; };
-		4CA89807224DF5BB00023F99 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */; };
-		4CA89808224DF5BB00023F99 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */; };
-		4CA89809224DF5BB00023F99 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */; };
-		4CA8980A224DF5BB00023F99 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */; };
 		4CB675992253040100A4169B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675982253040100A4169B /* UIImageExtension.swift */; };
 		4CB6759A2253040100A4169B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675982253040100A4169B /* UIImageExtension.swift */; };
 		4CB6759B2253040100A4169B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675982253040100A4169B /* UIImageExtension.swift */; };
@@ -91,6 +87,18 @@
 		4CB675B022531FDC00A4169B /* CSHideRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */; };
 		4CB675B122531FDC00A4169B /* CSHideRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */; };
 		4CB675B222531FDC00A4169B /* CSHideRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */; };
+		4CB675B422533FE200A4169B /* CSObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675B322533FE200A4169B /* CSObservable.swift */; };
+		4CB675B522533FE200A4169B /* CSObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675B322533FE200A4169B /* CSObservable.swift */; };
+		4CB675B622533FE200A4169B /* CSObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675B322533FE200A4169B /* CSObservable.swift */; };
+		4CB675B722533FE200A4169B /* CSObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675B322533FE200A4169B /* CSObservable.swift */; };
+		4CB675B92254677B00A4169B /* CSThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675B82254677B00A4169B /* CSThreadSafe.swift */; };
+		4CB675BA2254677B00A4169B /* CSThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675B82254677B00A4169B /* CSThreadSafe.swift */; };
+		4CB675BB2254677B00A4169B /* CSThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675B82254677B00A4169B /* CSThreadSafe.swift */; };
+		4CB675BC2254677B00A4169B /* CSThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675B82254677B00A4169B /* CSThreadSafe.swift */; };
+		4CB675BF2255B0C100A4169B /* CSDemoNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */; };
+		4CB675C02255B0C100A4169B /* CSDemoNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */; };
+		4CB675C12255B0C100A4169B /* CSDemoNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */; };
+		4CB675C22255B0C100A4169B /* CSDemoNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */; };
 		4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
 		4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
 		4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
@@ -323,12 +331,14 @@
 		4C2F4B892251F61100E5E9BD /* CSSearchMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchMessageCell.swift; sourceTree = "<group>"; };
 		4C2F4B8A2251F61100E5E9BD /* CSSearchMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSSearchMessageCell.xib; sourceTree = "<group>"; };
 		4CA897FB224CA3DD00023F99 /* CSMessageInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSMessageInputView.xib; sourceTree = "<group>"; };
-		4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		4CB675982253040100A4169B /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		4CB6759E22531AD400A4169B /* CSSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSettingViewController.swift; sourceTree = "<group>"; };
 		4CB6759F22531AD400A4169B /* CSSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSSettingViewController.xib; sourceTree = "<group>"; };
 		4CB675A922531FDC00A4169B /* CSHideRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSHideRoomViewController.swift; sourceTree = "<group>"; };
 		4CB675AA22531FDC00A4169B /* CSHideRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSHideRoomViewController.xib; sourceTree = "<group>"; };
+		4CB675B322533FE200A4169B /* CSObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSObservable.swift; sourceTree = "<group>"; };
+		4CB675B82254677B00A4169B /* CSThreadSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSThreadSafe.swift; sourceTree = "<group>"; };
+		4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSDemoNotify.swift; sourceTree = "<group>"; };
 		4CD569C7224A06130060EB36 /* ChatSystem UAT VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT VN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD569E8224A06170060EB36 /* ChatSystem UAT JP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT JP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD56A09224A061A0060EB36 /* ChatSystem PROD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem PROD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -519,6 +529,14 @@
 			path = HideRoom;
 			sourceTree = "<group>";
 		};
+		4CB675BD2255B09200A4169B /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		4CD56A0B224A06E50060EB36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +720,8 @@
 			children = (
 				5BE0799D2249D73B00116A00 /* CSUtils.swift */,
 				4CD56A1A224A1D190060EB36 /* CSSKConnection.swift */,
+				4CB675B322533FE200A4169B /* CSObservable.swift */,
+				4CB675B82254677B00A4169B /* CSThreadSafe.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -727,7 +747,6 @@
 				5B5E1CBC224A101500F59EA5 /* UIColorExtension.swift */,
 				5B5E1CBE224A353200F59EA5 /* UIViewExtension.swift */,
 				4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */,
-				4CA89806224DF5BB00023F99 /* NSObjectExtension.swift */,
 				4CB675982253040100A4169B /* UIImageExtension.swift */,
 			);
 			path = Extensions;
@@ -737,6 +756,7 @@
 			isa = PBXGroup;
 			children = (
 				5B89DEB62253397100A2DD78 /* AddMember */,
+				4CB675BD2255B09200A4169B /* Demo */,
 				4CB675A822531FBE00A4169B /* HideRoom */,
 				4CB6759D22531A8500A4169B /* Setting */,
 				5B147AFB22520817001875BE /* GroupMember */,
@@ -1100,7 +1120,6 @@
 				4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */,
 				4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569AE224A06130060EB36 /* UIWindowExtension.swift in Sources */,
-				4CA89808224DF5BB00023F99 /* NSObjectExtension.swift in Sources */,
 				4CD569AF224A06130060EB36 /* CSBaseViewController.swift in Sources */,
 				5B147AE72251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */,
 				4CD569B0224A06130060EB36 /* CSTalkListViewModel.swift in Sources */,
@@ -1115,6 +1134,7 @@
 				4C0B382C224B1B56001F737E /* UIColorExtension.swift in Sources */,
 				4CD569B5224A06130060EB36 /* CSLoginViewController.swift in Sources */,
 				5B89DECE2253417C00A2DD78 /* CSGroupMemberViewModel.swift in Sources */,
+				4CB675B522533FE200A4169B /* CSObservable.swift in Sources */,
 				4CD56A17224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4C2F4B852251F4AC00E5E9BD /* CSSearchMessageViewModel.swift in Sources */,
 				4CB675A122531AD400A4169B /* CSSettingViewController.swift in Sources */,
@@ -1130,6 +1150,7 @@
 				4CD569BB224A06130060EB36 /* ChatSystem.xcdatamodeld in Sources */,
 				5B147B1322520E82001875BE /* GroupMemberModel.swift in Sources */,
 				4C0B3860224B348D001F737E /* CSLabel.swift in Sources */,
+				4CB675BA2254677B00A4169B /* CSThreadSafe.swift in Sources */,
 				4C0B3842224B27F8001F737E /* MessageModel.swift in Sources */,
 				4CB6759A2253040100A4169B /* UIImageExtension.swift in Sources */,
 				4CD56A25224B160B0060EB36 /* StringExtension.swift in Sources */,
@@ -1139,6 +1160,7 @@
 				4CD569BC224A06130060EB36 /* CSConfig.swift in Sources */,
 				4CD569BD224A06130060EB36 /* CSLoginViewModel.swift in Sources */,
 				4C2F4B7C2251F49B00E5E9BD /* CSSearchMessageViewController.swift in Sources */,
+				4CB675C02255B0C100A4169B /* CSDemoNotify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,7 +1179,6 @@
 				4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */,
 				4CD569CE224A06170060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569CF224A06170060EB36 /* UIWindowExtension.swift in Sources */,
-				4CA89809224DF5BB00023F99 /* NSObjectExtension.swift in Sources */,
 				4CD569D0224A06170060EB36 /* CSBaseViewController.swift in Sources */,
 				5B147AE82251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */,
 				4CD569D1224A06170060EB36 /* CSTalkListViewModel.swift in Sources */,
@@ -1172,6 +1193,7 @@
 				4C0B382D224B1B57001F737E /* UIColorExtension.swift in Sources */,
 				4CD569D6224A06170060EB36 /* CSLoginViewController.swift in Sources */,
 				5B89DECF2253417C00A2DD78 /* CSGroupMemberViewModel.swift in Sources */,
+				4CB675B622533FE200A4169B /* CSObservable.swift in Sources */,
 				4CD56A18224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4C2F4B862251F4AC00E5E9BD /* CSSearchMessageViewModel.swift in Sources */,
 				4CB675A222531AD400A4169B /* CSSettingViewController.swift in Sources */,
@@ -1187,6 +1209,7 @@
 				4CD569DC224A06170060EB36 /* ChatSystem.xcdatamodeld in Sources */,
 				5B147B1422520E82001875BE /* GroupMemberModel.swift in Sources */,
 				4C0B3861224B348D001F737E /* CSLabel.swift in Sources */,
+				4CB675BB2254677B00A4169B /* CSThreadSafe.swift in Sources */,
 				4C0B3843224B27F8001F737E /* MessageModel.swift in Sources */,
 				4CB6759B2253040100A4169B /* UIImageExtension.swift in Sources */,
 				4CD56A26224B160B0060EB36 /* StringExtension.swift in Sources */,
@@ -1196,6 +1219,7 @@
 				4CD569DD224A06170060EB36 /* CSConfig.swift in Sources */,
 				4CD569DE224A06170060EB36 /* CSLoginViewModel.swift in Sources */,
 				4C2F4B7D2251F49B00E5E9BD /* CSSearchMessageViewController.swift in Sources */,
+				4CB675C12255B0C100A4169B /* CSDemoNotify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1214,7 +1238,6 @@
 				4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */,
 				4CD569EF224A061A0060EB36 /* CSNavigationViewModel.swift in Sources */,
 				4CD569F0224A061A0060EB36 /* UIWindowExtension.swift in Sources */,
-				4CA8980A224DF5BB00023F99 /* NSObjectExtension.swift in Sources */,
 				4CD569F1224A061A0060EB36 /* CSBaseViewController.swift in Sources */,
 				5B147AE92251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */,
 				4CD569F2224A061A0060EB36 /* CSTalkListViewModel.swift in Sources */,
@@ -1229,6 +1252,7 @@
 				4C0B382E224B1B57001F737E /* UIColorExtension.swift in Sources */,
 				4CD569F7224A061A0060EB36 /* CSLoginViewController.swift in Sources */,
 				5B89DED02253417C00A2DD78 /* CSGroupMemberViewModel.swift in Sources */,
+				4CB675B722533FE200A4169B /* CSObservable.swift in Sources */,
 				4CD56A19224A10340060EB36 /* UIApplicationExtension.swift in Sources */,
 				4C2F4B872251F4AC00E5E9BD /* CSSearchMessageViewModel.swift in Sources */,
 				4CB675A322531AD400A4169B /* CSSettingViewController.swift in Sources */,
@@ -1244,6 +1268,7 @@
 				4CD569FD224A061A0060EB36 /* ChatSystem.xcdatamodeld in Sources */,
 				5B147B1522520E82001875BE /* GroupMemberModel.swift in Sources */,
 				4C0B3862224B348D001F737E /* CSLabel.swift in Sources */,
+				4CB675BC2254677B00A4169B /* CSThreadSafe.swift in Sources */,
 				4C0B3844224B27F8001F737E /* MessageModel.swift in Sources */,
 				4CB6759C2253040100A4169B /* UIImageExtension.swift in Sources */,
 				4CD56A27224B160B0060EB36 /* StringExtension.swift in Sources */,
@@ -1253,6 +1278,7 @@
 				4CD569FE224A061A0060EB36 /* CSConfig.swift in Sources */,
 				4CD569FF224A061A0060EB36 /* CSLoginViewModel.swift in Sources */,
 				4C2F4B7E2251F49B00E5E9BD /* CSSearchMessageViewController.swift in Sources */,
+				4CB675C22255B0C100A4169B /* CSDemoNotify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1271,7 +1297,6 @@
 				4CD56A1B224A1D190060EB36 /* CSSKConnection.swift in Sources */,
 				5BE0799C2249D70A00116A00 /* LoginModel.swift in Sources */,
 				5BE0798E2249CC4800116A00 /* CSNavigationViewModel.swift in Sources */,
-				4CA89807224DF5BB00023F99 /* NSObjectExtension.swift in Sources */,
 				5BE079952249D20400116A00 /* UIWindowExtension.swift in Sources */,
 				5B147AE62251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */,
 				4C0B382F224B1B61001F737E /* StringExtension.swift in Sources */,
@@ -1286,6 +1311,7 @@
 				5B5E1CB02249E04500F59EA5 /* UITableViewExtension.swift in Sources */,
 				5BE079A72249D9BD00116A00 /* NSObjectExtention.swift in Sources */,
 				5B89DECD2253417C00A2DD78 /* CSGroupMemberViewModel.swift in Sources */,
+				4CB675B422533FE200A4169B /* CSObservable.swift in Sources */,
 				5BE079A22249D83300116A00 /* CSLoginViewController.swift in Sources */,
 				4C2F4B842251F4AC00E5E9BD /* CSSearchMessageViewModel.swift in Sources */,
 				4CB675A022531AD400A4169B /* CSSettingViewController.swift in Sources */,
@@ -1301,6 +1327,7 @@
 				4C0B385F224B348D001F737E /* CSLabel.swift in Sources */,
 				5B147B1222520E82001875BE /* GroupMemberModel.swift in Sources */,
 				4C0B3841224B27F8001F737E /* MessageModel.swift in Sources */,
+				4CB675B92254677B00A4169B /* CSThreadSafe.swift in Sources */,
 				5B5E1CB82249E2BF00F59EA5 /* CSTalkListViewController.swift in Sources */,
 				4CB675992253040100A4169B /* UIImageExtension.swift in Sources */,
 				5BE079592249C48500116A00 /* ChatSystem.xcdatamodeld in Sources */,
@@ -1310,6 +1337,7 @@
 				5BE079A52249D8CC00116A00 /* CSLoginViewModel.swift in Sources */,
 				5BCF411F224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */,
 				4C2F4B7B2251F49B00E5E9BD /* CSSearchMessageViewController.swift in Sources */,
+				4CB675BF2255B0C100A4169B /* CSDemoNotify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
