@@ -41,3 +41,8 @@ public class Observable<T> {
     }
 }
 
+class ObservableDataSource<T>: NSObject {
+    typealias ObservableSynchronizedArray = SynchronizedArray<T>
+    var data: Observable<ObservableSynchronizedArray> = Observable(ObservableSynchronizedArray())
+}
+

@@ -259,6 +259,14 @@ public extension SynchronizedArray {
             DispatchQueue.main.async { completion?(elements) }
         }
     }
+    
+    func copy(completion: (([Element]) -> Void)? = nil) -> SynchronizedArray {
+        var result: SynchronizedArray!
+        queue.sync {
+            result = SynchronizedArray(self.array)
+        }
+        return result
+    }
 }
 
 public extension SynchronizedArray {
