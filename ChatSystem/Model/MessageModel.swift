@@ -23,3 +23,13 @@ struct MessageModel {
         self.importanct = importanct
     }
 }
+
+extension MessageModel: Equatable{
+    static func ==(lhs: MessageModel, rhs: MessageModel) -> Bool {
+        return lhs.message == rhs.message &&
+            lhs.messageSender == rhs.messageSender &&
+            lhs.senderUsername == rhs.senderUsername &&
+            lhs.time == rhs.time &&
+            lhs.importanct == rhs.importanct
+    }
+}

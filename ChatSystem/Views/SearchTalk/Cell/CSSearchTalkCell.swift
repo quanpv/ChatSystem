@@ -1,5 +1,5 @@
 //
-//  CSSearchMessageCell.swift
+//  CSSearchTalkCell.swift
 //  ChatSystem
 //
 //  Created by bit on 4/1/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CSSearchMessageCell: UITableViewCell {
+class CSSearchTalkCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var time: UILabel!

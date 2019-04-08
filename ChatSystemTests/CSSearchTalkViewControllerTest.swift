@@ -1,15 +1,15 @@
 //
-//  ChatSystemTests.swift
+//  CSSearchTalkViewControllerTest.swift
 //  ChatSystemTests
 //
-//  Created by Pham Van Quan on 3/26/19.
+//  Created by bit on 4/8/19.
 //  Copyright © 2019 Pham Van Quan. All rights reserved.
 //
 
 import XCTest
-@testable import ChatSystem
+@testable import ChatSystem_DEV
 
-class ChatSystemTests: XCTestCase {
+class CSSearchTalkViewControllerTest: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

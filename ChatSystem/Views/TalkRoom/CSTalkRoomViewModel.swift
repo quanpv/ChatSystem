@@ -85,7 +85,7 @@ class CSTalkRoomViewModel: CSNavigationViewModel {
     
     // MARK: - Navigate
     func processOpenSearchMessage() {
-        let searchMessage = CSSearchMessageViewController(nibName: CSSearchMessageViewController.className, bundle: nil)
+        let searchMessage = CSSearchTalkViewController(nibName: CSSearchTalkViewController.className, bundle: nil)
         let nav = UINavigationController(rootViewController: searchMessage)
         self.ownerView?.present(nav, completion: nil)
     }

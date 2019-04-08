@@ -1,5 +1,5 @@
 //
-//  CSSearchMessageViewController.swift
+//  CSSearchTalkViewController.swift
 //  ChatSystem
 //
 //  Created by bit on 4/1/19.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CSSearchMessageViewController: CSBaseViewController {
+class CSSearchTalkViewController: CSBaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var searchMessageVM: CSSearchMessageViewModel?
+    var searchTalkVM: CSSearchTalkViewModel!
     private let searchController = UISearchController(searchResultsController: nil)
     private var isFlaged: Bool = false
     
@@ -20,13 +20,13 @@ class CSSearchMessageViewController: CSBaseViewController {
         super.viewDidLoad()
         
         setupView()
-        searchMessageVM = CSSearchMessageViewModel(dataSource: CSSearchMessageDataSource(), isImportant: isFlaged)
-        tableView.dataSource = searchMessageVM?.dataSource
+        searchTalkVM = CSSearchTalkViewModel(dataSource: ObservableDataSource<MessageModel>())
+        tableView.dataSource = self
         tableView.delegate = self
-        searchMessageVM?.dataSource?.messages.data.observe(observer: self) { [weak self](array) in
+        searchTalkVM?.dataSource.data.observe(observer: self) { [weak self](array) in
             self?.tableView.reloadData()
         }
-        searchMessageVM?.setupDataDemo()
+        searchTalkVM?.setupDataDemo()
     }
     
     private func setupView() {
@@ -44,7 +44,7 @@ class CSSearchMessageViewController: CSBaseViewController {
         searchController.searchBar.setImage(UIImage(named: "unflag")!.withRenderingMode(.alwaysOriginal), for: .bookmark, state: .normal)
         
         tableView.tableHeaderView = searchController.searchBar
-        tableView.registerCellNib(CSSearchMessageCell.self)
+        tableView.registerCellNib(CSSearchTalkCell.self)
         tableView.separatorStyle = .none
     }
     
@@ -53,29 +53,44 @@ class CSSearchMessageViewController: CSBaseViewController {
     }
 }
 
-extension CSSearchMessageViewController: UISearchResultsUpdating {
+extension CSSearchTalkViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        searchMessageVM?.search(with: searchController.searchBar)
+        searchTalkVM?.search(with: searchController.searchBar.text, important: isFlaged)
     }
 }
 
-extension CSSearchMessageViewController: UISearchBarDelegate {
+extension CSSearchTalkViewController: UISearchBarDelegate {
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
         isFlaged = !isFlaged
         let unflag = UIImage(named: "unflag")!.withRenderingMode(.alwaysOriginal)
         let flag = UIImage(named: "flag")!.withRenderingMode(.alwaysOriginal)
         searchBar.setImage(isFlaged ? flag : unflag, for: .bookmark, state: .normal)
-        searchMessageVM?.isImportant = isFlaged
-        searchMessageVM?.search(with: searchBar)
+        searchTalkVM?.search(with: searchBar.text, important: isFlaged)
     }
 }
 
-extension CSSearchMessageViewController: UITableViewDelegate {
+extension CSSearchTalkViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension CSSearchTalkViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchTalkVM.numberOfRowsInSection()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CSSearchTalkCell.className) as! CSSearchTalkCell
+        if let message = searchTalkVM.message(at: indexPath.row) {
+            cell.apply(message: message)
+        }
+        
+        return cell
     }
 }
