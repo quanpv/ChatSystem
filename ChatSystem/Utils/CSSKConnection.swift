@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Queuer
+import SwiftProtobuf
 
 protocol MessageDelegate: class {
     func receivedMessage(message: MessageModel)
 }
 
 enum CSSKConnectionStatus {
-    case notOpen, open, opening, close, closed, error
+    case notOpen, opening, open, closing, close, error
 }
 
 class CSSKConnection: NSObject {
@@ -21,8 +23,8 @@ class CSSKConnection: NSObject {
     weak var delegate: MessageDelegate?
     
     public var status: CSSKConnectionStatus = .notOpen
-    public lazy var isOpening: Bool = {
-        return inputStream.streamStatus == Stream.Status.open && outputStream.streamStatus ==  Stream.Status.open
+    public lazy var isOpen: Bool = {
+        return inputStream.streamStatus == .open && outputStream.streamStatus ==  .open
     }()
     
     let maxReadLength = 1024
@@ -36,11 +38,12 @@ class CSSKConnection: NSObject {
     private override init() { }
     
     public func openSocket(completion:((_ status: CSSKConnectionStatus) -> Void)?) {
-//        if status == .opening {
-//            return
-//        }
+        if status == .open || status == .opening || status == .closing {
+            completion?(status)
+            return
+        }
         
-        status = .open
+        status = .opening
         
         var readStream: Unmanaged<CFReadStream>?
         var writeStream: Unmanaged<CFWriteStream>?
@@ -70,15 +73,15 @@ class CSSKConnection: NSObject {
         outputStream.open()
         
         if waitOpenSocket() {
-            status = .opening
+            status = .open
         } else {
-            status = .closed
+            status = .close
         }
         completion?(status)
     }
     
     public func closeSocket() {
-        status = .close
+        status = .closing
         
         if inputStream != nil {
             inputStream.close()
@@ -90,7 +93,7 @@ class CSSKConnection: NSObject {
             outputStream.remove(from: .main, forMode: .common)
         }
         
-        status = .closed
+        status = .close
     }
     
     private func waitOpenSocket() -> Bool {
@@ -145,6 +148,36 @@ class CSSKConnection: NSObject {
         let data = "msg:\(message)".data(using: .utf8)!
         _ = data.withUnsafeBytes { outputStream.write($0, maxLength: data.count) }
     }
+    
+    func write(message: Message) {
+        do {
+            try BinaryDelimited.serialize(message: message, to: outputStream)
+        } catch BinaryDelimited.Error.truncated {
+            
+        } catch BinaryDelimited.Error.unknownStreamError {
+            
+        } catch BinaryDecodingError.missingRequiredFields {
+            
+        } catch let error {
+            track("Error: \(error.localizedDescription)")
+        }
+    }
+    
+    func read<M: Message>(messageType: M.Type) -> M? {
+        do {
+            return try BinaryDelimited.parse(messageType: messageType, from: inputStream)
+        } catch BinaryDelimited.Error.truncated {
+            return nil
+        } catch BinaryDelimited.Error.unknownStreamError {
+            return nil
+        } catch BinaryDecodingError.missingRequiredFields {
+            return nil
+        } catch let error {
+            track("Error: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
 }
 
 extension CSSKConnection: StreamDelegate {
@@ -169,15 +202,25 @@ extension CSSKConnection: StreamDelegate {
     }
     
     private func readAvailableBytes(stream: InputStream) {
+        guard stream.streamStatus == .open || stream.streamStatus == .reading else {
+            // TODO: Handle connection disconnect
+            return
+        }
         let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: maxReadLength)
-        
+        let maxlen = MemoryLayout.size(ofValue: buffer) / MemoryLayout.size(ofValue: UInt8.self)
         while stream.hasBytesAvailable {
-            let numberOfBytesRead = inputStream.read(buffer, maxLength: maxReadLength)
+            let numberOfBytesRead = inputStream.read(buffer, maxLength: maxlen)
             
             if numberOfBytesRead < 0 {
-                if let _ = inputStream.streamError {
-                    break
+                if let error = inputStream.streamError {
+                    track("readData error %@", error.localizedDescription);
+                    // TODO: Handle conection false
                 }
+            } else if numberOfBytesRead == 0 {
+                track("readData eof"); // Logout event from server
+                CSSKConnection.shared.closeSocket()
+                CSSKConnection.shared.openSocket(completion: nil)
+                // TODO: Handle logout event
             }
             
             if let message = processedData(buffer: buffer, length: numberOfBytesRead) {

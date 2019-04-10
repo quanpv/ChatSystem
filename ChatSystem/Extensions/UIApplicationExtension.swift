@@ -17,6 +17,7 @@ extension UIApplication {
     static let socketHost: String = getInfo("SocketHost") as? String ?? ""
     static let socketPort: UInt32 = (getInfo("SocketPort") as? NSNumber)?.uint32Value ?? 0
     static let sslPeerName: String = getInfo("SslPeerName") as? String ?? ""
+    static let timeOut: UInt = (getInfo("TimeOut") as? NSNumber)?.uintValue ?? 0
     
     static func getInfo(_ key: String) -> Any? {
         return Bundle.main.infoDictionary?[key]

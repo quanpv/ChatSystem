@@ -1,0 +1,20 @@
+PODS:
+  - Queuer (2.0.1)
+  - SwiftProtobuf (1.4.0)
+
+DEPENDENCIES:
+  - Queuer
+  - SwiftProtobuf (~> 1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Queuer
+    - SwiftProtobuf
+
+SPEC CHECKSUMS:
+  Queuer: 4c2c7e8ef7878b9ca31ab9657d5306235279099b
+  SwiftProtobuf: b06646ed6cdcfc3fecd074c6000fe0c413140e4f
+
+PODFILE CHECKSUM: a97957335716c3e413bcd2f5c1396490849191eb
+
+COCOAPODS: 1.5.3
