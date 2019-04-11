@@ -207,7 +207,7 @@ extension CSSKConnection: StreamDelegate {
             return
         }
         let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: maxReadLength)
-        let maxlen = MemoryLayout.size(ofValue: buffer) / MemoryLayout.size(ofValue: UInt8.self)
+        let maxlen = MemoryLayout.size(ofValue: buffer) / MemoryLayout.size(ofValue: UInt8.max)
         while stream.hasBytesAvailable {
             let numberOfBytesRead = inputStream.read(buffer, maxLength: maxlen)
             

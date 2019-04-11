@@ -45,6 +45,7 @@
 		4C0B3874224B88CD001F737E /* CSTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B386E224B88CD001F737E /* CSTalkCell.xib */; };
 		4C0B3875224B88CD001F737E /* CSTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B386E224B88CD001F737E /* CSTalkCell.xib */; };
 		4C0B3876224B88CD001F737E /* CSTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B386E224B88CD001F737E /* CSTalkCell.xib */; };
+		4C23CAAE225EF13000F876A3 /* CSThreadSafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23CAAD225EF13000F876A3 /* CSThreadSafeTests.swift */; };
 		4C2F4B7B2251F49B00E5E9BD /* CSSearchTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F4B792251F49B00E5E9BD /* CSSearchTalkViewController.swift */; };
 		4C2F4B7C2251F49B00E5E9BD /* CSSearchTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F4B792251F49B00E5E9BD /* CSSearchTalkViewController.swift */; };
 		4C2F4B7D2251F49B00E5E9BD /* CSSearchTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F4B792251F49B00E5E9BD /* CSSearchTalkViewController.swift */; };
@@ -102,6 +103,7 @@
 		4CB675C12255B0C100A4169B /* CSDemoNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */; };
 		4CB675C22255B0C100A4169B /* CSDemoNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */; };
 		4CB675C422570E5C00A4169B /* CSSearchTalkViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB675C322570E5C00A4169B /* CSSearchTalkViewModelTests.swift */; };
+		4CC271C7225F27E000AA6697 /* CSObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC271C6225F27E000AA6697 /* CSObservableTests.swift */; };
 		4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798B2249CBE100116A00 /* CSBaseViewModel.swift */; };
 		4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0799B2249D70A00116A00 /* LoginModel.swift */; };
 		4CD569AD224A06130060EB36 /* CSNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0798D2249CC4800116A00 /* CSNavigationViewModel.swift */; };
@@ -356,6 +358,7 @@
 		4C0B3859224B3431001F737E /* CSMessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSMessageInputView.swift; sourceTree = "<group>"; };
 		4C0B385E224B348D001F737E /* CSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLabel.swift; sourceTree = "<group>"; };
 		4C0B386E224B88CD001F737E /* CSTalkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSTalkCell.xib; sourceTree = "<group>"; };
+		4C23CAAD225EF13000F876A3 /* CSThreadSafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSThreadSafeTests.swift; sourceTree = "<group>"; };
 		4C2F4B792251F49B00E5E9BD /* CSSearchTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchTalkViewController.swift; sourceTree = "<group>"; };
 		4C2F4B7A2251F49B00E5E9BD /* CSSearchTalkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSSearchTalkViewController.xib; sourceTree = "<group>"; };
 		4C2F4B832251F4AC00E5E9BD /* CSSearchTalkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchTalkViewModel.swift; sourceTree = "<group>"; };
@@ -371,6 +374,7 @@
 		4CB675B82254677B00A4169B /* CSThreadSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSThreadSafe.swift; sourceTree = "<group>"; };
 		4CB675BE2255B0C100A4169B /* CSDemoNotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSDemoNotify.swift; sourceTree = "<group>"; };
 		4CB675C322570E5C00A4169B /* CSSearchTalkViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchTalkViewModelTests.swift; sourceTree = "<group>"; };
+		4CC271C6225F27E000AA6697 /* CSObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSObservableTests.swift; sourceTree = "<group>"; };
 		4CD569C7224A06130060EB36 /* ChatSystem UAT VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT VN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD569E8224A06170060EB36 /* ChatSystem UAT JP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem UAT JP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD56A09224A061A0060EB36 /* ChatSystem PROD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatSystem PROD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -750,6 +754,8 @@
 			children = (
 				4CB675C322570E5C00A4169B /* CSSearchTalkViewModelTests.swift */,
 				4CE32FA9225B31E300E070F3 /* CSSearchTalkViewControllerTest.swift */,
+				4C23CAAD225EF13000F876A3 /* CSThreadSafeTests.swift */,
+				4CC271C6225F27E000AA6697 /* CSObservableTests.swift */,
 				5BE0796A2249C48700116A00 /* Info.plist */,
 			);
 			path = ChatSystemTests;
@@ -1635,7 +1641,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC271C7225F27E000AA6697 /* CSObservableTests.swift in Sources */,
 				4CE32FAA225B31E300E070F3 /* CSSearchTalkViewControllerTest.swift in Sources */,
+				4C23CAAE225EF13000F876A3 /* CSThreadSafeTests.swift in Sources */,
 				4CB675C422570E5C00A4169B /* CSSearchTalkViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
