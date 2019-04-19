@@ -25,9 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>SocketHost</key>
-	<string>localhost</string>
+	<string>10.1.40.42</string>
 	<key>SocketPort</key>
-	<integer>80</integer>
+	<integer>8082</integer>
 	<key>SslPeerName</key>
 	<string></string>
 	<key>StoreURL</key>

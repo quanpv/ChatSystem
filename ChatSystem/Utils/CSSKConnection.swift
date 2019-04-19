@@ -187,10 +187,10 @@ extension CSSKConnection: StreamDelegate {
             track("open completed")
         case Stream.Event.hasBytesAvailable:
             track("new message received")
-            readAvailableBytes(stream: aStream as! InputStream)
+//            readAvailableBytes(stream: aStream as! InputStream)
         case Stream.Event.endEncountered:
             track("close socket")
-            closeSocket()
+//            closeSocket()
         case Stream.Event.errorOccurred:
             track("error occurred")
         case Stream.Event.hasSpaceAvailable:

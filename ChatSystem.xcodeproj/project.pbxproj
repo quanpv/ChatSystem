@@ -46,6 +46,18 @@
 		4C0B3875224B88CD001F737E /* CSTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B386E224B88CD001F737E /* CSTalkCell.xib */; };
 		4C0B3876224B88CD001F737E /* CSTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B386E224B88CD001F737E /* CSTalkCell.xib */; };
 		4C23CAAE225EF13000F876A3 /* CSThreadSafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23CAAD225EF13000F876A3 /* CSThreadSafeTests.swift */; };
+		4C252C2B22698A1C00FED4EE /* account_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C2822698A1A00FED4EE /* account_service.pb.swift */; };
+		4C252C2C22698A1C00FED4EE /* account_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C2822698A1A00FED4EE /* account_service.pb.swift */; };
+		4C252C2D22698A1C00FED4EE /* account_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C2822698A1A00FED4EE /* account_service.pb.swift */; };
+		4C252C2E22698A1C00FED4EE /* account_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C2822698A1A00FED4EE /* account_service.pb.swift */; };
+		4C252C3322698A1C00FED4EE /* account_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C2A22698A1B00FED4EE /* account_model.pb.swift */; };
+		4C252C3422698A1C00FED4EE /* account_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C2A22698A1B00FED4EE /* account_model.pb.swift */; };
+		4C252C3522698A1C00FED4EE /* account_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C2A22698A1B00FED4EE /* account_model.pb.swift */; };
+		4C252C3622698A1C00FED4EE /* account_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C2A22698A1B00FED4EE /* account_model.pb.swift */; };
+		4C252C3D22698A7500FED4EE /* rpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C3C22698A7400FED4EE /* rpc.pb.swift */; };
+		4C252C3E22698A7500FED4EE /* rpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C3C22698A7400FED4EE /* rpc.pb.swift */; };
+		4C252C3F22698A7500FED4EE /* rpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C3C22698A7400FED4EE /* rpc.pb.swift */; };
+		4C252C4022698A7500FED4EE /* rpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C252C3C22698A7400FED4EE /* rpc.pb.swift */; };
 		4C2F4B7B2251F49B00E5E9BD /* CSSearchTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F4B792251F49B00E5E9BD /* CSSearchTalkViewController.swift */; };
 		4C2F4B7C2251F49B00E5E9BD /* CSSearchTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F4B792251F49B00E5E9BD /* CSSearchTalkViewController.swift */; };
 		4C2F4B7D2251F49B00E5E9BD /* CSSearchTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F4B792251F49B00E5E9BD /* CSSearchTalkViewController.swift */; };
@@ -359,6 +371,9 @@
 		4C0B385E224B348D001F737E /* CSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLabel.swift; sourceTree = "<group>"; };
 		4C0B386E224B88CD001F737E /* CSTalkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSTalkCell.xib; sourceTree = "<group>"; };
 		4C23CAAD225EF13000F876A3 /* CSThreadSafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSThreadSafeTests.swift; sourceTree = "<group>"; };
+		4C252C2822698A1A00FED4EE /* account_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = account_service.pb.swift; sourceTree = "<group>"; };
+		4C252C2A22698A1B00FED4EE /* account_model.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = account_model.pb.swift; sourceTree = "<group>"; };
+		4C252C3C22698A7400FED4EE /* rpc.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rpc.pb.swift; sourceTree = "<group>"; };
 		4C2F4B792251F49B00E5E9BD /* CSSearchTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchTalkViewController.swift; sourceTree = "<group>"; };
 		4C2F4B7A2251F49B00E5E9BD /* CSSearchTalkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSSearchTalkViewController.xib; sourceTree = "<group>"; };
 		4C2F4B832251F4AC00E5E9BD /* CSSearchTalkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchTalkViewModel.swift; sourceTree = "<group>"; };
@@ -610,6 +625,9 @@
 		4CE3305A225C8BDC00E070F3 /* Proto */ = {
 			isa = PBXGroup;
 			children = (
+				4C252C2A22698A1B00FED4EE /* account_model.pb.swift */,
+				4C252C2822698A1A00FED4EE /* account_service.pb.swift */,
+				4C252C3C22698A7400FED4EE /* rpc.pb.swift */,
 				4CE33070225DE8A000E070F3 /* DataModel.pb.swift */,
 			);
 			path = Proto;
@@ -1403,7 +1421,9 @@
 				5B89DEC522533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
 				4CE33072225DE8A000E070F3 /* DataModel.pb.swift in Sources */,
 				5B147AFF22520843001875BE /* CSGroupMemberViewController.swift in Sources */,
+				4C252C3422698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF410F224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
+				4C252C3E22698A7500FED4EE /* rpc.pb.swift in Sources */,
 				5B147B0A22520BDF001875BE /* CSGroupMemberCell.swift in Sources */,
 				4CD56A1C224A1D190060EB36 /* CSSKConnection.swift in Sources */,
 				4CD569AC224A06130060EB36 /* LoginModel.swift in Sources */,
@@ -1439,6 +1459,7 @@
 				4CD569BA224A06130060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569BB224A06130060EB36 /* ChatSystem.xcdatamodeld in Sources */,
 				5B147B1322520E82001875BE /* GroupMemberModel.swift in Sources */,
+				4C252C2C22698A1C00FED4EE /* account_service.pb.swift in Sources */,
 				4C0B3860224B348D001F737E /* CSLabel.swift in Sources */,
 				4CB675BA2254677B00A4169B /* CSThreadSafe.swift in Sources */,
 				4C0B3842224B27F8001F737E /* MessageModel.swift in Sources */,
@@ -1464,7 +1485,9 @@
 				5B89DEC622533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
 				4CE33073225DE8A000E070F3 /* DataModel.pb.swift in Sources */,
 				5B147B0022520843001875BE /* CSGroupMemberViewController.swift in Sources */,
+				4C252C3522698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4110224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
+				4C252C3F22698A7500FED4EE /* rpc.pb.swift in Sources */,
 				5B147B0B22520BDF001875BE /* CSGroupMemberCell.swift in Sources */,
 				4CD56A1D224A1D190060EB36 /* CSSKConnection.swift in Sources */,
 				4CD569CD224A06170060EB36 /* LoginModel.swift in Sources */,
@@ -1500,6 +1523,7 @@
 				4CD569DB224A06170060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569DC224A06170060EB36 /* ChatSystem.xcdatamodeld in Sources */,
 				5B147B1422520E82001875BE /* GroupMemberModel.swift in Sources */,
+				4C252C2D22698A1C00FED4EE /* account_service.pb.swift in Sources */,
 				4C0B3861224B348D001F737E /* CSLabel.swift in Sources */,
 				4CB675BB2254677B00A4169B /* CSThreadSafe.swift in Sources */,
 				4C0B3843224B27F8001F737E /* MessageModel.swift in Sources */,
@@ -1525,7 +1549,9 @@
 				5B89DEC722533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
 				4CE33074225DE8A000E070F3 /* DataModel.pb.swift in Sources */,
 				5B147B0122520843001875BE /* CSGroupMemberViewController.swift in Sources */,
+				4C252C3622698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4111224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
+				4C252C4022698A7500FED4EE /* rpc.pb.swift in Sources */,
 				5B147B0C22520BDF001875BE /* CSGroupMemberCell.swift in Sources */,
 				4CD56A1E224A1D190060EB36 /* CSSKConnection.swift in Sources */,
 				4CD569EE224A061A0060EB36 /* LoginModel.swift in Sources */,
@@ -1561,6 +1587,7 @@
 				4CD569FC224A061A0060EB36 /* CSTalkListViewController.swift in Sources */,
 				4CD569FD224A061A0060EB36 /* ChatSystem.xcdatamodeld in Sources */,
 				5B147B1522520E82001875BE /* GroupMemberModel.swift in Sources */,
+				4C252C2E22698A1C00FED4EE /* account_service.pb.swift in Sources */,
 				4C0B3862224B348D001F737E /* CSLabel.swift in Sources */,
 				4CB675BC2254677B00A4169B /* CSThreadSafe.swift in Sources */,
 				4C0B3844224B27F8001F737E /* MessageModel.swift in Sources */,
@@ -1586,7 +1613,9 @@
 				5B89DEC422533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
 				4CE33071225DE8A000E070F3 /* DataModel.pb.swift in Sources */,
 				5B147AFE22520843001875BE /* CSGroupMemberViewController.swift in Sources */,
+				4C252C3322698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */,
+				4C252C3D22698A7500FED4EE /* rpc.pb.swift in Sources */,
 				5B147B0922520BDF001875BE /* CSGroupMemberCell.swift in Sources */,
 				5B5E1CBF224A353200F59EA5 /* UIViewExtension.swift in Sources */,
 				4CD56A1B224A1D190060EB36 /* CSSKConnection.swift in Sources */,
@@ -1622,6 +1651,7 @@
 				5B5E1CB42249E20D00F59EA5 /* CSEnum.swift in Sources */,
 				4C0B385F224B348D001F737E /* CSLabel.swift in Sources */,
 				5B147B1222520E82001875BE /* GroupMemberModel.swift in Sources */,
+				4C252C2B22698A1C00FED4EE /* account_service.pb.swift in Sources */,
 				4C0B3841224B27F8001F737E /* MessageModel.swift in Sources */,
 				4CB675B92254677B00A4169B /* CSThreadSafe.swift in Sources */,
 				5B5E1CB82249E2BF00F59EA5 /* CSTalkListViewController.swift in Sources */,
