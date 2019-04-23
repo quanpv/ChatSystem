@@ -1291,20 +1291,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		831A8EF901858B817886EF63 /* [CP] Embed Pods Frameworks */ = {
@@ -1313,20 +1308,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8AEAC3FBEB52DB14068EFEF4 /* [CP] Check Pods Manifest.lock */ = {
@@ -1357,20 +1347,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC5B35CBB3F492B1EF198EF7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1401,20 +1386,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
