@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -287,10 +287,10 @@
 		5BCF4113224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */; };
 		5BCF4114224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */; };
 		5BCF4115224B1CB500E9BA22 /* CSTalkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */; };
-		5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* Room.swift */; };
-		5BCF4118224B3B3700E9BA22 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* Room.swift */; };
-		5BCF4119224B3B3700E9BA22 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* Room.swift */; };
-		5BCF411A224B3B3700E9BA22 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* Room.swift */; };
+		5BCF4117224B3B3700E9BA22 /* RoomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* RoomTest.swift */; };
+		5BCF4118224B3B3700E9BA22 /* RoomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* RoomTest.swift */; };
+		5BCF4119224B3B3700E9BA22 /* RoomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* RoomTest.swift */; };
+		5BCF411A224B3B3700E9BA22 /* RoomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF4116224B3B3700E9BA22 /* RoomTest.swift */; };
 		5BCF411F224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF411D224B63CB00E9BA22 /* CSCreateTalkViewController.swift */; };
 		5BCF4120224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF411D224B63CB00E9BA22 /* CSCreateTalkViewController.swift */; };
 		5BCF4121224B63CB00E9BA22 /* CSCreateTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF411D224B63CB00E9BA22 /* CSCreateTalkViewController.swift */; };
@@ -437,7 +437,7 @@
 		5B89DECC2253417C00A2DD78 /* CSGroupMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSGroupMemberViewModel.swift; sourceTree = "<group>"; };
 		5BCF410C224B1CB500E9BA22 /* CSTalkListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTalkListCell.swift; sourceTree = "<group>"; };
 		5BCF410D224B1CB500E9BA22 /* CSTalkListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSTalkListCell.xib; sourceTree = "<group>"; };
-		5BCF4116224B3B3700E9BA22 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		5BCF4116224B3B3700E9BA22 /* RoomTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTest.swift; sourceTree = "<group>"; };
 		5BCF411D224B63CB00E9BA22 /* CSCreateTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSCreateTalkViewController.swift; sourceTree = "<group>"; };
 		5BCF411E224B63CB00E9BA22 /* CSCreateTalkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSCreateTalkViewController.xib; sourceTree = "<group>"; };
 		5BCF4127224B783800E9BA22 /* CSCreateTalkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSCreateTalkViewModel.swift; sourceTree = "<group>"; };
@@ -825,7 +825,7 @@
 			children = (
 				4CE3305A225C8BDC00E070F3 /* Proto */,
 				5BE0799B2249D70A00116A00 /* LoginModel.swift */,
-				5BCF4116224B3B3700E9BA22 /* Room.swift */,
+				5BCF4116224B3B3700E9BA22 /* RoomTest.swift */,
 				4C0B3840224B27F8001F737E /* MessageModel.swift */,
 				5B147B1122520E82001875BE /* GroupMemberModel.swift */,
 			);
@@ -1430,7 +1430,7 @@
 				4C0B385B224B3431001F737E /* CSMessageInputView.swift in Sources */,
 				4CD569B3224A06130060EB36 /* UITableViewExtension.swift in Sources */,
 				4CD569B4224A06130060EB36 /* NSObjectExtention.swift in Sources */,
-				5BCF4118224B3B3700E9BA22 /* Room.swift in Sources */,
+				5BCF4118224B3B3700E9BA22 /* RoomTest.swift in Sources */,
 				4C0B382C224B1B56001F737E /* UIColorExtension.swift in Sources */,
 				4CD569B5224A06130060EB36 /* CSLoginViewController.swift in Sources */,
 				5B89DECE2253417C00A2DD78 /* CSGroupMemberViewModel.swift in Sources */,
@@ -1496,7 +1496,7 @@
 				4C0B385C224B3431001F737E /* CSMessageInputView.swift in Sources */,
 				4CD569D4224A06170060EB36 /* UITableViewExtension.swift in Sources */,
 				4CD569D5224A06170060EB36 /* NSObjectExtention.swift in Sources */,
-				5BCF4119224B3B3700E9BA22 /* Room.swift in Sources */,
+				5BCF4119224B3B3700E9BA22 /* RoomTest.swift in Sources */,
 				4C0B382D224B1B57001F737E /* UIColorExtension.swift in Sources */,
 				4CD569D6224A06170060EB36 /* CSLoginViewController.swift in Sources */,
 				5B89DECF2253417C00A2DD78 /* CSGroupMemberViewModel.swift in Sources */,
@@ -1562,7 +1562,7 @@
 				4C0B385D224B3431001F737E /* CSMessageInputView.swift in Sources */,
 				4CD569F5224A061A0060EB36 /* UITableViewExtension.swift in Sources */,
 				4CD569F6224A061A0060EB36 /* NSObjectExtention.swift in Sources */,
-				5BCF411A224B3B3700E9BA22 /* Room.swift in Sources */,
+				5BCF411A224B3B3700E9BA22 /* RoomTest.swift in Sources */,
 				4C0B382E224B1B57001F737E /* UIColorExtension.swift in Sources */,
 				4CD569F7224A061A0060EB36 /* CSLoginViewController.swift in Sources */,
 				5B89DED02253417C00A2DD78 /* CSGroupMemberViewModel.swift in Sources */,
@@ -1609,7 +1609,7 @@
 				4CD76CFF226EB59600458410 /* group_service.pb.swift in Sources */,
 				5B147AFE22520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3322698A1C00FED4EE /* account_model.pb.swift in Sources */,
-				5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */,
+				5BCF4117224B3B3700E9BA22 /* RoomTest.swift in Sources */,
 				4C252C3D22698A7500FED4EE /* rpc.pb.swift in Sources */,
 				5B147B0922520BDF001875BE /* CSGroupMemberCell.swift in Sources */,
 				5B5E1CBF224A353200F59EA5 /* UIViewExtension.swift in Sources */,

@@ -16,13 +16,13 @@ class CSTalkListViewController: CSBaseViewController {
         return CSTalkListViewModel(self)
     }
     
-    var rooms = [Room(name: "Red Velvet", date: "2019/01/11 11:30"),
-                 Room(name: "Brownie", date: "2019/02/13 12:30"),
-                 Room(name: "Bannna Bread", date: "2019/03/16 10:00"),
-                 Room(name: "Vanilla", date: "2019/04/14 01:30"),
-                 Room(name: "Minty", date: "2019/05/15 09:10")]
+    var rooms = [RoomTest(name: "Red Velvet", date: "2019/01/11 11:30"),
+                 RoomTest(name: "Brownie", date: "2019/02/13 12:30"),
+                 RoomTest(name: "Bannna Bread", date: "2019/03/16 10:00"),
+                 RoomTest(name: "Vanilla", date: "2019/04/14 01:30"),
+                 RoomTest(name: "Minty", date: "2019/05/15 09:10")]
     
-    var filteredRooms = [Room]()
+    var filteredRooms = [RoomTest]()
     
     let searchController = UISearchController(searchResultsController: nil)
     

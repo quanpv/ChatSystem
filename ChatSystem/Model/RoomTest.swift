@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Room {
+struct RoomTest {
     var name = String()
     var date = String()
 }

@@ -24,7 +24,7 @@ class CSMemberTalkCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(_ room: Room) {
+    func setData(_ room: RoomTest) {
       self.labelName.text = room.name
     }
     
