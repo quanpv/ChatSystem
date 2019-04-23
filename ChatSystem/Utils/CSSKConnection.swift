@@ -14,6 +14,10 @@ protocol MessageDelegate: class {
     func receivedMessage(message: MessageModel)
 }
 
+protocol MessageReceivedDelegate: class {
+    func receivedMessage()
+}
+
 enum CSSKConnectionStatus {
     case notOpen, opening, open, closing, close, error
 }
@@ -21,13 +25,11 @@ enum CSSKConnectionStatus {
 class CSSKConnection: NSObject {
     
     weak var delegate: MessageDelegate?
+    weak var receivedDelegate: MessageReceivedDelegate?
     
-    public var status: CSSKConnectionStatus = .notOpen
-    public lazy var isOpen: Bool = {
-        return inputStream.streamStatus == .open && outputStream.streamStatus ==  .open
-    }()
+    private var status: CSSKConnectionStatus = .notOpen
     
-    let maxReadLength = 1024
+    private let maxReadLength = 1024
     var inputStream: InputStream!
     var outputStream: OutputStream!
     
@@ -83,17 +85,17 @@ class CSSKConnection: NSObject {
     public func closeSocket() {
         status = .closing
         
-        if inputStream != nil {
-            inputStream.close()
-            inputStream.remove(from: .main, forMode: .common)
-        }
+        inputStream?.close()
+        inputStream?.remove(from: .main, forMode: .common)
         
-        if outputStream != nil {
-            outputStream.close()
-            outputStream.remove(from: .main, forMode: .common)
-        }
+        outputStream?.close()
+        outputStream?.remove(from: .main, forMode: .common)
         
         status = .close
+    }
+    
+    public func isOpen() -> Bool {
+        return inputStream?.streamStatus == .open && outputStream?.streamStatus ==  .open
     }
     
     private func waitOpenSocket() -> Bool {
@@ -125,7 +127,7 @@ class CSSKConnection: NSObject {
         
         while (true) {
             let status = stream.streamStatus
-            if status == Stream.Status.opening {
+            if status == Stream.Status.open {
                 break
             } else if (status != Stream.Status.opening) {
                 return false
@@ -187,10 +189,9 @@ extension CSSKConnection: StreamDelegate {
             track("open completed")
         case Stream.Event.hasBytesAvailable:
             track("new message received")
-//            readAvailableBytes(stream: aStream as! InputStream)
+            receivedDelegate?.receivedMessage()
         case Stream.Event.endEncountered:
             track("close socket")
-//            closeSocket()
         case Stream.Event.errorOccurred:
             track("error occurred")
         case Stream.Event.hasSpaceAvailable:
@@ -199,48 +200,5 @@ extension CSSKConnection: StreamDelegate {
             track("some other event...")
             break
         }
-    }
-    
-    private func readAvailableBytes(stream: InputStream) {
-        guard stream.streamStatus == .open || stream.streamStatus == .reading else {
-            // TODO: Handle connection disconnect
-            return
-        }
-        let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: maxReadLength)
-        let maxlen = MemoryLayout.size(ofValue: buffer) / MemoryLayout.size(ofValue: UInt8.max)
-        while stream.hasBytesAvailable {
-            let numberOfBytesRead = inputStream.read(buffer, maxLength: maxlen)
-            
-            if numberOfBytesRead < 0 {
-                if let error = inputStream.streamError {
-                    track("readData error %@", error.localizedDescription);
-                    // TODO: Handle conection false
-                }
-            } else if numberOfBytesRead == 0 {
-                track("readData eof"); // Logout event from server
-                CSSKConnection.shared.closeSocket()
-                CSSKConnection.shared.openSocket(completion: nil)
-                // TODO: Handle logout event
-            }
-            
-            if let message = processedData(buffer: buffer, length: numberOfBytesRead) {
-                delegate?.receivedMessage(message: message)
-            }
-        }
-    }
-    
-    private func processedData(buffer: UnsafeMutablePointer<UInt8>, length: Int) -> MessageModel? {
-        guard let stringArray = String(bytesNoCopy: buffer,
-                                       length: length,
-                                       encoding: .ascii,
-                                       freeWhenDone: true)?.components(separatedBy: ":"),
-            let name = stringArray.first,
-            let message = stringArray.last else {
-                return nil
-        }
-        
-        let messageSender:MessageSender = (name == self.username) ? .ourself : .someoneElse
-        
-        return MessageModel(message: message, messageSender: messageSender, username: name, time: Formatter.shared.dateFormat.string(from: Date()))
     }
 }

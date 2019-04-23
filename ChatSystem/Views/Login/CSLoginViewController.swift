@@ -23,8 +23,8 @@ class CSLoginViewController: CSBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
-        let rpc = CSRpc()
-        rpc.start()
+        CSRpc.shared.stop()
+        CSRpc.shared.start()
         print("okokkkkk")
     }
     
@@ -35,16 +35,16 @@ class CSLoginViewController: CSBaseViewController {
 
     @IBAction func actionLogin(_ sender: Any) {
         var loginRequest = LoginRequest()
-        loginRequest.loginID = "1"
-        loginRequest.password = "1"
-        let rpc = CSRpc()
-        rpc.rpcLogin(request: loginRequest) { (result, response) in
-            track(result, response)
+        loginRequest.loginID = "101"
+        loginRequest.password = "yume123123"
+        CSRpc.shared.login(with: loginRequest) { (result, response) in
+            track(result, response as Any)
         }
 //        loginVM.processOpenTalkList()
     }
     
     @IBAction func actionForgotPW(_ sender: Any) {
+        CSRpc.shared.stop()
         loginVM.processOpenForgotPW()
     }
     /*

@@ -25,15 +25,20 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>SocketHost</key>
-	<string>10.1.40.42</string>
+	<string>10.1.40.111</string>
 	<key>SocketPort</key>
-	<integer>8082</integer>
+	<integer>7789</integer>
 	<key>SslPeerName</key>
 	<string></string>
 	<key>StoreURL</key>
 	<string></string>
 	<key>TimeOut</key>
 	<integer>15</integer>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

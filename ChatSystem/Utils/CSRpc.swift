@@ -10,7 +10,26 @@ import UIKit
 import Queuer
 import SwiftProtobuf
 
+extension CSRpc: MessageReceivedDelegate {
+    func receivedMessage() {
+        let response = ConcurrentOperation(name: "rpc.reponse") { [weak self] (_) in
+            if CSSKConnection.shared.outputStream.streamStatus != .open {
+                self?.openConnection()
+            }
+            guard let rpcMessage = CSSKConnection.shared.read(messageType: RpcMessage.self) else { return }
+            guard let completion = self?.rpcRequestQueue[rpcMessage.id] else { return }
+            completion(rpcMessage.result, rpcMessage)
+            self?.rpcRequestQueue[rpcMessage.id] = nil
+        }
+        concurrentQueue.addOperation(response)
+    }
+}
+
 class CSRpc: NSObject {
+    
+    static let shared = CSRpc()
+    private override init() { }
+    
     let APP_ID_BITS: Int = 8
     let SEQUENCE_BITS: Int = 14
     //static long TIMESTAMP_BITS = 41;
@@ -20,64 +39,46 @@ class CSRpc: NSObject {
     let TIMESTAMP_OFFSET: Int = 1388505600000
     var serial: Int = 0
     
+    var rpcRequestQueue = [Int64: ((RpcMessage.Result, RpcMessage) -> Void)]()
     
-    let queue = Queuer(name: "rpc.queue", maxConcurrentOperationCount: 1, qualityOfService: .default)
+    let queue = Queuer(name: "rpc.queue", maxConcurrentOperationCount: 1, qualityOfService: .background)
     let concurrentQueue = Queuer(name: "rpc.conrurrentQueue", maxConcurrentOperationCount: OperationQueue.defaultMaxConcurrentOperationCount, qualityOfService: .background)
     
     func start() {
-        if CSSKConnection.shared.status == .opening || CSSKConnection.shared.status == .open {
+        if CSSKConnection.shared.isOpen() {
             return
-        } else if CSSKConnection.shared.status == .closing {
-            let semaphore = Semaphore()
-            while CSSKConnection.shared.status == .closing {
-                semaphore.wait(.now() + 0.1)
-            }
-            semaphore.continue()
         }
-        let semaphore = Semaphore()
-        while CSSKConnection.shared.status != .open {
-            let operationConnect = SynchronousOperation(name: "rpc.connect.socket") { (concurrentOperation) in
-                CSSKConnection.shared.openSocket(completion: { (status) in
-                    if status == .open {
-                        semaphore.continue()
-                    }
-                })
-            }
-            queue.addOperation(operationConnect)
-            semaphore.wait(.now() + 0.1)
+        DispatchQueue.global(qos: .default).sync {
+            openConnection()
         }
+        CSSKConnection.shared.receivedDelegate = self
     }
     
     func stop() {
         CSSKConnection.shared.closeSocket()
     }
     
-    private func send(message:Message, service: String) {
-        // TODO: Check and handle status connection before send
-        CSSKConnection.shared.write(message: message)
-    }
-    
-    private func read<M: Message>(messageType: M.Type) -> M? {
-        // TODO: check and handle status connection before read
-        return CSSKConnection.shared.read(messageType: messageType)
-    }
-    
-    private func add(request: RpcMessage, completion: @escaping ((RpcMessage) -> Void)) {
-        self.send(message: request, service: "String")
+    private func openConnection() {
         let semaphore = Semaphore()
-        while true {
-            if CSSKConnection.shared.inputStream.streamStatus == .open && CSSKConnection.shared.inputStream.hasBytesAvailable == true {
-                if let msg = read(messageType: RpcMessage.self) {
-                    completion(msg)
+//        let timeout = DispatchTime.now() + UIApplication.connectionTimeOut
+        while !CSSKConnection.shared.isOpen() {
+            CSSKConnection.shared.openSocket(completion: { (status) in
+                if status == .open {
                     semaphore.continue()
-                    break
-                } else {
-                    semaphore.wait(.now() + 0.5)
                 }
-            }
+                semaphore.wait(.now() + 0.1)
+            })
         }
-        semaphore.wait(.now() + UIApplication.connectionTimeOut)
-        semaphore.continue()
+    }
+    
+    private func add(request: Message, completion: @escaping ((RpcMessage.Result, RpcMessage) -> Void)) {
+        if CSSKConnection.shared.outputStream.streamStatus != .open {
+            openConnection()
+        }
+        trackRequest(request)
+        let rpcMessage = self.rpc(message: request)
+        CSSKConnection.shared.write(message: rpcMessage)
+        rpcRequestQueue[rpcMessage.id] = completion
     }
     
     private func rpc(message: Message) -> RpcMessage {
@@ -86,7 +87,7 @@ class CSRpc: NSObject {
         rpcMessage.version = "1.0.0"
         rpcMessage.service = "account"
         rpcMessage.payloadData = try! message.serializedData()
-        rpcMessage.payloadClass = "LoginRequest"
+        rpcMessage.payloadClass = String(describing: type(of: message))
         return rpcMessage
     }
     
@@ -97,16 +98,21 @@ class CSRpc: NSObject {
         return (now << (SEQUENCE_BITS + APP_ID_BITS)) | (Int)(seq << APP_ID_BITS) | (Int)(0 &+ APP_ID_MASK)
     }
     
-    func rpcLogin(request: LoginRequest, completion: @escaping ((RpcMessage.Result, LoginResponse) -> Void)) {
-        DispatchQueue.global(qos: .background).async {
-            let rpcMessage = self.rpc(message: request)
-            self.add(request: rpcMessage, completion: { (message) in
+}
+
+// MARK: - Request
+extension CSRpc {
+    
+    func login(with request: LoginRequest, completion: @escaping ((RpcMessage.Result, LoginResponse?) -> Void)) {
+        let login = SynchronousOperation(name: "rpc.request.login") { (login) in
+            self.add(request: request, completion: { (result, rpcMessage) in
+                let response = try? LoginResponse(serializedData: rpcMessage.payloadData)
+                trackResponse(response as Any)
                 DispatchQueue.main.async {
-                    let _ = message
-                    //                    completion(message.result, msg)
+                    completion(result, response)
                 }
             })
         }
+        queue.addOperation(login)
     }
-    
 }

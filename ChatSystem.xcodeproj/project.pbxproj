@@ -201,10 +201,6 @@
 		4CE33062225CA1F000E070F3 /* CSRpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33060225CA1F000E070F3 /* CSRpc.swift */; };
 		4CE33063225CA1F000E070F3 /* CSRpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33060225CA1F000E070F3 /* CSRpc.swift */; };
 		4CE33064225CA1F000E070F3 /* CSRpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33060225CA1F000E070F3 /* CSRpc.swift */; };
-		4CE33071225DE8A000E070F3 /* DataModel.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33070225DE8A000E070F3 /* DataModel.pb.swift */; };
-		4CE33072225DE8A000E070F3 /* DataModel.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33070225DE8A000E070F3 /* DataModel.pb.swift */; };
-		4CE33073225DE8A000E070F3 /* DataModel.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33070225DE8A000E070F3 /* DataModel.pb.swift */; };
-		4CE33074225DE8A000E070F3 /* DataModel.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33070225DE8A000E070F3 /* DataModel.pb.swift */; };
 		5B147AE62251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B147AE42251BC5A001875BE /* CSCreateGroupTalkViewController.swift */; };
 		5B147AE72251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B147AE42251BC5A001875BE /* CSCreateGroupTalkViewController.swift */; };
 		5B147AE82251BC5A001875BE /* CSCreateGroupTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B147AE42251BC5A001875BE /* CSCreateGroupTalkViewController.swift */; };
@@ -402,7 +398,6 @@
 		4CD56A23224B160B0060EB36 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4CE32FA9225B31E300E070F3 /* CSSearchTalkViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchTalkViewControllerTest.swift; sourceTree = "<group>"; };
 		4CE33060225CA1F000E070F3 /* CSRpc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSRpc.swift; sourceTree = "<group>"; };
-		4CE33070225DE8A000E070F3 /* DataModel.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.pb.swift; sourceTree = "<group>"; };
 		5B147AE42251BC5A001875BE /* CSCreateGroupTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSCreateGroupTalkViewController.swift; sourceTree = "<group>"; };
 		5B147AE52251BC5A001875BE /* CSCreateGroupTalkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSCreateGroupTalkViewController.xib; sourceTree = "<group>"; };
 		5B147AEF2251C98A001875BE /* CSForgotPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSForgotPWViewController.swift; sourceTree = "<group>"; };
@@ -628,7 +623,6 @@
 				4C252C2A22698A1B00FED4EE /* account_model.pb.swift */,
 				4C252C2822698A1A00FED4EE /* account_service.pb.swift */,
 				4C252C3C22698A7400FED4EE /* rpc.pb.swift */,
-				4CE33070225DE8A000E070F3 /* DataModel.pb.swift */,
 			);
 			path = Proto;
 			sourceTree = "<group>";
@@ -1064,6 +1058,11 @@
 				TargetAttributes = {
 					5BE0794C2249C48500116A00 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5BE079632249C48700116A00 = {
 						CreatedOnToolsVersion = 10.1;
@@ -1419,7 +1418,6 @@
 				4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF4129224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5B89DEC522533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
-				4CE33072225DE8A000E070F3 /* DataModel.pb.swift in Sources */,
 				5B147AFF22520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3422698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF410F224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
@@ -1483,7 +1481,6 @@
 				4CD569CB224A06170060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF412A224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5B89DEC622533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
-				4CE33073225DE8A000E070F3 /* DataModel.pb.swift in Sources */,
 				5B147B0022520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3522698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4110224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
@@ -1547,7 +1544,6 @@
 				4CD569EC224A061A0060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF412B224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5B89DEC722533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
-				4CE33074225DE8A000E070F3 /* DataModel.pb.swift in Sources */,
 				5B147B0122520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3622698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4111224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
@@ -1611,7 +1607,6 @@
 				5BE0798C2249CBE100116A00 /* CSBaseViewModel.swift in Sources */,
 				5BEE514C224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
 				5B89DEC422533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
-				4CE33071225DE8A000E070F3 /* DataModel.pb.swift in Sources */,
 				5B147AFE22520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3322698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */,
