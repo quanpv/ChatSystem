@@ -57,13 +57,13 @@ func track(file: String = #file,
 
 func trackRequest(_ item: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
-    print("\(dateFormatterTrack.string(from: Date()))\n--------------->Request--------------->\n" , item, separator: separator, terminator: terminator)
+    print("\(dateFormatterTrack.string(from: Date()))\n-----> Request\n" , item, separator: separator, terminator: terminator)
     #endif
 }
 
 func trackResponse(_ item: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
-    print("\(dateFormatterTrack.string(from: Date()))\n<---------------Response<---------------\n" , item, separator: separator, terminator: terminator)
+    print("\(dateFormatterTrack.string(from: Date()))\n<----- Response\n" , item, separator: separator, terminator: terminator)
     #endif
 }
 

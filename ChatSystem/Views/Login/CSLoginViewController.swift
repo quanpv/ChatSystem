@@ -38,9 +38,8 @@ class CSLoginViewController: CSBaseViewController {
         loginRequest.loginID = "101"
         loginRequest.password = "yume123123"
         CSRpc.shared.login(with: loginRequest) { (result, response) in
-            track(result, response as Any)
+            
         }
-//        loginVM.processOpenTalkList()
     }
     
     @IBAction func actionForgotPW(_ sender: Any) {

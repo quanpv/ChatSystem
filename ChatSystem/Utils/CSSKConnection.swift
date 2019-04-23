@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Queuer
 import SwiftProtobuf
 
 protocol MessageDelegate: class {
@@ -155,11 +154,11 @@ class CSSKConnection: NSObject {
         do {
             try BinaryDelimited.serialize(message: message, to: outputStream)
         } catch BinaryDelimited.Error.truncated {
-            
+            track("Error: While reading/writing to the stream, less than the expected bytes was read/written")
         } catch BinaryDelimited.Error.unknownStreamError {
-            
+            track("Error: Unknown")
         } catch BinaryDecodingError.missingRequiredFields {
-            
+            track("Error: Missing required fields")
         } catch let error {
             track("Error: \(error.localizedDescription)")
         }
@@ -169,10 +168,13 @@ class CSSKConnection: NSObject {
         do {
             return try BinaryDelimited.parse(messageType: messageType, from: inputStream)
         } catch BinaryDelimited.Error.truncated {
+            track("Error: While reading/writing to the stream, less than the expected bytes was read/written")
             return nil
         } catch BinaryDelimited.Error.unknownStreamError {
+            track("Error: Unknown")
             return nil
         } catch BinaryDecodingError.missingRequiredFields {
+            track("Error: Missing required fields")
             return nil
         } catch let error {
             track("Error: \(error.localizedDescription)")
