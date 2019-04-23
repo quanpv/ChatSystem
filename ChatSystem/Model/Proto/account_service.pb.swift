@@ -28,6 +28,8 @@ struct LoginRequest {
 
   var password: String = String()
 
+  var mobileType: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -38,13 +40,25 @@ struct LoginResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var loginResult: Int32 = 0
+  var loginResult: Int32 {
+    get {return _storage._loginResult}
+    set {_uniqueStorage()._loginResult = newValue}
+  }
 
-  var responseCode: Int32 = 0
+  var account: Account {
+    get {return _storage._account ?? Account()}
+    set {_uniqueStorage()._account = newValue}
+  }
+  /// Returns true if `account` has been explicitly set.
+  var hasAccount: Bool {return _storage._account != nil}
+  /// Clears the value of `account`. Subsequent reads from it will return its default value.
+  mutating func clearAccount() {_uniqueStorage()._account = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct LogoutRequest {
@@ -100,6 +114,7 @@ extension LoginRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "login_id"),
     2: .same(proto: "password"),
+    3: .standard(proto: "mobile_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -107,6 +122,7 @@ extension LoginRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.loginID)
       case 2: try decoder.decodeSingularStringField(value: &self.password)
+      case 3: try decoder.decodeSingularInt32Field(value: &self.mobileType)
       default: break
       }
     }
@@ -119,12 +135,16 @@ extension LoginRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     if !self.password.isEmpty {
       try visitor.visitSingularStringField(value: self.password, fieldNumber: 2)
     }
+    if self.mobileType != 0 {
+      try visitor.visitSingularInt32Field(value: self.mobileType, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: LoginRequest, rhs: LoginRequest) -> Bool {
     if lhs.loginID != rhs.loginID {return false}
     if lhs.password != rhs.password {return false}
+    if lhs.mobileType != rhs.mobileType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -134,32 +154,66 @@ extension LoginResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   static let protoMessageName: String = "LoginResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "login_result"),
-    2: .standard(proto: "response_code"),
+    2: .same(proto: "account"),
   ]
 
+  fileprivate class _StorageClass {
+    var _loginResult: Int32 = 0
+    var _account: Account? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _loginResult = source._loginResult
+      _account = source._account
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularInt32Field(value: &self.loginResult)
-      case 2: try decoder.decodeSingularInt32Field(value: &self.responseCode)
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularInt32Field(value: &_storage._loginResult)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._account)
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.loginResult != 0 {
-      try visitor.visitSingularInt32Field(value: self.loginResult, fieldNumber: 1)
-    }
-    if self.responseCode != 0 {
-      try visitor.visitSingularInt32Field(value: self.responseCode, fieldNumber: 2)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._loginResult != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._loginResult, fieldNumber: 1)
+      }
+      if let v = _storage._account {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: LoginResponse, rhs: LoginResponse) -> Bool {
-    if lhs.loginResult != rhs.loginResult {return false}
-    if lhs.responseCode != rhs.responseCode {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._loginResult != rhs_storage._loginResult {return false}
+        if _storage._account != rhs_storage._account {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
