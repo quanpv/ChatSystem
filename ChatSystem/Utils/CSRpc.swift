@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import Queuer
 import SwiftProtobuf
 
 extension CSRpc: MessageReceivedDelegate {
     func receivedMessage() {
-        let response = ConcurrentOperation(name: "rpc.reponse") { [weak self] (_) in
+        DispatchQueue.global(qos: .default).async { [weak self] in
             if CSSKConnection.shared.outputStream.streamStatus != .open {
                 self?.openConnection()
             }
@@ -21,12 +20,12 @@ extension CSRpc: MessageReceivedDelegate {
             completion(rpcMessage.result, rpcMessage)
             self?.rpcRequestQueue[rpcMessage.id] = nil
         }
-        concurrentQueue.addOperation(response)
     }
 }
 
 class CSRpc: NSObject {
     
+    // Singleton
     static let shared = CSRpc()
     private override init() { }
     
@@ -39,17 +38,15 @@ class CSRpc: NSObject {
     let TIMESTAMP_OFFSET: Int = 1388505600000
     var serial: Int = 0
     
-    var rpcRequestQueue = [Int64: ((RpcMessage.Result, RpcMessage) -> Void)]()
-    
-    let queue = Queuer(name: "rpc.queue", maxConcurrentOperationCount: 1, qualityOfService: .background)
-    let concurrentQueue = Queuer(name: "rpc.conrurrentQueue", maxConcurrentOperationCount: OperationQueue.defaultMaxConcurrentOperationCount, qualityOfService: .background)
+    private var rpcRequestQueue = [Int64: ((RpcMessage.Result, RpcMessage) -> Void)]()
+    private let serialQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier!).rpcSerialQueue")
     
     func start() {
         if CSSKConnection.shared.isOpen() {
             return
         }
-        DispatchQueue.global(qos: .default).sync {
-            openConnection()
+        DispatchQueue.global(qos: .default).async {
+            self.openConnection()
         }
         CSSKConnection.shared.receivedDelegate = self
     }
@@ -59,14 +56,21 @@ class CSRpc: NSObject {
     }
     
     private func openConnection() {
-        let semaphore = Semaphore()
-//        let timeout = DispatchTime.now() + UIApplication.connectionTimeOut
+        let semaphore = DispatchSemaphore(value: 0)
+        let timeout = DispatchTime.now() + UIApplication.connectionTimeOut
         while !CSSKConnection.shared.isOpen() {
+            if Int(timeout.uptimeNanoseconds) - Int(DispatchTime.now().uptimeNanoseconds) < 0 {
+                // TODO: Handle timeout open connect
+                let alert = UIAlertController(title: "", message: "Request time out", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+                break
+            }
             CSSKConnection.shared.openSocket(completion: { (status) in
                 if status == .open {
-                    semaphore.continue()
+                    semaphore.signal()
                 }
-                semaphore.wait(.now() + 0.1)
+                _ = semaphore.wait(timeout: .now() + 0.1)
             })
         }
     }
@@ -104,7 +108,7 @@ class CSRpc: NSObject {
 extension CSRpc {
     
     func login(with request: LoginRequest, completion: @escaping ((RpcMessage.Result, LoginResponse?) -> Void)) {
-        let login = SynchronousOperation(name: "rpc.request.login") { (login) in
+        serialQueue.async {
             self.add(request: request, completion: { (result, rpcMessage) in
                 let response = try? LoginResponse(serializedData: rpcMessage.payloadData)
                 trackResponse(response as Any)
@@ -113,6 +117,5 @@ extension CSRpc {
                 }
             })
         }
-        queue.addOperation(login)
     }
 }

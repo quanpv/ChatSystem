@@ -5,7 +5,6 @@ inhibit_all_warnings!
 
 def available_pods
   pod 'SwiftProtobuf', '~> 1.0'
-  pod 'Queuer'
 end
 
 target 'ChatSystem DEV' do

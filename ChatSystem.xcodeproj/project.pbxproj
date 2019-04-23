@@ -196,6 +196,18 @@
 		4CD56A25224B160B0060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A23224B160B0060EB36 /* StringExtension.swift */; };
 		4CD56A26224B160B0060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A23224B160B0060EB36 /* StringExtension.swift */; };
 		4CD56A27224B160B0060EB36 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD56A23224B160B0060EB36 /* StringExtension.swift */; };
+		4CD76CFB226EB59600458410 /* heartbeat.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CF8226EB59500458410 /* heartbeat.pb.swift */; };
+		4CD76CFC226EB59600458410 /* heartbeat.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CF8226EB59500458410 /* heartbeat.pb.swift */; };
+		4CD76CFD226EB59600458410 /* heartbeat.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CF8226EB59500458410 /* heartbeat.pb.swift */; };
+		4CD76CFE226EB59600458410 /* heartbeat.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CF8226EB59500458410 /* heartbeat.pb.swift */; };
+		4CD76CFF226EB59600458410 /* group_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CF9226EB59500458410 /* group_service.pb.swift */; };
+		4CD76D00226EB59600458410 /* group_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CF9226EB59500458410 /* group_service.pb.swift */; };
+		4CD76D01226EB59600458410 /* group_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CF9226EB59500458410 /* group_service.pb.swift */; };
+		4CD76D02226EB59600458410 /* group_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CF9226EB59500458410 /* group_service.pb.swift */; };
+		4CD76D03226EB59600458410 /* group_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CFA226EB59600458410 /* group_model.pb.swift */; };
+		4CD76D04226EB59600458410 /* group_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CFA226EB59600458410 /* group_model.pb.swift */; };
+		4CD76D05226EB59600458410 /* group_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CFA226EB59600458410 /* group_model.pb.swift */; };
+		4CD76D06226EB59600458410 /* group_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD76CFA226EB59600458410 /* group_model.pb.swift */; };
 		4CE32FAA225B31E300E070F3 /* CSSearchTalkViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE32FA9225B31E300E070F3 /* CSSearchTalkViewControllerTest.swift */; };
 		4CE33061225CA1F000E070F3 /* CSRpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33060225CA1F000E070F3 /* CSRpc.swift */; };
 		4CE33062225CA1F000E070F3 /* CSRpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33060225CA1F000E070F3 /* CSRpc.swift */; };
@@ -396,6 +408,9 @@
 		4CD56A15224A10340060EB36 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		4CD56A1A224A1D190060EB36 /* CSSKConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSKConnection.swift; sourceTree = "<group>"; };
 		4CD56A23224B160B0060EB36 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4CD76CF8226EB59500458410 /* heartbeat.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = heartbeat.pb.swift; sourceTree = "<group>"; };
+		4CD76CF9226EB59500458410 /* group_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = group_service.pb.swift; sourceTree = "<group>"; };
+		4CD76CFA226EB59600458410 /* group_model.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = group_model.pb.swift; sourceTree = "<group>"; };
 		4CE32FA9225B31E300E070F3 /* CSSearchTalkViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchTalkViewControllerTest.swift; sourceTree = "<group>"; };
 		4CE33060225CA1F000E070F3 /* CSRpc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSRpc.swift; sourceTree = "<group>"; };
 		5B147AE42251BC5A001875BE /* CSCreateGroupTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSCreateGroupTalkViewController.swift; sourceTree = "<group>"; };
@@ -622,6 +637,9 @@
 			children = (
 				4C252C2A22698A1B00FED4EE /* account_model.pb.swift */,
 				4C252C2822698A1A00FED4EE /* account_service.pb.swift */,
+				4CD76CFA226EB59600458410 /* group_model.pb.swift */,
+				4CD76CF9226EB59500458410 /* group_service.pb.swift */,
+				4CD76CF8226EB59500458410 /* heartbeat.pb.swift */,
 				4C252C3C22698A7400FED4EE /* rpc.pb.swift */,
 			);
 			path = Proto;
@@ -1273,22 +1291,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Queuer/Queuer.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Queuer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSystem DEV/Pods-ChatSystem DEV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		831A8EF901858B817886EF63 /* [CP] Embed Pods Frameworks */ = {
@@ -1297,22 +1308,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Queuer/Queuer.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Queuer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT JP/Pods-ChatSystem UAT JP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8AEAC3FBEB52DB14068EFEF4 /* [CP] Check Pods Manifest.lock */ = {
@@ -1343,22 +1347,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Queuer/Queuer.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Queuer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSystem UAT VN/Pods-ChatSystem UAT VN-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC5B35CBB3F492B1EF198EF7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1389,22 +1386,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Queuer/Queuer.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Queuer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatSystem PROD/Pods-ChatSystem PROD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1418,6 +1408,7 @@
 				4CD569AA224A06130060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF4129224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5B89DEC522533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
+				4CD76D00226EB59600458410 /* group_service.pb.swift in Sources */,
 				5B147AFF22520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3422698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF410F224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
@@ -1432,6 +1423,7 @@
 				4CD569B0224A06130060EB36 /* CSTalkListViewModel.swift in Sources */,
 				4CB675AC22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */,
 				5BEE514D224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
+				4CD76CFC226EB59600458410 /* heartbeat.pb.swift in Sources */,
 				4CD569B1224A06130060EB36 /* CSConstant.swift in Sources */,
 				4CD569B2224A06130060EB36 /* CSUtils.swift in Sources */,
 				4CE33062225CA1F000E070F3 /* CSRpc.swift in Sources */,
@@ -1460,6 +1452,7 @@
 				4C252C2C22698A1C00FED4EE /* account_service.pb.swift in Sources */,
 				4C0B3860224B348D001F737E /* CSLabel.swift in Sources */,
 				4CB675BA2254677B00A4169B /* CSThreadSafe.swift in Sources */,
+				4CD76D04226EB59600458410 /* group_model.pb.swift in Sources */,
 				4C0B3842224B27F8001F737E /* MessageModel.swift in Sources */,
 				4CB6759A2253040100A4169B /* UIImageExtension.swift in Sources */,
 				4CD56A25224B160B0060EB36 /* StringExtension.swift in Sources */,
@@ -1481,6 +1474,7 @@
 				4CD569CB224A06170060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF412A224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5B89DEC622533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
+				4CD76D01226EB59600458410 /* group_service.pb.swift in Sources */,
 				5B147B0022520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3522698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4110224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
@@ -1495,6 +1489,7 @@
 				4CD569D1224A06170060EB36 /* CSTalkListViewModel.swift in Sources */,
 				4CB675AD22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */,
 				5BEE514E224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
+				4CD76CFD226EB59600458410 /* heartbeat.pb.swift in Sources */,
 				4CD569D2224A06170060EB36 /* CSConstant.swift in Sources */,
 				4CD569D3224A06170060EB36 /* CSUtils.swift in Sources */,
 				4CE33063225CA1F000E070F3 /* CSRpc.swift in Sources */,
@@ -1523,6 +1518,7 @@
 				4C252C2D22698A1C00FED4EE /* account_service.pb.swift in Sources */,
 				4C0B3861224B348D001F737E /* CSLabel.swift in Sources */,
 				4CB675BB2254677B00A4169B /* CSThreadSafe.swift in Sources */,
+				4CD76D05226EB59600458410 /* group_model.pb.swift in Sources */,
 				4C0B3843224B27F8001F737E /* MessageModel.swift in Sources */,
 				4CB6759B2253040100A4169B /* UIImageExtension.swift in Sources */,
 				4CD56A26224B160B0060EB36 /* StringExtension.swift in Sources */,
@@ -1544,6 +1540,7 @@
 				4CD569EC224A061A0060EB36 /* CSBaseViewModel.swift in Sources */,
 				5BCF412B224B783800E9BA22 /* CSCreateTalkViewModel.swift in Sources */,
 				5B89DEC722533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
+				4CD76D02226EB59600458410 /* group_service.pb.swift in Sources */,
 				5B147B0122520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3622698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4111224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
@@ -1558,6 +1555,7 @@
 				4CD569F2224A061A0060EB36 /* CSTalkListViewModel.swift in Sources */,
 				4CB675AE22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */,
 				5BEE514F224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
+				4CD76CFE226EB59600458410 /* heartbeat.pb.swift in Sources */,
 				4CD569F3224A061A0060EB36 /* CSConstant.swift in Sources */,
 				4CD569F4224A061A0060EB36 /* CSUtils.swift in Sources */,
 				4CE33064225CA1F000E070F3 /* CSRpc.swift in Sources */,
@@ -1586,6 +1584,7 @@
 				4C252C2E22698A1C00FED4EE /* account_service.pb.swift in Sources */,
 				4C0B3862224B348D001F737E /* CSLabel.swift in Sources */,
 				4CB675BC2254677B00A4169B /* CSThreadSafe.swift in Sources */,
+				4CD76D06226EB59600458410 /* group_model.pb.swift in Sources */,
 				4C0B3844224B27F8001F737E /* MessageModel.swift in Sources */,
 				4CB6759C2253040100A4169B /* UIImageExtension.swift in Sources */,
 				4CD56A27224B160B0060EB36 /* StringExtension.swift in Sources */,
@@ -1607,6 +1606,7 @@
 				5BE0798C2249CBE100116A00 /* CSBaseViewModel.swift in Sources */,
 				5BEE514C224CA56C00DD9947 /* CSMemberTalkCell.swift in Sources */,
 				5B89DEC422533C8A00A2DD78 /* CSAddMemberCell.swift in Sources */,
+				4CD76CFF226EB59600458410 /* group_service.pb.swift in Sources */,
 				5B147AFE22520843001875BE /* CSGroupMemberViewController.swift in Sources */,
 				4C252C3322698A1C00FED4EE /* account_model.pb.swift in Sources */,
 				5BCF4117224B3B3700E9BA22 /* Room.swift in Sources */,
@@ -1621,6 +1621,7 @@
 				4C0B382F224B1B61001F737E /* StringExtension.swift in Sources */,
 				4CB675AB22531FDC00A4169B /* CSHideRoomViewController.swift in Sources */,
 				5B5E1CBD224A101500F59EA5 /* UIColorExtension.swift in Sources */,
+				4CD76CFB226EB59600458410 /* heartbeat.pb.swift in Sources */,
 				5BE0798A2249CB5400116A00 /* CSBaseViewController.swift in Sources */,
 				5BCF410E224B1CB500E9BA22 /* CSTalkListCell.swift in Sources */,
 				4CE33061225CA1F000E070F3 /* CSRpc.swift in Sources */,
@@ -1649,6 +1650,7 @@
 				4C252C2B22698A1C00FED4EE /* account_service.pb.swift in Sources */,
 				4C0B3841224B27F8001F737E /* MessageModel.swift in Sources */,
 				4CB675B92254677B00A4169B /* CSThreadSafe.swift in Sources */,
+				4CD76D03226EB59600458410 /* group_model.pb.swift in Sources */,
 				5B5E1CB82249E2BF00F59EA5 /* CSTalkListViewController.swift in Sources */,
 				4CB675992253040100A4169B /* UIImageExtension.swift in Sources */,
 				5BE079592249C48500116A00 /* ChatSystem.xcdatamodeld in Sources */,
