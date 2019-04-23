@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>ENV</key>
 	<string>DEV</string>
+	<key>HeartBeatInterval</key>
+	<integer>30</integer>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>SocketHost</key>

@@ -14,6 +14,7 @@ extension UIApplication {
     static let buildVersion: String = getInfo("CFBundleVersion") as? String ?? "1.0.0"
     static let storeUrl: URL? = URL.init(string: getInfo("StoreURL") as? String ?? "")
     static let connectionTimeOut: Double = (getInfo("TimeOut") as? NSNumber)?.doubleValue ?? 15.0
+    static let heartBeatInterval: Double = (getInfo("HeartBeatInterval") as? NSNumber)?.doubleValue ?? 30.0
     static let socketHost: String = getInfo("SocketHost") as? String ?? ""
     static let socketPort: UInt32 = (getInfo("SocketPort") as? NSNumber)?.uint32Value ?? 0
     static let sslPeerName: String = getInfo("SslPeerName") as? String ?? ""

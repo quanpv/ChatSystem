@@ -9,35 +9,59 @@
 import UIKit
 import SwiftProtobuf
 
+@available(*, deprecated, message: "Not using for implement")
 protocol MessageDelegate: class {
     func receivedMessage(message: MessageModel)
 }
 
+/// Event when received Message
 protocol MessageReceivedDelegate: class {
     func receivedMessage()
 }
 
+/// Status of socket connection
+///
+/// - notOpen: is not open
+/// - opening: is opening
+/// - open: is open
+/// - closing: is closing
+/// - close: is close
+/// - error: is error
 enum CSSKConnectionStatus {
     case notOpen, opening, open, closing, close, error
 }
 
+/// Class singleton connection socket
 class CSSKConnection: NSObject {
     
+    @available(*, deprecated, message: "Not using for implement")
     weak var delegate: MessageDelegate?
+    
+    /// Delegate received message
     weak var receivedDelegate: MessageReceivedDelegate?
     
+    /// Status of connection
     private var status: CSSKConnectionStatus = .notOpen
     
+    /// max length per message
     private let maxReadLength = 1024
+    
+    /// input stream for read message
     var inputStream: InputStream!
+    
+    /// output stream for write message
     var outputStream: OutputStream!
     
+    @available(*, deprecated, message: "Not using for implement")
     var username = ""
     
+    /// Singleton class define
     static let shared = CSSKConnection()
-    
     private override init() { }
     
+    /// Open socket
+    ///
+    /// - Parameter completion: Block: CSSKConnectionStatus
     public func openSocket(completion:((_ status: CSSKConnectionStatus) -> Void)?) {
         if status == .open || status == .opening || status == .closing {
             completion?(status)
@@ -81,6 +105,7 @@ class CSSKConnection: NSObject {
         completion?(status)
     }
     
+    /// Close socket
     public func closeSocket() {
         status = .closing
         
@@ -93,10 +118,16 @@ class CSSKConnection: NSObject {
         status = .close
     }
     
+    /// Check inputStream and outputStream is open
+    ///
+    /// - Returns: Bool
     public func isOpen() -> Bool {
         return inputStream?.streamStatus == .open && outputStream?.streamStatus ==  .open
     }
     
+    /// Wait for open socket
+    ///
+    /// - Returns: Bool
     private func waitOpenSocket() -> Bool {
         var readStreamStatus = false
         var writeStreamStatus = false
@@ -121,6 +152,10 @@ class CSSKConnection: NSObject {
         return readStreamStatus == true && writeStreamStatus == true
     }
     
+    /// Wait for open stream
+    ///
+    /// - Parameter stream: inputStream or outputStream
+    /// - Returns: Bool
     private func waitOpenStream(stream: Stream) -> Bool {
         let semaphore = DispatchSemaphore(value: 0)
         
@@ -139,17 +174,22 @@ class CSSKConnection: NSObject {
         return true
     }
     
+    @available(*, deprecated, message: "Not using for implement")
     func joinChat(username: String) {
         let data = "iam:\(username)".data(using: .utf8)!
         self.username = username
         _ = data.withUnsafeBytes { outputStream.write($0, maxLength: data.count) }
     }
     
+    @available(*, deprecated, message: "Not using for implement")
     func sendMessage(message: String) {
         let data = "msg:\(message)".data(using: .utf8)!
         _ = data.withUnsafeBytes { outputStream.write($0, maxLength: data.count) }
     }
     
+    /// Write message to outputStream
+    ///
+    /// - Parameter message: Message
     func write(message: Message) {
         do {
             try BinaryDelimited.serialize(message: message, to: outputStream)
@@ -164,6 +204,10 @@ class CSSKConnection: NSObject {
         }
     }
     
+    /// Read message from inputStream
+    ///
+    /// - Parameter messageType: Message.Type
+    /// - Returns: Message?
     func read<M: Message>(messageType: M.Type) -> M? {
         do {
             return try BinaryDelimited.parse(messageType: messageType, from: inputStream)
@@ -184,20 +228,20 @@ class CSSKConnection: NSObject {
     
 }
 
+// MARK: - StreamDelegate
 extension CSSKConnection: StreamDelegate {
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
         switch eventCode {
         case Stream.Event.openCompleted:
-            track("open completed")
+            break
         case Stream.Event.hasBytesAvailable:
-            track("new message received")
             receivedDelegate?.receivedMessage()
         case Stream.Event.endEncountered:
             track("close socket")
         case Stream.Event.errorOccurred:
             track("error occurred")
         case Stream.Event.hasSpaceAvailable:
-            track("has space available")
+            break
         default:
             track("some other event...")
             break

@@ -55,17 +55,31 @@ func track(file: String = #file,
     #endif
 }
 
-func trackRequest(_ item: Any..., separator: String = " ", terminator: String = "\n") {
+func trackRequest(_ item: Any..., separator: String = "\n", terminator: String = "\n") {
     #if DEBUG
-    print("\(dateFormatterTrack.string(from: Date()))\n-----> Request\n" , item, separator: separator, terminator: terminator)
+    print("\(dateFormatterTrack.string(from: Date())) ------------------------------>" , item, separator: separator, terminator: terminator)
     #endif
 }
 
-func trackResponse(_ item: Any..., separator: String = " ", terminator: String = "\n") {
+func trackResponse(_ item: Any..., separator: String = "\n", terminator: String = "\n") {
     #if DEBUG
-    print("\(dateFormatterTrack.string(from: Date()))\n<----- Response\n" , item, separator: separator, terminator: terminator)
+    print("\(dateFormatterTrack.string(from: Date())) <------------------------------" , item, separator: separator, terminator: terminator)
     #endif
 }
+
+// MARK: - RPC Service
+let accountService = "account"
+let groupService = "group"
+let heartbeatService = "heartbeat"
+
+// MARK: - Define for canculate id serial
+let APP_ID_BITS: Int = 8
+let SEQUENCE_BITS: Int = 14
+//static long TIMESTAMP_BITS = 41;
+let APP_ID_MASK: Int = 255 // (1L << APP_ID_BITS) - 1L;
+let SEQUENCE_MASK: Int = 16383 //(1L << SEQUENCE_BITS) - 1L;
+let TIMESTAMP_MASK: Int =  2199023255551//(1L << TIMESTAMP_BITS) - 1L;
+let TIMESTAMP_OFFSET: Int = 1388505600000
 
 //MARK: - Class config common
 class CSConfig: NSObject {
