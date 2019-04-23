@@ -1,6 +1,6 @@
 PODS:
-  - Queuer (2.0.1)
-  - SwiftProtobuf (1.4.0)
+  - Queuer (2.1.0)
+  - SwiftProtobuf (1.5.0)
 
 DEPENDENCIES:
   - Queuer
@@ -12,9 +12,9 @@ SPEC REPOS:
     - SwiftProtobuf
 
 SPEC CHECKSUMS:
-  Queuer: 4c2c7e8ef7878b9ca31ab9657d5306235279099b
-  SwiftProtobuf: b06646ed6cdcfc3fecd074c6000fe0c413140e4f
+  Queuer: db8c76d75902504f0b4c460b641ef6455551330d
+  SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
 
 PODFILE CHECKSUM: a97957335716c3e413bcd2f5c1396490849191eb
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.3
